@@ -3,7 +3,7 @@
 Clonare il progetto base ti odoo 
 
 ```bash
-git clone -b 12.0 --recurse-submodules git@bitbucket.org:metadonors/odoo.docker.git dboxtest.docker
+git clone -b 12.0 git@bitbucket.org:metadonors/odoo-base-project.docker.git dboxtest.docker
 ```
 
 Clonare il repository degli addons donationpoints
@@ -56,7 +56,10 @@ Lanciare odoo
 docker-compose up
 ```
 
-Andare su [http://localhost](http://localhost)
+Andare su [http://localhost](http://localhost) 
+
+User: admin 
+Password: admin
 
 Tra le app selezionare il modulo Donationpoints e installarlo
 
