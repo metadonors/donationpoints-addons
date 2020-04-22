@@ -9,7 +9,8 @@
     'license': 'AGPL-3',
     'author': 'Metadonors Srl',
     'website': 'https://www.metadonors.it',
-    'depends': ['base'
+    'application': True,
+    'depends': ['base','mail'
     ],
     'data': [
         'security/donationpoints_donation.xml',
@@ -38,6 +39,5 @@
     ],
     'demo': [
     ],
-    'application': True,
-    'installable': True,
+    
 }

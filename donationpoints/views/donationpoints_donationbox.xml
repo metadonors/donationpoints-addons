@@ -4,9 +4,9 @@
 
 <odoo>
 
-    <record model="ir.ui.view" id="donationpoint_donationbox_form_view">
-        <field name="name">donationpoint.donationbox.form (in donationpoints)</field>
-        <field name="model">donationpoint.donationbox</field>
+    <record model="ir.ui.view" id="donationpoints_donationbox_form_view">
+        <field name="name">donationpoints.donationbox.form (in donationpoints)</field>
+        <field name="model">donationpoints.donationbox</field>
         <field name="arch" type="xml">
             <form>
                 <header>
@@ -23,9 +23,9 @@
         </field>
     </record>
 
-    <record model="ir.ui.view" id="donationpoint_donationbox_search_view">
-        <field name="name">donationpoint.donationbox.search (in donationpoints)</field>
-        <field name="model">donationpoint.donationbox</field>
+    <record model="ir.ui.view" id="donationpoints_donationbox_search_view">
+        <field name="name">donationpoints.donationbox.search (in donationpoints)</field>
+        <field name="model">donationpoints.donationbox</field>
         <field name="arch" type="xml">
             <search>
                 <!-- TODO -->
@@ -33,9 +33,9 @@
         </field>
     </record>
 
-    <record model="ir.ui.view" id="donationpoint_donationbox_tree_view">
-        <field name="name">donationpoint.donationbox.tree (in donationpoints)</field>
-        <field name="model">donationpoint.donationbox</field>
+    <record model="ir.ui.view" id="donationpoints_donationbox_tree_view">
+        <field name="name">donationpoints.donationbox.tree (in donationpoints)</field>
+        <field name="model">donationpoints.donationbox</field>
         <field name="arch" type="xml">
             <tree>
                 <field name="name"/>
@@ -52,7 +52,7 @@
     </record>
 
     <record model="ir.ui.menu" id="donationpoints_donationbox_menu">
-        <field name="name">Donationpoint Donationbox</field>
+        <field name="name">Donationpoints Donationbox</field>
         <field name="parent_id" ref="xmlid of parent menu"/> <!-- TODO -->
         <field name="action" ref="donationpoints_donationbox_act_window"/>
         <field name="sequence" eval="16"/> <!-- TODO -->

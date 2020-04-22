@@ -20,7 +20,7 @@ class DonationpointsChannelLocation(models.Model):
                                        string=_('Activity State'))
     start_date = fields.Datetime(string=_('Start Date'))
     end_date = fields.Datetime(string=_('End Date'))
-    # contact_history Many2Many donationpoint.contact_history # Queste diventano note/appuntamenti sulle location
+    # contact_history Many2Many donationpoints.contact_history # Queste diventano note/appuntamenti sulle location
     contact_result = fields.Text(string=_('Contact Result'))
     note = fields.Text(string=_('Note'))
 

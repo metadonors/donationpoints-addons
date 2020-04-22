@@ -6,8 +6,8 @@ from odoo import api, fields, models, _
 
 class DonationpointsDonationbox(models.Model):
 
-    _name = 'donationpoint.donationbox'
-    _description = 'Donationpoint Donationbox'  # TODO
+    _name = 'donationpoints.donationbox'
+    _description = 'Donationpoints Donationbox'  # TODO
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
     name = fields.Char(string=_('Name'), required=True)
