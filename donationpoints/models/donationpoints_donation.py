@@ -15,8 +15,8 @@ class DonationpointsDonation(models.Model):
     channel_id = fields.Many2one('donationpoints.channel', string=_('Channel'))
     location_id = fields.Many2one('donationpoints.donationbox.location', string=_('Location'))
     location_owner_id = fields.Many2one('donationpoints.location', string=_('Owner'), related=('location_id.owner_partner_id'), readonly=True)
-    date = fields.DateField(string=_("Date")) #Data di elaborazione della donazione
-    amount = fields.monetary(string=_('Amount'))
+    date = fields.Date(string=_("Date")) #Data di elaborazione della donazione
+    amount = fields.Monetary(string=_('Amount'))
 
     @api.model
     def create(self, vals):
