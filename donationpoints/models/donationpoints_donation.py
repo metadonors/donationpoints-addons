@@ -13,10 +13,11 @@ class DonationpointsDonation(models.Model):
     #name = fields.Char(string=_('Name'))
     code = fields.Char(string=_('Code'),readonly=True, required=True, copy=False, default='Don')
     channel_id = fields.Many2one('donationpoints.channel', string=_('Channel'))
-    location_id = fields.Many2one('donationpoints.donationbox.location', string=_('Location'))
-    location_owner_id = fields.Many2one('donationpoints.location', string=_('Owner'), related=('location_id.owner_partner_id'), readonly=True)
+    location_id = fields.Many2one('donationpoints.location', string=_('Location'))
+    location_owner_id = fields.Many2one(string=_('Owner'), related=('location_id.owner_partner_id'), readonly=True)
     date = fields.Date(string=_("Date")) #Data di elaborazione della donazione
-    amount = fields.Monetary(string=_('Amount'))
+    amount = fields.Monetary(currency_field='currency_id', string=_('Amount'))
+    currency_id = fields.Many2one('res.currency', 'Currency', required=True, readonly=True)
 
     @api.model
     def create(self, vals):

@@ -14,8 +14,10 @@ class DonationpointsVisit(models.Model):
     channel_id = fields.Many2one('donationpoints.channel', string=_('Channel'))
     user_id = fields.Many2one('res.users', string=_('User'))
     donationbox_id = fields.Many2one('donationpoints.donationbox', string=_('Donation Box'))
-    condition_id = fields.Many2one('donationpoints.donationbox.condition', string=_('Condition'), related='donationbox_id.condition_id.name', store=True) #store=salvabile
-    location_id = fields.Many2one('donationpoints.donationbox.location', string=_('Location'), related='donationbox_id.location_id')
-    amount = fields.Monetary(string=_('Amount')) #visibile sulla view in base alla donationbox_id.type (visibile solo per dispositivi manuali)
+    condition_id = fields.Many2one('donationpoints.donationbox.condition', string=_('Condition'), related='donationbox_id.condition_id', store=True) #store=salvabile
+    location_id = fields.Many2one('donationpoints.location', string=_('Location'), related='donationbox_id.location_id')
+    amount = fields.Monetary(currency_field='currency_id', string=_('Amount')) #visibile sulla view in base alla donationbox_id.type (visibile solo per dispositivi manuali)
+    currency_id = fields.Many2one('res.currency', 'Currency', required=True, readonly=True)
+
     name = fields.Char()
 
