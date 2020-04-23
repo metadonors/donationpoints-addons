@@ -10,10 +10,10 @@
         <field name="arch" type="xml">
             <form>
                 <header>
-                    <!-- TODO -->
+                    
                 </header>
                 <sheet>
-                    <!-- TODO -->
+                    
                     <group>
                         <field name="name"/>
                     </group>
@@ -28,7 +28,7 @@
         <field name="model">donationpoints.channel.location</field>
         <field name="arch" type="xml">
             <search>
-                <!-- TODO -->
+                
             </search>
         </field>
     </record>
@@ -38,14 +38,14 @@
         <field name="model">donationpoints.channel.location</field>
         <field name="arch" type="xml">
             <tree>
-                <!-- TODO -->
+                
                 <field name="name"/>
             </tree>
         </field>
     </record>
 
     <record model="ir.actions.act_window" id="donationpoints_channel_location_act_window">
-        <field name="name">Donationpoints channel Location</field> <!-- TODO -->
+        <field name="name">Donationpoints channel Location</field> 
         <field name="res_model">donationpoints.channel.location</field>
         <field name="view_mode">tree,form</field>
         <field name="domain">[]</field>
@@ -54,9 +54,8 @@
 
     <record model="ir.ui.menu" id="donationpoints_channel_location_menu">
         <field name="name">Donationpoints channel Location</field>
-        <field name="parent_id" ref="xmlid of parent menu"/> <!-- TODO -->
         <field name="action" ref="donationpoints_channel_location_act_window"/>
-        <field name="sequence" eval="16"/> <!-- TODO -->
+        <field name="sequence" eval="16"/> 
     </record>
 
 </odoo>
