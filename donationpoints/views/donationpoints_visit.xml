@@ -51,12 +51,4 @@
         <field name="domain">[]</field>
         <field name="context">{}</field>
     </record>
-
-    <record model="ir.ui.menu" id="donationpoints_visit_menu">
-        <field name="name">Donationpoints Visit</field>
-	    <!--<field name="parent_id" ref="xmlid of parent menu"/> -->
-        <field name="action" ref="donationpoints_visit_act_window"/>
-        <field name="sequence" eval="16"/> 
-    </record>
-
 </odoo>

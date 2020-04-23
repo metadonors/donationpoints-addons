@@ -9,6 +9,7 @@ class DonationpointsChannelLocation(models.Model):
     _name = 'donationpoints.channel.location'
     _description = 'Donationpoints Channel Location'  # TODO
 
+    #code = fields.Char(string=_("Code"))
     channel_id = fields.Many2one('donationpoints.channel', string=_('Channel'))
     location_id = fields.Many2one('donationpoints.location', string=_('Location'))
     location_owner_id = fields.Many2one(string=_('Owner'), related=('location_id.owner_partner_id'), readonly=True) #AUTOMATICO??
@@ -24,4 +25,9 @@ class DonationpointsChannelLocation(models.Model):
     contact_result = fields.Text(string=_('Contact Result'))
     note = fields.Text(string=_('Note'))
 
-
+    #@api.model
+    #def create(self, vals):
+    #    if vals.get("code", "REL") == "REL":
+    #        vals["code"] = self.env["ir.sequence"].next_by_code("donationpoints.channel.location") or "REL"
+    #        record = super(DonationpointsChannelLocation, self).create(vals)
+    #        return record

@@ -51,10 +51,4 @@
         <field name="context">{}</field>
     </record>
 
-    <record model="ir.ui.menu" id="donationpoints_donationbox_menu">
-        <field name="name">Donationpoints Donationbox</field>
-        <field name="action" ref="donationpoints_donationbox_act_window"/>
-        <field name="sequence" eval="16"/> 
-    </record>
-
 </odoo>
