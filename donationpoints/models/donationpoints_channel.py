@@ -16,8 +16,8 @@ class DonationpointsChannel(models.Model):
                               ('suspended',_('Suspended')),
                               ('cancelled',_('Cancelled')),
                               ('closed',_('Closed'))],string=_('State'),default='active')
-    start_date = fields.Datetime(string=_('Start Date'))
-    end_date = fields.Datetime(string=_('End Date'))
+    start_date = fields.Date(string=_('Start Date'))
+    end_date = fields.Date(string=_('End Date'))
     note = fields.Text(string=_('note'))
 
     @api.onchange('end_date')    

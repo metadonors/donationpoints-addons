@@ -2,6 +2,9 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo import api, fields, models, _
+from odoo.exceptions import ValidationError 
+import logging
+log = logging.getLogger(__name__)
 
 
 class DonationpointsChannelLocation(models.Model):
@@ -27,9 +30,3 @@ class DonationpointsChannelLocation(models.Model):
     note = fields.Text(string=_('Note'))
 
 
-            #@api.model
-    #def create(self, vals):
-    #    if vals.get("code", "REL") == "REL":
-    #        vals["code"] = self.env["ir.sequence"].next_by_code("donationpoints.channel.location") or "REL"
-    #        record = super(DonationpointsChannelLocation, self).create(vals)
-    #        return record
