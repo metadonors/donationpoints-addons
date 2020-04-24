@@ -7,17 +7,17 @@ from odoo import api, fields, models, _
 class DonationpointsVisit(models.Model):
 
     _name = 'donationpoints.visit'
-    _description = 'Donationpoints Visit'  # TODO
+    _description = 'Donationpoints Visit'
 
     visit_date = fields.Date(string=_("Visit Date"))
     visit_type_id = fields.Many2one('donationpoints.visit.type', string=_('Type'))
     channel_id = fields.Many2one('donationpoints.channel', string=_('Channel'))
     user_id = fields.Many2one('res.users', string=_('User'))
     donationbox_id = fields.Many2one('donationpoints.donationbox', string=_('Donation Box'))
-    condition_id = fields.Many2one('donationpoints.donationbox.condition', string=_('Condition'), related='donationbox_id.condition_id', store=True) #store=salvabile
+    condition_id = fields.Many2one('donationpoints.donationbox.condition', string=_('Condition'),
+                                   related='donationbox_id.condition_id', store=True)
     location_id = fields.Many2one('donationpoints.location', string=_('Location'), related='donationbox_id.location_id')
-    amount = fields.Monetary(currency_field='currency_id', string=_('Amount')) #visibile sulla view in base alla donationbox_id.type (visibile solo per dispositivi manuali)
-    currency_id = fields.Many2one('res.currency', 'Currency', required=True, readonly=True)
+    amount = fields.Monetary(currency_field='currency_id', string=_('Amount'))
+    currency_id = fields.Many2one('res.currency', 'Currency', readonly=True)
 
-    name = fields.Char()
 

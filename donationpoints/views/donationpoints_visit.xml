@@ -9,14 +9,17 @@
         <field name="model">donationpoints.visit</field>
         <field name="arch" type="xml">
             <form>
-                <header>
-                    
-                </header>
                 <sheet>
-                    
-                    <group>
-                        <field name="name"/>
-                    </group>
+		    <group>
+			<field name="visit_date"/>
+		    	<field name="visit_type_id"/>
+		    	<field name="channel_id"/> 
+		    	<field name="user_id"/>   
+		    	<field name="donationbox_id"/>
+		    	<field name="condition_id"/>
+			<field name="location_id"/>
+			<field name="amount"/>
+		    </group>
                 </sheet>
                 <div class="oe_chatter"></div>
             </form>
@@ -38,13 +41,18 @@
         <field name="model">donationpoints.visit</field>
         <field name="arch" type="xml">
             <tree>
-                
-                <field name="name"/>
-            </tree>
-        </field>
+		<field name="visit_date"/>
+		<field name="visit_type_id"/>
+		<field name="channel_id"/> 
+		<field name="user_id"/>   
+		<field name="donationbox_id"/>
+		<field name="condition_id"/>
+		<field name="location_id"/>
+		<field name="amount"/>
+	    </tree>
+	</field>
     </record>
-
-    <record model="ir.actions.act_window" id="donationpoints_visit_act_window">
+     <record model="ir.actions.act_window" id="donationpoints_visit_act_window">
         <field name="name">Donationpoints Visit</field> 
         <field name="res_model">donationpoints.visit</field>
         <field name="view_mode">tree,form</field>

@@ -37,7 +37,7 @@
                         </page>
                     </notebook>
                     <tree>
-                        <field name="donationbox_id"/>
+                        <field name="donationbox_ids"/>
                     </tree>
                 </sheet>
                 <div class="oe_chatter"></div>
