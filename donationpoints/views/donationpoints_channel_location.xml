@@ -13,15 +13,42 @@
                     
                 </header>
                 <sheet>
-                    
+                    <h1>
+                        <field name="channel_id"/>
+                    </h1>
                     <group>
-                        
+                        <group>                       
+                            <field name="location_id"/>
+                            <field name="location_owner_id"/>
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                        </group>
+                        <group>                       
+                            <field name="channel_id"/>
+                            <field name="activity_state"/>                        
+                        </group>
                     </group>
+                    <notebook>
+                        <page string='Contact result'>
+                            <field name="contact_result"/>
+                        </page>
+                        <page string='note'>
+                            <field name="note"/>
+                        </page>
+                    </notebook>
+                    <tree>
+                        <field name="donationbox_id"/>
+                    </tree>
                 </sheet>
                 <div class="oe_chatter"></div>
             </form>
         </field>
     </record>
+
+    <!--  = fields.Many2one('donationpoints.channel', string=_('Channel'))
+    
+    contact_result = fields.Text(string=_('Contact Result'))
+    note = fields.Text(string=_('Note')) -->
 
     <record model="ir.ui.view" id="donationpoints_channel_location_search_view">
         <field name="name">donationpoints.channel.location.search (in donationpoints)</field>
@@ -38,10 +65,16 @@
         <field name="model">donationpoints.channel.location</field>
         <field name="arch" type="xml">
             <tree>
-                
+                <field name="channel_id"/>
+                <field name="location_id"/>
+                <field name="location_owner_id"/>
+                <field name="activity_state"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
             </tree>
         </field>
     </record>
+
 
     <record model="ir.actions.act_window" id="donationpoints_channel_location_act_window">
         <field name="name">Donationpoints channel Location</field> 

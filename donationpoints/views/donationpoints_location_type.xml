@@ -4,7 +4,7 @@
 
 <odoo>
 
-    <record model="ir.ui.view" id="donationpoints_location_type_form_view">
+<!--     <record model="ir.ui.view" id="donationpoints_location_type_form_view">
         <field name="name">donationpoints.location.type.form (in donationpoints)</field>
         <field name="model">donationpoints.location.type</field>
         <field name="arch" type="xml">
@@ -21,14 +21,14 @@
                 <div class="oe_chatter"></div>
             </form>
         </field>
-    </record>
+    </record> -->
 
 
     <record model="ir.ui.view" id="donationpoints_location_type_tree_view">
         <field name="name">donationpoints.location.type.tree (in donationpoints)</field>
         <field name="model">donationpoints.location.type</field>
         <field name="arch" type="xml">
-            <tree>
+            <tree editable="top">
                 
                 <field name="name"/>
             </tree>
@@ -38,7 +38,7 @@
     <record model="ir.actions.act_window" id="donationpoints_location_type_act_window">
         <field name="name">Donationpoints Location Type</field> 
         <field name="res_model">donationpoints.location.type</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree</field>
         <field name="domain">[]</field>
         <field name="context">{}</field>
     </record>

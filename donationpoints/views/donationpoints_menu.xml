@@ -18,6 +18,12 @@
         <field name="action" ref="donationpoints_channel_act_window"/>
         <field name="sequence" eval="20"/>
     </record>
+    <record model="ir.ui.menu" id="donationpoints_channel_location">
+        <field name="name">Activity</field>
+        <field name="parent_id" ref="donationpoints_main_menu"/>
+        <field name="action" ref="donationpoints_channel_location_act_window"/>
+        <field name="sequence" eval="20"/>
+    </record>
     <record model="ir.ui.menu" id="donationpoints_location">
         <field name="name">Locations</field>
         <field name="parent_id" ref="donationpoints_main_menu"/>
@@ -65,7 +71,7 @@
     <record model="ir.ui.menu" id="donationpoints_settings_device_type">
         <field name="name">Device Type</field>
         <field name="parent_id" ref="donationpoints_settings"/>
-        <field name="action" ref="donationpoints_donationbox_condition_act_window"/>
+        <field name="action" ref="donationpoints_donationbox_type_act_window"/>
         <field name="sequence" eval="110"/>
     </record>
 </odoo>

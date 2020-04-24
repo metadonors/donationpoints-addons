@@ -15,17 +15,19 @@ class DonationpointsChannel(models.Model):
     state = fields.Selection([('active',_('Active')),
                               ('suspended',_('Suspended')),
                               ('cancelled',_('Cancelled')),
-                              ('closed',_('Closed'))],string=_('State'),compute='_compute_state')
+                              ('closed',_('Closed'))],string=_('State'),default='active')
     start_date = fields.Datetime(string=_('Start Date'))
     end_date = fields.Datetime(string=_('End Date'))
     note = fields.Text(string=_('note'))
 
-    @api.depends('end_date')    
-    def compute_state(self):
+    @api.onchange('end_date')    
+    def check_expitation_date(self):
         today = datetime.today()
         for record in self:
-            if record.end_date < today:
+            if record.end_date and record.end_date < today:
                 record.state = 'closed'
+            else:
+                record.state = 'active'
 
 
 

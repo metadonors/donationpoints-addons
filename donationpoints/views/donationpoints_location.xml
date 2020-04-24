@@ -9,19 +9,51 @@
         <field name="model">donationpoints.location</field>
         <field name="arch" type="xml">
             <form>
-                <header>
-                    
-                </header>
                 <sheet>
-                    
-                    <group>
+                    <h1>
                         <field name="name"/>
+                    </h1>
+                    <group>
+                        <group>
+                            <field name="location_type_id"/>
+                            <field name="phone"/>
+                            <field name="mobile"/>
+                            <field name="email"/>
+                        </group>
+                        <group>
+                            <field name="address1"/>
+                            <field name="address2"/>
+                            <field name="city"/>
+                            <field name="country_state_id"/>
+                            <field name="country_id"/>
+                            
+                        </group>
                     </group>
+                    <notebook>
+                        <page string="Owner">
+                            <field name="owner_partner_id"/>
+                            <field name="owner_partner_phone_id"/>
+                            <field name="owner_partner_mobile_id"/>
+                            <field name="owner_partner_email_id"/>
+                        </page>
+                        <page string="Contact">
+                            <field name="contact_partner_id"/>
+                            <field name="contact_partner_phone_id"/>
+                            <field name="contact_partner_mobile_id"/>
+                            <field name="contact_partner_email_id"/>
+                        </page>
+                        <page string="Note">
+                            <field name="note"/>
+                        </page>
+                        <tree>
+                        </tree>
+                    </notebook>
                 </sheet>
                 <div class="oe_chatter"></div>
             </form>
         </field>
     </record>
+    
 
     <record model="ir.ui.view" id="donationpoints_location_search_view">
         <field name="name">donationpoints.location.search (in donationpoints)</field>
@@ -40,6 +72,16 @@
             <tree>
                 
                 <field name="name"/>
+                <field name="city"/>
+                <field name="country_state_id"/>
+                <field name="phone"/>
+                <field name="mobile"/>
+                <field name="email"/>
+                <field name="owner_partner_id"/>
+                <field name="contact_partner_id"/>
+                <field name="contact_partner_phone_id"/>
+                <field name="contact_partner_mobile_id"/>
+                <field name="contact_partner_email_id"/>
             </tree>
         </field>
     </record>

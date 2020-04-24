@@ -13,6 +13,7 @@ class DonationpointsChannelLocation(models.Model):
     channel_id = fields.Many2one('donationpoints.channel', string=_('Channel'))
     location_id = fields.Many2one('donationpoints.location', string=_('Location'))
     location_owner_id = fields.Many2one(string=_('Owner'), related=('location_id.owner_partner_id'), readonly=True) #AUTOMATICO??
+    donationbox_id = fields.Many2one('donationpoints.donationbox', string=_('Donationbox'), domain=[("location_id","=",location_id)])
     activity_state = fields.Selection([('active',_('Active')),
                                        ('suspended',_('Suspended')),
                                        ('closed',_('Closed')),
