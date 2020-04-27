@@ -30,7 +30,7 @@
     </record>
 
     <record model="ir.actions.act_window" id="donationpoints_donationbox_type_act_window">
-        <field name="name">Donationpoints Donationbox Type</field> 
+        <field name="name">Donationbox Type</field> 
         <field name="res_model">donationpoints.donationbox.type</field>
         <field name="view_mode">tree</field>
         <field name="domain">[]</field>

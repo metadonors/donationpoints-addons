@@ -45,7 +45,7 @@
     </record>
 
     <record model="ir.actions.act_window" id="donationpoints_donation_act_window">
-        <field name="name">Donationpoints Donation</field> 
+        <field name="name">Donation</field> 
         <field name="res_model">donationpoints.donation</field>
         <field name="view_mode">tree,form</field>
         <field name="domain">[]</field>

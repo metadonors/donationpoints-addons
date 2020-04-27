@@ -77,7 +77,7 @@
 
 
     <record model="ir.actions.act_window" id="donationpoints_channel_location_act_window">
-        <field name="name">Donationpoints channel Location</field> 
+        <field name="name">Activity</field> 
         <field name="res_model">donationpoints.channel.location</field>
         <field name="view_mode">tree,form</field>
         <field name="domain">[]</field>
