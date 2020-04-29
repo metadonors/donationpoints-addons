@@ -45,7 +45,19 @@
         <field name="model">donationpoints.donationbox</field>
         <field name="arch" type="xml">
             <search>
+                <filter name="filter_condition_working" string="Working" domain="[('condition_id','=','Working')]"/>
+                <filter name="filter_condition_not_working" string="Not working" domain="[('condition_id','=','Not working')]"/>
+                <filter name="filter_condition_maintenance" string="Maintenance" domain="[('condition_id','=','Maintenance')]"/>
+                <separator/>
                 
+                <filter name="groupby_type" string="Type" context="{'group_by':'type_id'}"/>
+                <filter name="groupby_condition" string="Condition" context="{'group_by':'condition_id'}"/>
+                <filter name="groupby_location" string="Location" context="{'group_by':'location_id'}"/>
+
+                <field name="code" string="Code"/>
+                <field name="name" string="Name"/>
+                <field name="type_id" string="Type"/>
+                <field name="location_id" string="Location"/>
             </search>
         </field>
     </record>

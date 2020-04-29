@@ -9,9 +9,6 @@
         <field name="model">donationpoints.channel.location</field>
         <field name="arch" type="xml">
             <form>
-                <header>
-                    
-                </header>
                 <sheet>
                     <h1>
                         <field name="channel_id"/>
@@ -50,15 +47,44 @@
     contact_result = fields.Text(string=_('Contact Result'))
     note = fields.Text(string=_('Note')) -->
 
-    <record model="ir.ui.view" id="donationpoints_channel_location_search_view">
+  <record model="ir.ui.view" id="donationpoints_channel_location_search_view">
         <field name="name">donationpoints.channel.location.search (in donationpoints)</field>
         <field name="model">donationpoints.channel.location</field>
         <field name="arch" type="xml">
             <search>
+                <!-- activity state -->
+                <filter name="filter_active" string="Active" domain="[('activity_state','=','active')]"/>
+                <filter name="filter_suspended" string="Suspended" domain="[('activity_state','=','suspended')]"/>
+                <filter name="filter_closed" string="Closed" domain="[('activity_state','=','closed')]"/>
+                <filter name="filter_retired" string="Retired" domain="[('activity_state','=','retired')]"/>
+                <filter name="filter_denied" string="Denied" domain="[('activity_state','=','denied')]"/>
+                <filter name="filter_active" string="Active" domain="[('activity_state','=','active')]"/>
+                <separator/>
+                <!-- channel state -->
+                <!-- <filter name="filter_channel_active_old" string="Channel Active" domain="[('channel_id_state','=','active')]"/>
+                <filter name="filter_channel_suspended_old" string="Channel Suspended" domain="[('channel_id_state','=','suspended')]"/>
+                <filter name="filter_channel_cancelled_old" string="Channel Cancelled" domain="[('channel_id_state','=','cancelled')]"/>
+                <filter name="filter_channel_closed_old" string="Channel Closed" domain="[('channel_id_state','=','closed')]"/>
+                <separator/> -->
+                <filter name="filter_channel_active" string="Channel Active" domain="[('channel_id.state','=','active')]"/>
+                <filter name="filter_channel_suspended" string="Channel Suspended" domain="[('channel_id.state','=','suspended')]"/>
+                <filter name="filter_channel_cancelled" string="Channel Cancelled" domain="[('channel_id.state','=','cancelled')]"/>
+                <filter name="filter_channel_closed" string="Channel Closed" domain="[('channel_id.state','=','closed')]"/>
+
+                <!-- group_by -->
+                <filter name="groupby_channel" string="Channel" context="{'group_by':'channel_id'}"/>
+                <filter name="groupby_location" string="Location" context="{'group_by':'location_id'}"/>
+                <filter name="groupby_user" string="Owner" context="{'group_by':'location_owner_id'}"/>
                 
+                <!-- search fields -->
+                <field name="location_owner_id" string="Owner"/>
+                <field name="location_id" string="Location"/>
+                <field name="channel_id" string="Channel"/>
+                <!--field name="donationbox_ids" string="Donationbox"/-->
             </search>
         </field>
     </record>
+
 
     <record model="ir.ui.view" id="donationpoints_channel_location_tree_view">
         <field name="name">donationpoints.channel.location.tree (in donationpoints)</field>
@@ -66,9 +92,10 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="channel_id"/>
+                <!--field name="channel_id_state"/-->
                 <field name="location_id"/>
-                <field name="location_owner_id"/>
                 <field name="activity_state"/>
+                <field name="location_owner_id"/>
                 <field name="start_date"/>
                 <field name="end_date"/>
             </tree>

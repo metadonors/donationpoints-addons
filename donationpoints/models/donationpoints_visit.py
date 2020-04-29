@@ -16,8 +16,8 @@ class DonationpointsVisit(models.Model):
     donationbox_id = fields.Many2one('donationpoints.donationbox', string=_('Donation Box'))
     condition_id = fields.Many2one('donationpoints.donationbox.condition', string=_('Condition'),
                                    related='donationbox_id.condition_id', store=True)
-    location_id = fields.Many2one('donationpoints.location', string=_('Location'), related='donationbox_id.location_id')
-    amount = fields.Monetary(currency_field='currency_id', string=_('Amount'))
+    location_id = fields.Many2one('donationpoints.location', string=_('Location'), related='donationbox_id.location_id', store=True, readonly=True)
+    amount = fields.Monetary(currency_field='currency_id', string=_('Amount'), store=True)
     currency_id = fields.Many2one('res.currency', 'Currency', readonly=True)
 
 

@@ -18,7 +18,7 @@ class DonationpointsChannel(models.Model):
                               ('closed',_('Closed'))],string=_('State'),default='active')
     start_date = fields.Date(string=_('Start Date'))
     end_date = fields.Date(string=_('End Date'))
-    note = fields.Text(string=_('note'))
+    note = fields.Text(string=_('Note'))
 
     @api.onchange('end_date')    
     def check_expitation_date(self):

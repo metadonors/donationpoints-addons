@@ -15,7 +15,7 @@ class DonationpointsChannelLocation(models.Model):
     #code = fields.Char(string=_("Code"))
     channel_id = fields.Many2one('donationpoints.channel', string=_('Channel'))
     location_id = fields.Many2one('donationpoints.location', string=_('Location'))
-    location_owner_id = fields.Many2one(string=_('Owner'), related=('location_id.owner_partner_id'), readonly=True) #AUTOMATICO??
+    location_owner_id = fields.Many2one(string=_('Owner'), related=('location_id.owner_partner_id'), store=True, readonly=True) #AUTOMATICO??
     donationbox_ids = fields.Many2many('donationpoints.donationbox', string=_('Donationbox'))
     activity_state = fields.Selection([('active',_('Active')),
                                        ('suspended',_('Suspended')),
@@ -28,5 +28,7 @@ class DonationpointsChannelLocation(models.Model):
     # contact_history Many2Many donationpoints.contact_history # Queste diventano note/appuntamenti sulle location
     contact_result = fields.Text(string=_('Contact Result'))
     note = fields.Text(string=_('Note'))
+
+        
 
 
