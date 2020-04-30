@@ -15,6 +15,7 @@ class DonationpointsDonationbox(models.Model):
     code = fields.Char(string=_('Serial Code'))
     type_id = fields.Many2one('donationpoints.donationbox.type', string=_('Type'))
     location_id = fields.Many2one('donationpoints.location', string=_('Location'))
+    theme_id = fields.Many2one('donationpoints.donationpoint_theme', string=_('Theme'))
     history_ids = fields.One2many('donationpoints.visit', 'donationbox_id', string=_('Visits'), readonly=True)
     condition_id = fields.Many2one('donationpoints.donationbox.condition',
                                     string=_("Conditions"))

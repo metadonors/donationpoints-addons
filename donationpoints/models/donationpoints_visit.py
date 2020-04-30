@@ -11,7 +11,7 @@ class DonationpointsVisit(models.Model):
 
     visit_date = fields.Date(string=_("Visit Date"))
     visit_type_id = fields.Many2one('donationpoints.visit.type', string=_('Type'))
-    channel_id = fields.Many2one('donationpoints.channel', string=_('Channel'))
+    donationbox_theme_id = fields.Many2one('donationpoints.donationbox_theme', string=_('Donationbox Theme'))
     user_id = fields.Many2one('res.users', string=_('User'))
     donationbox_id = fields.Many2one('donationpoints.donationbox', string=_('Donation Box'))
     condition_id = fields.Many2one('donationpoints.donationbox.condition', string=_('Condition'),

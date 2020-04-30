@@ -14,7 +14,6 @@
                         <group>
                             <field name="visit_date"/>
                             <field name="visit_type_id"/>
-                            <field name="channel_id"/> 
                             <field name="location_id"/>
                         </group>
                         <group>
@@ -48,7 +47,6 @@
                 <filter name="groupby_type" string="Type" context="{'group_by':'visit_type_id'}"/>
                 <filter name="groupby_user" string="Responsible" context="{'group_by':'user_id'}"/>
                 <filter name="groupby_location" string="Location" context="{'group_by':'location_id'}"/>
-                <filter name="groupby_channel" string="Channel" context="{'group_by':'channel_id'}"/>
                 <filter name="groupby_condition" string="Donationbox condition" context="{'group_by':'condition_id'}"/>
                 
                 <!-- search fields -->
@@ -56,7 +54,7 @@
                 <field name="donationbox_id" string="Donationbox"/>
                 <field name="location_id" string="Location"/>
                 <field name="visit_type_id" string="Type"/>
-                <field name="channel_id" string="Channel"/>
+                <field name="donationbox_theme_id" string="Donation Box Theme"/>
                 <field name="visit_date" string="Date"/>
 
             </search>
@@ -70,7 +68,6 @@
             <tree>
                 <field name="visit_date"/>
                 <field name="visit_type_id"/>
-                <field name="channel_id"/>
                 <field name="user_id"/>
                 <field name="donationbox_id"/>
                 <field name="condition_id"/>

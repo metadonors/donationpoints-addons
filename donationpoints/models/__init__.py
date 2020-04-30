@@ -5,6 +5,6 @@ from . import donationpoints_visit_type
 from . import donationpoints_location
 from . import donationpoints_location_type
 from . import donationpoints_donationbox_type
-from . import donationpoints_channel
-from . import donationpoints_channel_location
+from . import donationpoints_donationbox_theme
+from . import donationpoints_donationpoint
 from . import donationpoints_donation
