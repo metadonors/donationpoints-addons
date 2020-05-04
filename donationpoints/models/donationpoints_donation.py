@@ -11,12 +11,12 @@ class DonationpointsDonation(models.Model):
     _inherit = 'mail.thread'
 
     code = fields.Char(string=_('Code'),readonly=True)
-    donationpoint_id = fields.Many2one('donationpoints.donationpoint', string=_('Channel'))
+    donationpoint_id = fields.Many2one('donationpoints.donationpoint', string=_('Donation Point'))
     location_id = fields.Many2one('donationpoints.location', string=_('Location'))
     user_id = fields.Many2one('res.users', string=_('Responsable'))
     date = fields.Date(string=_("Donation Date")) #Data di elaborazione della donazione
     amount = fields.Monetary(currency_field='currency_id', string=_('Amount'))
-    currency_id = fields.Many2one('res.currency', 'Currency', required=True, readonly=True)
+    currency_id = fields.Many2one('res.currency', 'Currency', readonly=True)
 
     @api.model
     def create(self, vals):

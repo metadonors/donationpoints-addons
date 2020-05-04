@@ -23,6 +23,7 @@
 			    <field name="condition_id" attrs="{'invisible': [('location_id','=',False)]}" string="Donation Box condition"/>
 			</group>
 		    </group>
+		    <field name="note"/>
 		</sheet>
 
 		<div class="oe_chatter"></div>
@@ -65,13 +66,14 @@
 	<field name="model">donationpoints.visit</field>
 	<field name="arch" type="xml">
 	    <tree>
+		<field name="location_id"/>
 		<field name="visit_date"/>
 		<field name="visit_type_id"/>
 		<field name="user_id"/>
 		<field name="donationbox_id"/>
 		<field name="condition_id"/>
-		<field name="location_id"/>
 		<field name="amount"/>
+		<field name="note"/>
 	    </tree>
 	</field>
     </record>

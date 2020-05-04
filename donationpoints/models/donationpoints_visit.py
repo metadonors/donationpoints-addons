@@ -2,7 +2,9 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo import api, fields, models, _
-
+from odoo.exceptions import ValidationError
+import logging
+log = logging.getLogger(__name__)
 
 class DonationpointsVisit(models.Model):
 
@@ -18,6 +20,7 @@ class DonationpointsVisit(models.Model):
     location_id = fields.Many2one('donationpoints.location', string=_('Location'), store=True, required=True)
     amount = fields.Monetary(currency_field='currency_id', string=_('Amount'), store=True)
     currency_id = fields.Many2one('res.currency', 'Currency', readonly=True)
+    note = fields.Text(string=_("Note"))
 
 
     @api.onchange('donationbox_id')
@@ -47,11 +50,15 @@ class DonationpointsVisit(models.Model):
 
     def create_donation(self):
         for record in self:
-            donationpoint = self.env['donationpoints.donationpoint'].search([('location_id', '=', record.location_id), ('donationbox_id','=',record.donationbox_id)])
+            donationpoint = self.env['donationpoints.donationpoint'].search([('location_id', '=', record.location_id.id), ('donationbox_id','=',record.donationbox_id.id)])
+            if not donationpoint:
+                raise ValidationError('Donation Point not found')
+
             self.env['donationpoints.donation'].create({
                 'donationpoint_id': donationpoint.id,
                 'location_id': record.location_id.id,
                 'date': record.visit_date,
                 'amount': record.amount,
-                'user_id': record.user_id.id
+                'user_id': record.user_id.id,
             })
+
