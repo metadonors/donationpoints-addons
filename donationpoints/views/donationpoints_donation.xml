@@ -1,55 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright 2020 Metadonors Srl
-     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 
 <odoo>
 
     <record model="ir.ui.view" id="donationpoints_donation_form_view">
-        <field name="name">donationpoints.donation.form (in donationpoints)</field>
-        <field name="model">donationpoints.donation</field>
-        <field name="arch" type="xml">
-            <form>
-                <header>
-                    
-                </header>
-                <sheet>
-                    
-                    <group>
-                        
-                    </group>
-                </sheet>
-                <div class="oe_chatter"></div>
-            </form>
-        </field>
+	<field name="name">donationpoints.donation.form (in donationpoints)</field>
+	<field name="model">donationpoints.donation</field>
+	<field name="arch" type="xml">
+	    <form>
+		<header>
+		    <field name="code"/>
+		</header>
+		<sheet>
+		    <group>
+			<field name="donationpoint_id"/>
+			<field name="location_id"/>
+			<field name="user_id"/>
+			<field name="date"/>
+			<field name="amount"/>                        
+		    </group>
+		</sheet>
+		<div class="oe_chatter"></div>
+	    </form>
+	</field>
     </record>
 
     <record model="ir.ui.view" id="donationpoints_donation_search_view">
-        <field name="name">donationpoints.donation.search (in donationpoints)</field>
-        <field name="model">donationpoints.donation</field>
-        <field name="arch" type="xml">
-            <search>
-                
-            </search>
-        </field>
+	<field name="name">donationpoints.donation.search (in donationpoints)</field>
+	<field name="model">donationpoints.donation</field>
+	<field name="arch" type="xml">
+	    <search>
+
+	    </search>
+	</field>
     </record>
 
     <record model="ir.ui.view" id="donationpoints_donation_tree_view">
-        <field name="name">donationpoints.donation.tree (in donationpoints)</field>
-        <field name="model">donationpoints.donation</field>
-        <field name="arch" type="xml">
-            <tree>
-                
-               
-            </tree>
-        </field>
+	<field name="name">donationpoints.donation.tree (in donationpoints)</field>
+	<field name="model">donationpoints.donation</field>
+	<field name="arch" type="xml">
+	    <tree>
+		<field name="code"/>
+		<field name="donationpoint_id"/>
+		<field name="location_id"/>
+		<field name="user_id"/>
+		<field name="date"/>
+		<field name="amount"/>
+	    </tree>
+	</field>
     </record>
 
     <record model="ir.actions.act_window" id="donationpoints_donation_act_window">
-        <field name="name">Donation</field> 
-        <field name="res_model">donationpoints.donation</field>
-        <field name="view_mode">tree,form</field>
-        <field name="domain">[]</field>
-        <field name="context">{}</field>
+	<field name="name">Donation</field> 
+	<field name="res_model">donationpoints.donation</field>
+	<field name="view_mode">tree,form</field>
+	<field name="domain">[]</field>
+	<field name="context">{}</field>
     </record>
 
 </odoo>

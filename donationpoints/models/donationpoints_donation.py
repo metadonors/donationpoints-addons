@@ -10,11 +10,11 @@ class DonationpointsDonation(models.Model):
     _description = 'Donationpoints Donation'
     _inherit = 'mail.thread'
 
-    code = fields.Char(string=_('Code'),readonly=True, required=True, copy=False, default='Don')
-    channel_id = fields.Many2one('donationpoints.channel', string=_('Channel'))
+    code = fields.Char(string=_('Code'),readonly=True)
+    donationpoint_id = fields.Many2one('donationpoints.donationpoint', string=_('Channel'))
     location_id = fields.Many2one('donationpoints.location', string=_('Location'))
-    location_owner_id = fields.Many2one(string=_('Owner'), related=('location_id.owner_partner_id'), readonly=True)
-    date = fields.Date(string=_("Date")) #Data di elaborazione della donazione
+    user_id = fields.Many2one('res.users', string=_('Responsable'))
+    date = fields.Date(string=_("Donation Date")) #Data di elaborazione della donazione
     amount = fields.Monetary(currency_field='currency_id', string=_('Amount'))
     currency_id = fields.Many2one('res.currency', 'Currency', required=True, readonly=True)
 

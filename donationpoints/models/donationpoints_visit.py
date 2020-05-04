@@ -14,6 +14,7 @@ class DonationpointsVisit(models.Model):
     user_id = fields.Many2one('res.users', string=_('User'), required=True)
     donationbox_id = fields.Many2one('donationpoints.donationbox', string=_('Donation Box'), required=True)
     condition_id = fields.Many2one('donationpoints.donationbox.condition', string=_('Condition'), store=True)
+    is_device = fields.Boolean(string=_("The donation box is a device"))
     location_id = fields.Many2one('donationpoints.location', string=_('Location'), store=True, required=True)
     amount = fields.Monetary(currency_field='currency_id', string=_('Amount'), store=True)
     currency_id = fields.Many2one('res.currency', 'Currency', readonly=True)
@@ -24,15 +25,33 @@ class DonationpointsVisit(models.Model):
         for record in self:
             if record.donationbox_id:
                 record.condition_id = record.donationbox_id.condition_id
+                record.is_device = True if record.donationbox_id.type_id.model_type == 'device' else False
 
-    @api.model
+    @api.multi
     def write(self,vals):
         ret = super(DonationpointsVisit, self).write(vals)
-        vals['donationbox_id'].write({'condition_id':vals['condition_id']})
+        if vals.get('condition_id', False):
+            vals['donationbox_id'].write({'condition_id':vals['condition_id']})
+        if vals.get('amount', False) and vals['amount'] > 0:
+            self.create_donation()
         return ret
 
     @api.model
     def create(self,vals):
         ret = super(DonationpointsVisit, self).create(vals)
         self.env['donationpoints.donationbox'].search([('id', '=', vals['donationbox_id'])]).write({'condition_id':vals['condition_id']})
+        if vals.get('amount', False) and vals['amount'] > 0:
+            self.create_donation
+
         return ret
+
+    def create_donation(self):
+        for record in self:
+            donationpoint = self.env['donationpoints.donationpoint'].search([('location_id', '=', record.location_id), ('donationbox_id','=',record.donationbox_id)])
+            self.env['donationpoints.donation'].create({
+                'donationpoint_id': donationpoint.id,
+                'location_id': record.location_id.id,
+                'date': record.visit_date,
+                'amount': record.amount,
+                'user_id': record.user_id.id
+            })
