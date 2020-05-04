@@ -10,7 +10,6 @@ class DonationpointsDonation(models.Model):
     _description = 'Donationpoints Donation'
     _inherit = 'mail.thread'
 
-    #name = fields.Char(string=_('Name'))
     code = fields.Char(string=_('Code'),readonly=True, required=True, copy=False, default='Don')
     channel_id = fields.Many2one('donationpoints.channel', string=_('Channel'))
     location_id = fields.Many2one('donationpoints.location', string=_('Location'))

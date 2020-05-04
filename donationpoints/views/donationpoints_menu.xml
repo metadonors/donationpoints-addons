@@ -50,26 +50,26 @@
         <field name="action" ref="donationpoints_location_type_act_window"/>
         <field name="sequence" eval="70"/>
     </record>
-    <record model="ir.ui.menu" id="donationpoints_setting_donationpoint_theme">
-        <field name="name">Donationbox Theme</field>
-        <field name="parent_id" ref="donationpoints_settings"/>
-        <field name="action" ref="donationpoints_donationbox_theme_act_window"/>
-        <field name="sequence" eval="80"/>
-    </record>
     <record model="ir.ui.menu" id="donationpoints_settings_visit_type">
         <field name="name">Visit Type</field>
         <field name="parent_id" ref="donationpoints_settings"/>
         <field name="action" ref="donationpoints_visit_type_act_window"/>
         <field name="sequence" eval="90"/>
     </record>
+    <record model="ir.ui.menu" id="donationpoints_setting_donationpoint_theme">
+        <field name="name">Donationbox Theme</field>
+        <field name="parent_id" ref="donationpoints_settings"/>
+        <field name="action" ref="donationpoints_donationbox_theme_act_window"/>
+        <field name="sequence" eval="120"/>
+    </record>
     <record model="ir.ui.menu" id="donationpoints_settings_condition_type">
-        <field name="name">Device Condition</field>
+        <field name="name">Donationbox  Condition</field>
         <field name="parent_id" ref="donationpoints_settings"/>
         <field name="action" ref="donationpoints_donationbox_condition_act_window"/>
         <field name="sequence" eval="100"/>
     </record>
     <record model="ir.ui.menu" id="donationpoints_settings_device_type">
-        <field name="name">Device Type</field>
+        <field name="name">Donationbox Type</field>
         <field name="parent_id" ref="donationpoints_settings"/>
         <field name="action" ref="donationpoints_donationbox_type_act_window"/>
         <field name="sequence" eval="110"/>

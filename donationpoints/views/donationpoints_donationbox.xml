@@ -1,87 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright 2020 Metadonors Srl
-     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 
 <odoo>
 
     <record model="ir.ui.view" id="donationpoints_donationbox_form_view">
-        <field name="name">donationpoints.donationbox.form (in donationpoints)</field>
-        <field name="model">donationpoints.donationbox</field>
-        <field name="arch" type="xml">
-            <form>
-                <!-- <header>
-                    <field name="code"/> 
-                </header> -->
-                <sheet>
-                    <h1>
-                        <field name="code"/>
-                    </h1> 
-                    <group>
-                        <field name="name"/>
-                        <field name="type_id"/>
-                        <field name="location_id"/>
-                        <field name="condition_id"/>
-                    </group>
-                    <notebook>
-                        <page string="Description">
-                            <field name="description"/>
-                        </page>
-                        <page string="History">
-                            <field name="history_ids"/>
-                        </page>
-                        <page string="Notes">
-                            <field name="note"/>
-                        </page>
-                    </notebook>
-                </sheet>
-                <div class="oe_chatter"></div>
-            </form>
-        </field>
+	<field name="name">donationpoints.donationbox.form (in donationpoints)</field>
+	<field name="model">donationpoints.donationbox</field>
+	<field name="arch" type="xml">
+	    <form>
+		<sheet>
+		    <header>
+			<field name="condition_id" widget="statusbar" clickable="1"/>
+		    </header>
+                    <group col="2" colspan="2">
+			<field name="code"/>
+			<field name="name"/>
+			<field name="theme_id"/>
+			<field name="type_id"/>
+			<field name="location_id"/>
+		    </group>
+		    <notebook>
+			<page string="Description">
+			    <field name="description"/>
+			</page>
+			<page string="History">
+			    <field name="history_ids"/>
+			</page>
+			<page string="Notes">
+			    <field name="note"/>
+			</page>
+		    </notebook>
+		</sheet>
+		<div class="oe_chatter"></div>
+	    </form>
+	</field>
     </record>
 
 
     <record model="ir.ui.view" id="donationpoints_donationbox_search_view">
-        <field name="name">donationpoints.donationbox.search (in donationpoints)</field>
-        <field name="model">donationpoints.donationbox</field>
-        <field name="arch" type="xml">
-            <search>
-                <filter name="filter_condition_working" string="Working" domain="[('condition_id','=','Working')]"/>
-                <filter name="filter_condition_not_working" string="Not working" domain="[('condition_id','=','Not working')]"/>
-                <filter name="filter_condition_maintenance" string="Maintenance" domain="[('condition_id','=','Maintenance')]"/>
-                <separator/>
-                
-                <filter name="groupby_type" string="Type" context="{'group_by':'type_id'}"/>
-                <filter name="groupby_condition" string="Condition" context="{'group_by':'condition_id'}"/>
-                <filter name="groupby_location" string="Location" context="{'group_by':'location_id'}"/>
+	<field name="name">donationpoints.donationbox.search (in donationpoints)</field>
+	<field name="model">donationpoints.donationbox</field>
+	<field name="arch" type="xml">
+	    <search>
+		<filter name="filter_condition_working" string="Working" domain="[('condition_id','=','Working')]"/>
+		<filter name="filter_condition_not_working" string="Not working" domain="[('condition_id','=','Not working')]"/>
+		<filter name="filter_condition_maintenance" string="Maintenance" domain="[('condition_id','=','Maintenance')]"/>
+		<separator/>
 
-                <field name="code" string="Code"/>
-                <field name="name" string="Name"/>
-                <field name="type_id" string="Type"/>
-                <field name="location_id" string="Location"/>
-            </search>
-        </field>
+		<filter name="groupby_type" string="Type" context="{'group_by':'type_id'}"/>
+		<filter name="groupby_condition" string="Condition" context="{'group_by':'condition_id'}"/>
+		<filter name="groupby_location" string="Location" context="{'group_by':'location_id'}"/>
+
+		<field name="code" string="Code"/>
+		<field name="name" string="Name"/>
+		<field name="type_id" string="Type"/>
+		<field name="location_id" string="Location"/>
+	    </search>
+	</field>
     </record>
 
     <record model="ir.ui.view" id="donationpoints_donationbox_tree_view">
-        <field name="name">donationpoints.donationbox.tree (in donationpoints)</field>
-        <field name="model">donationpoints.donationbox</field>
-        <field name="arch" type="xml">
-            <tree>
-                <field name="name"/>
-                <field name="code"/>
-                <field name="type_id"/>
-                <field name="location_id"/>
-                <field name="condition_id"/>
-            </tree>
-        </field>
+	<field name="name">donationpoints.donationbox.tree (in donationpoints)</field>
+	<field name="model">donationpoints.donationbox</field>
+	<field name="arch" type="xml">
+	    <tree>
+		<field name="name"/>
+		<field name="theme_id"/>
+		<field name="code"/>
+		<field name="type_id"/>
+		<field name="location_id"/>
+		<field name="condition_id"/>
+	    </tree>
+	</field>
     </record>
 
     <record model="ir.actions.act_window" id="donationpoints_donationbox_act_window">
-        <field name="name">Donationbox</field> 
-        <field name="res_model">donationpoints.donationbox</field>
-        <field name="view_mode">tree,form</field>
-        <field name="domain">[]</field>
-        <field name="context">{}</field>
+	<field name="name">Donationbox</field> 
+	<field name="res_model">donationpoints.donationbox</field>
+	<field name="view_mode">tree,form</field>
+	<field name="domain">[]</field>
+	<field name="context">{}</field>
     </record>
 
 </odoo>
