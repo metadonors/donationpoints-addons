@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 Metadonors Srl
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record model="ir.ui.view" id="donation_import_form_view">
+        <field name="name">donation.import.form (in donationpoints)</field>
+        <field name="model">donation.import</field>
+        <field name="arch" type="xml">
+            <form string="Donation Import">
+                <!-- TODO -->
+                <group>
+                    <field name="name"/>
+                </group>
+                <footer>
+                    <button name="doit"
+                            string="OK"
+                            class="btn-primary"
+                            type="object"/>
+                    <button string="Cancel"
+                            class="btn-default"
+                            special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="donation_import_act_window">
+        <field name="name">Donation Import</field> <!-- TODO -->
+        <field name="res_model">donation.import</field>
+        <field name="view_mode">form</field>
+        <field name="context">{}</field>
+        <field name="target">new</field>
+    </record>
+
+    <record model="ir.values" id="donation_import_act_multi">
+        <field name="name">Donation Import</field> <!-- TODO -->
+        <field name="key2">client_action_multi</field>
+        <field name="value" eval="'ir.actions.act_window,' +str(ref('donation_import_act_window'))" />
+        <field name="model">source.model</field> <!-- TODO -->
+    </record>
+
+    <record model="ir.ui.menu" id="donation_import_menu">
+        <field name="name">Donation Import</field>
+        <field name="parent_id" ref="xmlid of parent menu"/> <!-- TODO -->
+        <field name="action" ref="donation_import_act_window"/>
+        <field name="sequence" eval="16"/> <!-- TODO -->
+    </record>
+</odoo>

@@ -13,6 +13,7 @@
     'depends': ['base','mail'
     ],
     'data': [
+        'wizards/donation_import.xml',
         'security/donationpoints_donationbox_condition.xml',
         'security/donationpoints_donationbox.xml',
         'security/donationpoints_visit.xml',

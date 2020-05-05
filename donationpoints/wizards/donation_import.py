@@ -1,23 +1,14 @@
 # Copyright 2020 Metadonors Srl
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo import api, fields, models, _
 
 
-class DonationpointsDonation(models.Model):
+class DonationImport(models.TransientModel):
 
-    _name = 'donationpoints.donation'
-    _description = 'Donationpoints Donation'
-    _inherit = 'mail.thread'
+    _name = "donation.import"
 
-    code = fields.Char(string=_('Code'),readonly=True)
-    donationpoint_id = fields.Many2one('donationpoints.donationpoint', string=_('Donation Point'))
-    location_id = fields.Many2one('donationpoints.location', string=_('Location'))
-    user_id = fields.Many2one('res.users', string=_('Responsable'))
-    date = fields.Datetime(string=_("Donation Date")) #Data di elaborazione della donazione
-    amount = fields.Monetary(currency_field='currency_id', string=_('Amount'))
-    currency_id = fields.Many2one('res.currency', 'Currency', readonly=True)
-
+    name = fields.Char()
+    date = fields.Datetime(string=_("Donation date"))
     cardease_reference = fields.Char(string=_("CardEase Reference"))
     distributor = fields.Char(string=_("Distributor"))
     client = fields.Char(string=_("Client"))
@@ -67,6 +58,7 @@ class DonationpointsDonation(models.Model):
     settlement_datetime = fields.Datetime(string=_("Settlement Date/Time"))
     currency = fields.Char(string=_("Currency"))
     amount_authorised = fields.Char(string=_("Amount Authorised"))
+    amount = fields.Char(string=_("Amount"))
     latitude = fields.Char(string=_("Latitude"))
     longitude = fields.Char(string=_("Longitude"))
     accuracy = fields.Char(string=_("Accuracy"))
@@ -112,10 +104,16 @@ class DonationpointsDonation(models.Model):
     )
     transaction_fee_dcc = fields.Char(string=_("Transaction Fee (DCC)"))
 
+    @api.multi
+    def doit(self):
+        pass
 
-    @api.model
-    def create(self, vals):
-        if vals.get("code", "Don") == "Don":
-            vals["code"] = self.env["ir.sequence"].next_by_code("donationpoints.donation") or "Don"
-            record = super(DonationpointsDonation, self).create(vals)
-            return record
+    #    for wizard in self:
+    #    action = {
+    #        'type': 'ir.actions.act_window',
+    #        'name': 'Action Name',
+    #        'res_model': 'result.model',  # TODO
+    #        'domain': [('id', '=', result_ids)],  # TODO
+    #        'view_mode': 'form,tree',
+    #    }
+    #    return action
