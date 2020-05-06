@@ -30,7 +30,7 @@ class DonationpointsDonation(models.Model):
     merchant_number = fields.Char(string=_("Merchant Number"))
     merchant_number_alternative = fields.Char(string=_("Merchant Number Alternative"))
     acquirer_tid = fields.Char(string=_("Acquirer TID"))
-    user_id = fields.Char(string=_('User Reference')) #fields.Many2one('res.user', string=_('User Reference'))
+    #user_id = fields.Char(string=_('User Reference')) #fields.Many2one('res.user', string=_('User Reference'))
     cardholder = fields.Char(string=_('Cardholder'))
     email_address = fields.Char(string=_('Email Address'))
     card_reference = fields.Char(string=_('Card Reference'))

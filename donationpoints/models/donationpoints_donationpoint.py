@@ -13,9 +13,9 @@ class Donationpoint(models.Model):
     _description = 'Donationpoints Donationpoint'
 
     name = fields.Char(string=_("Name"))
-    location_id = fields.Many2one('donationpoints.location', string=_('Location'))
+    location_id = fields.Many2one('donationpoints.location', string=_('Location'), required=True)
     location_owner_id = fields.Many2one(string=_('Owner'), related=('location_id.owner_partner_id'), store=True, readonly=True)
-    donationbox_id = fields.Many2one('donationpoints.donationbox', string=_('Donationbox'))
+    donationbox_id = fields.Many2one('donationpoints.donationbox', string=_('Donationbox'), required=True)
     donationbox_theme_id = fields.Many2one('donationpoints.donationbox.theme', related='donationbox_id.theme_id', string=_("Donation Box Theme"), readonly=True)
     activity_state = fields.Selection([('active',_('Active')),
                                        ('suspended',_('Suspended')),
@@ -24,12 +24,6 @@ class Donationpoint(models.Model):
                                        string=_('Activity State'))
     note = fields.Text(string=_('Note'))
 
-
-    @api.onchange('donationbox_id')
-    def donationbox_theme(self):
-        for record in self:
-            if record.donationbox_id:
-                record.donationbox_theme_id = record.donationbox_id.id
 
     @api.multi
     def write(self,vals):
@@ -42,6 +36,8 @@ class Donationpoint(models.Model):
 
     @api.model
     def create(self,vals):
+        if vals.get('donationbox_id', False) and self.env['donationpoints.donationpoint'].search([('donationbox_id','=', vals['donationbox_id'])]):
+            raise ValidationError(_('This Donationbox is already present on another donationpoint'))
         ret = super(Donationpoint, self).create(vals)
         self.env['donationpoints.donationbox'].search([('id', '=', vals['donationbox_id'])]).write({'location_id':vals['location_id']})
         return ret
