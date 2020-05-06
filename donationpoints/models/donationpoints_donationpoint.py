@@ -16,7 +16,7 @@ class Donationpoint(models.Model):
     location_id = fields.Many2one('donationpoints.location', string=_('Location'))
     location_owner_id = fields.Many2one(string=_('Owner'), related=('location_id.owner_partner_id'), store=True, readonly=True)
     donationbox_id = fields.Many2one('donationpoints.donationbox', string=_('Donationbox'))
-    donationbox_theme_id = fields.Many2one('donationpoints.donationbox.theme', string=_("Donation Box Theme"), readonly=True)
+    donationbox_theme_id = fields.Many2one('donationpoints.donationbox.theme', related='donationbox_id.theme_id', string=_("Donation Box Theme"), readonly=True)
     activity_state = fields.Selection([('active',_('Active')),
                                        ('suspended',_('Suspended')),
                                        ('closed',_('Closed'))],
@@ -31,10 +31,13 @@ class Donationpoint(models.Model):
             if record.donationbox_id:
                 record.donationbox_theme_id = record.donationbox_id.id
 
-    @api.model
+    @api.multi
     def write(self,vals):
         ret = super(Donationpoint, self).write(vals)
-        vals['donationbox_id'].write({'location_id':vals['location_id']})
+        if vals.get('location_id', False):
+            for record in self:
+                self.env['donationpoints.donationbox'].search([('id', '=', record['donationbox_id'])]).write({'location_id':vals['location_id']})
+
         return ret
 
     @api.model

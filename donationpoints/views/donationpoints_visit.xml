@@ -18,8 +18,8 @@
 			<group>
 			    <field name="user_id"/>
 			    <field name="is_device" invisible="1"/>
-			    <field name="amount" attrs="{'invisible': ['|',('is_device','=',True), ('donationbox_id', '=', False)]}"/>
-			    <field name="donationbox_id" attrs="{'invisible': [('location_id','=',False)]}" domain="[('location_id','=', location_id)]"/>
+			    <field name="amount" attrs="{'invisible': ['|',('is_device','=',True), ('donationpoint_id', '=', False)]}"/>
+			    <field name="donationpoint_id" attrs="{'invisible': [('location_id','=',False)]}" domain="[('location_id','=', location_id)]"/>
 			    <field name="condition_id" attrs="{'invisible': [('location_id','=',False)]}" string="Donation Box condition"/>
 			</group>
 		    </group>
@@ -37,10 +37,11 @@
 	<field name="arch" type="xml">
 	    <search>
 		<!-- Verify how to insert amount range filter -->
-		<filter name="filter_visit_amount_label" string="Amount range:"/>
+		<!--		<filter name="filter_visit_amount_label" string="Amount range:"/>
 		<filter name="filter_visit_amount" string="0 - 10" domain="[('amount','&lt;=','10.0')]"/>
 		<filter name="filter_visit_amount" string="10 - 100" domain="['&amp;',('amount','>','10.0'),('amount','&lt;=','100.0')]"/>
 		<filter name="filter_visit_amount" string="100 - 1000" domain="['&amp;',('amount','>','100.0'),('amount','&lt;=','1000.0')]"/>
+		-->
 
 
 
@@ -52,7 +53,7 @@
 
 		    <!-- search fields -->
 		<field name="user_id" string="User"/>
-		<field name="donationbox_id" string="Donationbox"/>
+		<field name="donationpoint_id" string="Donationpoint"/>
 		<field name="location_id" string="Location"/>
 		<field name="visit_type_id" string="Type"/>
 		<field name="visit_date" string="Date"/>
@@ -70,7 +71,7 @@
 		<field name="visit_date"/>
 		<field name="visit_type_id"/>
 		<field name="user_id"/>
-		<field name="donationbox_id"/>
+		<field name="donationpoint_id"/>
 		<field name="condition_id"/>
 		<field name="amount"/>
 		<field name="note"/>

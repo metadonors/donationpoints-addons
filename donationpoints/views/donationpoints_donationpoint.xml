@@ -60,6 +60,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 	<field name="arch" type="xml">
 	    <tree>
 		<field name="donationbox_id"/>
+		<field name="donationbox_theme_id"/>
 		<field name="location_id"/>
 		<field name="location_owner_id"/>
 		<field name="activity_state"/>

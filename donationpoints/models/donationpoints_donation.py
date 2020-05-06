@@ -94,7 +94,7 @@ class DonationpointsDonation(models.Model):
 
     @api.model
     def create(self, vals):
-        if vals.get("code", "Don") == "Don":
-            vals["code"] = self.env["ir.sequence"].next_by_code("donationpoints.donation") or "Don"
+        if vals.get("code", "DON") == "DON":
+            vals["code"] = self.env["ir.sequence"].next_by_code("donationpoints.donation") or "DON"
             record = super(DonationpointsDonation, self).create(vals)
             return record
