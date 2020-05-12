@@ -11,34 +11,35 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 	    <form>
 		<sheet>
 		    <h1>
+			<label for="name" class="oe_edit_only"></label>
 			<field name="name"/>
 		    </h1>
 		    <group>
-			<group>
-			    <field name="location_type_id"/>
-			    <field name="phone"/>
-			    <field name="mobile"/>
-			    <field name="email"/>
-			</group>
-			<group>
-			    <field name="owner_partner_id"/>
-			    <field name="owner_partner_phone_id"/>
-			    <field name="owner_partner_mobile_id"/>
-			    <field name="owner_partner_email_id"/>
-			</group>
+				<group>
+					<field name="location_type_id"/>
+					<field name="phone"/>
+					<field name="mobile"/>
+					<field name="email"/>
+				</group>
+				<group>
+					<field name="owner_partner_id" options="{'no_quick_create': True, 'no_create_edit' : False}"/>
+					<field name="owner_partner_phone_id"/>
+					<field name="owner_partner_mobile_id"/>
+					<field name="owner_partner_email_id"/>
+				</group>
 		    </group>
 		    <group>
-			<field name="address1"/>
-			<field name="address2"/>
-			<field name="city"/>
-			<field name="country_state_id"/>
-			<field name="country_id"/>
+				<field name="address1"/>
+				<field name="address2"/>
+				<field name="city"/>
+				<field name="country_state_id"/>
+				<field name="country_id"/>
 
 		    </group>
 		    <notebook>
 			<page string="Contact">
 			    <group>
-				<field name="contact_partner_id"/>
+				<field name="contact_partner_id" options="{'no_quick_create': True, 'no_create_edit' : False}"/>
 				<field name="contact_partner_phone_id"/>
 			    </group>
 			    <group>

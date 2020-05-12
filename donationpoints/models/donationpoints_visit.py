@@ -78,7 +78,7 @@ class DonationpointsVisit(models.Model):
                         "location_id": record.location_id.id,
                         "date": record.visit_date,
                         "amount": record.amount,
-                        "user_id": record.user_id,
+                        "user_id": record.user_id.id,
                         "donation_type": "cash",
                     }
                 )

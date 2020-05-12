@@ -23,6 +23,7 @@
 			    <field name="condition_id" attrs="{'invisible': [('location_id','=',False)]}" string="Donation Box condition"/>
 			</group>
 		    </group>
+			<label for="note"></label>
 		    <field name="note"/>
 		</sheet>
 
@@ -74,7 +75,6 @@
 		<field name="donationpoint_id"/>
 		<field name="condition_id"/>
 		<field name="amount"/>
-		<field name="note"/>
 	    </tree>
 	</field>
     </record>
