@@ -13,6 +13,7 @@ class DonationpointsDonation(models.Model):
     code = fields.Char(string=_('Code'),readonly=True)
     donationpoint_id = fields.Many2one('donationpoints.donationpoint', string=_('Donation Point'),required=True)
     donationbox_theme_id = fields.Many2one('donationpoints.donationbox.theme', related='donationpoint_id.donationbox_id.theme_id', readonly=True, store=True)
+    visit_id = fields.Many2one('donationpoints.visit', string=_("Visit"))
     location_id = fields.Many2one('donationpoints.location', string=_('Location'),required=True)
     user_id = fields.Many2one('res.users', string=_('Responsable'),required=True)
     date = fields.Date(string=_("Donation Date"),required=True) #Data di elaborazione della donazione
