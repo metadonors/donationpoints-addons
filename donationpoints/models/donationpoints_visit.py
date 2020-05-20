@@ -64,16 +64,16 @@ class DonationpointsVisit(models.Model):
                 existing_donation_id.write({"amount": vals["amount"]})
             else:
                 self.env["donationpoints.donation"].create(
-                {
-                    "donationpoint_id": self.donationpoint_id.id,
-                    "location_id": self.location_id.id,
-                    "date": self.visit_date,
-                    "amount": self.amount,
-                    "user_id": self.user_id.id,
-                    "donation_type": "cash",
-                    "visit_id": self.id,
-                }
-            )
+                    {
+                        "donationpoint_id": self.donationpoint_id.id,
+                        "location_id": self.location_id.id,
+                        "date": self.visit_date,
+                        "amount": self.amount,
+                        "user_id": self.user_id.id,
+                        "donation_type": "cash",
+                        "visit_id": self.id,
+                    }
+                )
 
         return ret
 
