@@ -18,6 +18,7 @@ class DonationpointsVisit(models.Model):
     donationpoint_id = fields.Many2one(
         "donationpoints.donationpoint", string=_("Donation Point"), required=True
     )
+    # donationbox_id related to one2many donationbox.history
     donationbox_id = fields.Many2one(
         "donationpoints.donationbox", related="donationpoint_id.donationbox_id"
     )
@@ -50,42 +51,50 @@ class DonationpointsVisit(models.Model):
     def write(self, vals):
         ret = super(DonationpointsVisit, self).write(vals)
 
-        log.error('-------write----')
-        log.error('-------write----')
-        log.error('-------write----')
-        log.error(vals)
-        if vals.get('condition_id', False):
-            vals.donationpoint_id.donationbox_id.condition_id.write({'condition_id':vals.condition_id.id})
+        if vals.get("condition_id", False):
+            self.donationpoint_id.donationbox_id.write(
+                {"condition_id": vals["condition_id"]}
+            )
 
-        if vals["amount"] and vals["amount"] > 0:
+        if vals.get("amount", False) and vals["amount"] > 0:
             existing_donation_id = self.env["donationpoints.donation"].search(
                 [("visit_id", "=", self.id)]
             )
             if existing_donation_id:
-                existing_donation_id.write({"amount": vals['amount']})
+                existing_donation_id.write({"amount": vals["amount"]})
+            else:
+                self.env["donationpoints.donation"].create(
+                {
+                    "donationpoint_id": self.donationpoint_id.id,
+                    "location_id": self.location_id.id,
+                    "date": self.visit_date,
+                    "amount": self.amount,
+                    "user_id": self.user_id.id,
+                    "donation_type": "cash",
+                    "visit_id": self.id,
+                }
+            )
+
         return ret
 
     @api.model
     def create(self, vals):
         ret = super(DonationpointsVisit, self).create(vals)
 
-        log.error('^^^^^^^^^^^^^^^^^^^^^^^')
-        log.error('^^^^^^^^^^^^^^^^^^^^^^^')
-        log.error('^^^^^^^^^^^^^^^^^^^^^^^')
-        log.error('^^^^^^^^^^^^^^^^^^^^^^^')
-        log.error(vals)
-        log.error(ret)
         if ret.condition_id:
-            ret.donationpoint_id.donationbox_id.condition_id.write({'condition_id':ret.condition_id.id})
-        self.env["donationpoints.donation"].create(
-            {
-                "donationpoint_id": ret.donationpoint_id.id,
-                "location_id": ret.location_id.id,
-                "date": ret.visit_date,
-                "amount": ret.amount,
-                "user_id": ret.user_id.id,
-                "donation_type": "cash",
-                "visit_id": ret.id,
-            }
-        )
+            ret.donationpoint_id.donationbox_id.write(
+                {"condition_id": ret.condition_id.id}
+            )
+        if ret.amount > 0:
+            self.env["donationpoints.donation"].create(
+                {
+                    "donationpoint_id": ret.donationpoint_id.id,
+                    "location_id": ret.location_id.id,
+                    "date": ret.visit_date,
+                    "amount": ret.amount,
+                    "user_id": ret.user_id.id,
+                    "donation_type": "cash",
+                    "visit_id": ret.id,
+                }
+            )
         return ret
