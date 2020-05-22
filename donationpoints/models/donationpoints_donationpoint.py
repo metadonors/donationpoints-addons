@@ -12,17 +12,41 @@ class Donationpoint(models.Model):
     _name = 'donationpoints.donationpoint'
     _description = 'Donationpoints Donationpoint'
 
-    name = fields.Char(string=_("Name"))
-    location_id = fields.Many2one('donationpoints.location', string=_('Location'), required=True)
-    location_owner_id = fields.Many2one(string=_('Owner'), related=('location_id.owner_partner_id'), store=True, readonly=True)
-    donationbox_id = fields.Many2one('donationpoints.donationbox', string=_('Donationbox'), required=True)
-    donationbox_theme_id = fields.Many2one('donationpoints.donationbox.theme', related='donationbox_id.theme_id', string=_("Donation Box Theme"), readonly=True)
-    activity_state = fields.Selection([('active',_('Active')),
-                                       ('suspended',_('Suspended')),
-                                       ('closed',_('Closed'))],
-                                        default='active',
-                                       string=_('Activity State'))
-    note = fields.Text(string=_('Note'))
+    name = fields.Char(
+        string=_("Name"))
+
+    location_id = fields.Many2one(
+        'donationpoints.location', 
+        string=_('Location'), 
+        required=True)
+
+    location_owner_id = fields.Many2one(
+        string=_('Owner'), 
+        related=('location_id.owner_partner_id'), 
+        store=True, 
+        readonly=True)
+
+    donationbox_id = fields.Many2one(
+        'donationpoints.donationbox', 
+        string=_('Donationbox'), 
+        required=True)
+
+    donationbox_theme_id = fields.Many2one(
+        'donationpoints.donationbox.theme', 
+        related='donationbox_id.theme_id', 
+        string=_("Donation Box Theme"), readonly=True)
+
+    activity_state = fields.Selection(
+        [
+            ('active',_('Active')),
+            ('suspended',_('Suspended')),
+            ('closed',_('Closed'))
+        ],
+        default='active',
+        string=_('Activity State'))
+
+    note = fields.Text(
+        string=_('Note'))
 
 
     @api.multi
