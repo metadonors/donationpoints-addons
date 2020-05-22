@@ -31,5 +31,6 @@ class DonationpointsDonationbox(models.Model):
     condition_id = fields.Many2one(
         "donationpoints.donationbox.condition", string=_("Conditions")
     )
+    note = fields.Text(string=_("Notes"))
 
     note = fields.Text(string=_("Notes"))

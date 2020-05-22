@@ -1,0 +1,1557 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* donationpoints
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0-20200121\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-06 15:25+0000\n"
+"PO-Revision-Date: 2020-05-06 15:25+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:55
+#: code:addons/donationpoints/wizards/donation_import.py:47
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__secure_3d_eci
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__secure_3d_eci
+#, python-format
+msgid "3-D Secure ECI"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:53
+#: code:addons/donationpoints/wizards/donation_import.py:45
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__secure_3d_enrolled
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__secure_3d_enrolled
+#, python-format
+msgid "3-D Secure Enrolled"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:54
+#: code:addons/donationpoints/wizards/donation_import.py:46
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__secure_3d_status
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__secure_3d_status
+#, python-format
+msgid "3-D Secure Status"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:56
+#: code:addons/donationpoints/wizards/donation_import.py:48
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__secure_3d_xid
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__secure_3d_xid
+#, python-format
+msgid "3-D Secure XID"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:50
+#: code:addons/donationpoints/wizards/donation_import.py:42
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__avs_address_result
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__avs_address_result
+#, python-format
+msgid "AVS Address Result"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:51
+#: code:addons/donationpoints/wizards/donation_import.py:43
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__avs_zip_result
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__avs_zip_result
+#, python-format
+msgid "AVS Zip Result"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:68
+#: code:addons/donationpoints/wizards/donation_import.py:61
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__accuracy
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__accuracy
+#, python-format
+msgid "Accuracy"
+msgstr "Precisione"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:28
+#: code:addons/donationpoints/wizards/donation_import.py:20
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__acquirer
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__acquirer
+#, python-format
+msgid "Acquirer"
+msgstr "Acquirente"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:82
+#: code:addons/donationpoints/wizards/donation_import.py:75
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__acquirer_response_code
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__acquirer_response_code
+#, python-format
+msgid "Acquirer Response Code"
+msgstr "Codice di risposta acquirente"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:83
+#: code:addons/donationpoints/wizards/donation_import.py:76
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__acquirer_response_code_address
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__acquirer_response_code_address
+#, python-format
+msgid "Acquirer Response Code Description"
+msgstr "Descrizione codice di risposta acquirente"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:32
+#: code:addons/donationpoints/wizards/donation_import.py:24
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__acquirer_tid
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__acquirer_tid
+#, python-format
+msgid "Acquirer TID"
+msgstr "TID Acquirente"
+
+#. module: donationpoints
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__message_needaction
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox__message_needaction
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location__message_needaction
+msgid "Action Needed"
+msgstr "Azione necessaria"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donationpoint.py:20
+#: selection:donationpoints.donationpoint,activity_state:0
+#: model_terms:ir.ui.view,arch_db:donationpoints.donationpoints_donationpoint_search_view
+#, python-format
+msgid "Active"
+msgstr "Attivo"
+
+#. module: donationpoints
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox__activity_ids
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location__activity_ids
+msgid "Activities"
+msgstr "Attività"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donationpoint.py:24
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox__activity_state
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationpoint__activity_state
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location__activity_state
+#, python-format
+msgid "Activity State"
+msgstr "Stato"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_location.py:14
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location__address1
+#, python-format
+msgid "Address"
+msgstr "Indirizzo"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_location.py:15
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location__address2
+#, python-format
+msgid "Address 2"
+msgstr "Indirizzo 2"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:18
+#: code:addons/donationpoints/models/donationpoints_visit.py:34
+#: code:addons/donationpoints/wizards/donation_import.py:58
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__amount
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__amount
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_visit__amount
+#, python-format
+msgid "Amount"
+msgstr "Importo"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:69
+#: code:addons/donationpoints/wizards/donation_import.py:62
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__amount_approved_online
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__amount_approved_online
+#, python-format
+msgid "Amount Approved Online"
+msgstr "Importo approvato online"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:85
+#: code:addons/donationpoints/wizards/donation_import.py:78
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__amount_approved_online_dcc
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__amount_approved_online_dcc
+#, python-format
+msgid "Amount Approved Online (DCC)"
+msgstr "Importo approvato online (DCC)"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:65
+#: code:addons/donationpoints/wizards/donation_import.py:57
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__amount_authorised
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__amount_authorised
+#, python-format
+msgid "Amount Authorised"
+msgstr "Importo autorizzato"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:70
+#: code:addons/donationpoints/wizards/donation_import.py:63
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__amount_currency
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__amount_currency
+#, python-format
+msgid "Amount Currency"
+msgstr "Valuta"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:84
+#: code:addons/donationpoints/wizards/donation_import.py:77
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__amount_currency_dcc
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__amount_currency_dcc
+#, python-format
+msgid "Amount Currency (DCC)"
+msgstr "Valuta (DCC)"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:72
+#: code:addons/donationpoints/wizards/donation_import.py:65
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__amount_final
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__amount_final
+#, python-format
+msgid "Amount Final"
+msgstr "Importo Totale"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:87
+#: code:addons/donationpoints/wizards/donation_import.py:80
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__amount_final_dcc
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__amount_final_dcc
+#, python-format
+msgid "Amount Final (DCC)"
+msgstr "Importo Totale (DCC)"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:71
+#: code:addons/donationpoints/wizards/donation_import.py:64
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__amount_requested_authorisation
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__amount_requested_authorisation
+#, python-format
+msgid "Amount Requested at Authorisation"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:86
+#: code:addons/donationpoints/wizards/donation_import.py:79
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__amount_requested_at_authorization_dcc
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__amount_requested_at_authorization_dcc
+#, python-format
+msgid "Amount Requested at Authorisation (DCC)"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:88
+#: code:addons/donationpoints/wizards/donation_import.py:81
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__amount_type_dcc
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__amount_type_dcc
+#, python-format
+msgid "Amount Type (DCC)"
+msgstr ""
+
+#. module: donationpoints
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__message_attachment_count
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox__message_attachment_count
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:49
+#: code:addons/donationpoints/wizards/donation_import.py:41
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__auth_code
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__auth_code
+#, python-format
+msgid "Auth Code"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:37
+#: code:addons/donationpoints/wizards/donation_import.py:29
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__batch_reference
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__batch_reference
+#, python-format
+msgid "Batch Reference"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:52
+#: code:addons/donationpoints/wizards/donation_import.py:44
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__csc_result
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__csc_result
+#, python-format
+msgid "CSC Result"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:40
+#: code:addons/donationpoints/wizards/donation_import.py:32
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__card_number_end
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__card_number_end
+#, python-format
+msgid "Card NUmber End"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:39
+#: code:addons/donationpoints/wizards/donation_import.py:31
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__card_number_start
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__card_number_start
+#, python-format
+msgid "Card NUmber Start"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:36
+#: code:addons/donationpoints/wizards/donation_import.py:28
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__card_reference
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__card_reference
+#, python-format
+msgid "Card Reference"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:44
+#: code:addons/donationpoints/wizards/donation_import.py:36
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__card_scheme
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__card_scheme
+#, python-format
+msgid "Card Scheme"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:45
+#: code:addons/donationpoints/wizards/donation_import.py:37
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__card_type
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__card_type
+#, python-format
+msgid "Card type"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:21
+#: code:addons/donationpoints/wizards/donation_import.py:13
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__cardease_reference
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__cardease_reference
+#, python-format
+msgid "CardEase Reference"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:34
+#: code:addons/donationpoints/wizards/donation_import.py:26
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__cardholder
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__cardholder
+#, python-format
+msgid "Cardholder"
+msgstr ""
+
+#. module: donationpoints
+#: selection:donationpoints.donation,donation_type:0
+msgid "Cash"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:73
+#: code:addons/donationpoints/wizards/donation_import.py:66
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__cashback_authorised
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__cashback_authorised
+#, python-format
+msgid "Cashback Authorised"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:89
+#: code:addons/donationpoints/wizards/donation_import.py:82
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__cashback_authorised_dcc
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__cashback_authorised_dcc
+#, python-format
+msgid "Cashback Authorised (DCC)"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:74
+#: code:addons/donationpoints/wizards/donation_import.py:67
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__cashback_requested_authorisation
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__cashback_requested_authorisation
+#, python-format
+msgid "Cashback Requested at Authorisation"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:90
+#: code:addons/donationpoints/wizards/donation_import.py:83
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__cashback_requested_at_authorization_dcc
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__cashback_requested_at_authorization_dcc
+#, python-format
+msgid "Cashback Requested at Authorisation (DCC)"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_location.py:16
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location__city
+#: model_terms:ir.ui.view,arch_db:donationpoints.donationpoints_location_search_view
+#, python-format
+msgid "City"
+msgstr "Comune"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:23
+#: code:addons/donationpoints/wizards/donation_import.py:15
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__client
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__client
+#, python-format
+msgid "Client"
+msgstr "Cliente"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donationpoint.py:22
+#: selection:donationpoints.donationpoint,activity_state:0
+#: model_terms:ir.ui.view,arch_db:donationpoints.donationpoints_donationpoint_search_view
+#, python-format
+msgid "Closed"
+msgstr "Chiuso"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:13
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__code
+#: model_terms:ir.ui.view,arch_db:donationpoints.donationpoints_donationbox_search_view
+#, python-format
+msgid "Code"
+msgstr "Codice"
+
+#. module: donationpoints
+#: model_terms:ir.ui.view,arch_db:donationpoints.donationpoints_donationbox_search_view
+msgid "Condition"
+msgstr "Condizione"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donationbox.py:22
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox__condition_id
+#, python-format
+msgid "Conditions"
+msgstr "Condizioni"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_location.py:27
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location__contact_partner_id
+#: model_terms:ir.ui.view,arch_db:donationpoints.donationpoints_location_form_view
+#: model_terms:ir.ui.view,arch_db:donationpoints.donationpoints_location_search_view
+#, python-format
+msgid "Contact"
+msgstr "Contatto"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_location.py:28
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location__contact_partner_email_id
+#, python-format
+msgid "Contact Email"
+msgstr "Email del contatto"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_location.py:30
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location__contact_partner_mobile_id
+#, python-format
+msgid "Contact Mobile"
+msgstr "Cellulare del contatto"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_location.py:29
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location__contact_partner_phone_id
+#, python-format
+msgid "Contact Phone"
+msgstr "Telefono del contatto"
+
+#. module: donationpoints
+#: model_terms:ir.ui.view,arch_db:donationpoints.donationpoints_location_search_view
+msgid "Contact email"
+msgstr "Email del contatto"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_location.py:18
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location__country_id
+#, python-format
+msgid "Country"
+msgstr "Stato"
+
+#. module: donationpoints
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__create_uid
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__create_uid
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox__create_uid
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox_condition__create_uid
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox_theme__create_uid
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox_type__create_uid
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationpoint__create_uid
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location__create_uid
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location_type__create_uid
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_visit__create_uid
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_visit_type__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: donationpoints
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__create_date
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__create_date
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox__create_date
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox_condition__create_date
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox_theme__create_date
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox_type__create_date
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationpoint__create_date
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location__create_date
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location_type__create_date
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_visit__create_date
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_visit_type__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:38
+#: code:addons/donationpoints/wizards/donation_import.py:30
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__creator_email_reference
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__creator_email_reference
+#, python-format
+msgid "Creator Email Address"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:64
+#: code:addons/donationpoints/wizards/donation_import.py:56
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__currency
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__currency
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__currency_id
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_visit__currency_id
+#, python-format
+msgid "Currency"
+msgstr "Valuta"
+
+#. module: donationpoints
+#: model_terms:ir.ui.view,arch_db:donationpoints.donationpoints_visit_search_view
+msgid "Date"
+msgstr "Data"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donationbox.py:14
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox__description
+#: model_terms:ir.ui.view,arch_db:donationpoints.donationpoints_donationbox_form_view
+#, python-format
+msgid "Description"
+msgstr "Descrizione"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donationbox_type.py:13
+#: selection:donationpoints.donationbox.type,model_type:0
+#, python-format
+msgid "Device"
+msgstr "Dispositivo"
+
+#. module: donationpoints
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__display_name
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__display_name
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox__display_name
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox_condition__display_name
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox_theme__display_name
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox_type__display_name
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationpoint__display_name
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location__display_name
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location_type__display_name
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_visit__display_name
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_visit_type__display_name
+msgid "Display Name"
+msgstr "Nome visualizzato"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:22
+#: code:addons/donationpoints/wizards/donation_import.py:14
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__distributor
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__distributor
+#, python-format
+msgid "Distributor"
+msgstr "Distributore"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:46
+#: code:addons/donationpoints/wizards/donation_import.py:38
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__domestic_international
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__domestic_international
+#, python-format
+msgid "Domestic/International"
+msgstr ""
+
+#. module: donationpoints
+#: model:ir.actions.act_window,name:donationpoints.donationpoints_donation_act_window
+msgid "Donation"
+msgstr "Donazione"
+
+#. module: donationpoints
+#: model:ir.ui.menu,name:donationpoints.donationpoints_donationpoint_menu
+msgid "Donation Box"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donationpoint.py:19
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationpoint__donationbox_theme_id
+#, python-format
+msgid "Donation Box Theme"
+msgstr "Tema Donation Box"
+
+#. module: donationpoints
+#: model_terms:ir.ui.view,arch_db:donationpoints.donationpoints_visit_form_view
+msgid "Donation Box condition"
+msgstr "Condizioni Donation Box"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:17
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__date
+#, python-format
+msgid "Donation Date"
+msgstr "Data donazione"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:14
+#: code:addons/donationpoints/models/donationpoints_visit.py:19
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__donationpoint_id
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_visit__donationpoint_id
+#: model:ir.ui.menu,name:donationpoints.donationpoints_donationpoint
+#, python-format
+msgid "Donation Point"
+msgstr ""
+
+#. module: donationpoints
+#: model:ir.actions.act_window,name:donationpoints.donationpoints_donationpoint_act_window
+msgid "Donation Points"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:19
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__donation_type
+#, python-format
+msgid "Donation Type"
+msgstr "Tipo donazione"
+
+#. module: donationpoints
+#: code:addons/donationpoints/wizards/donation_import.py:12
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__date
+#, python-format
+msgid "Donation date"
+msgstr "data donazione"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donationpoint.py:18
+#: model:ir.actions.act_window,name:donationpoints.donationpoints_donationbox_act_window
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationpoint__donationbox_id
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_visit__donationbox_id
+#, python-format
+msgid "Donationbox"
+msgstr ""
+
+#. module: donationpoints
+#: model:ir.ui.menu,name:donationpoints.donationpoints_settings_condition_type
+msgid "Donationbox  Condition"
+msgstr "Condizioni Donationbox"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_visit.py:26
+#: model:ir.actions.act_window,name:donationpoints.donationpoints_donationbox_condition_act_window
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_visit__condition_id
+#, python-format
+msgid "Donationbox Condition"
+msgstr "Condizioni Donationbox"
+
+#. module: donationpoints
+#: model:ir.ui.menu,name:donationpoints.donationpoints_setting_donationpoint_theme
+msgid "Donationbox Theme"
+msgstr "Tema Donationbox"
+
+#. module: donationpoints
+#: model:ir.actions.act_window,name:donationpoints.donationpoints_donationbox_type_act_window
+#: model:ir.ui.menu,name:donationpoints.donationpoints_settings_device_type
+msgid "Donationbox Type"
+msgstr "Tipo Donationbox"
+
+#. module: donationpoints
+#: model_terms:ir.ui.view,arch_db:donationpoints.donationpoints_visit_search_view
+msgid "Donationbox condition"
+msgstr "Condizioni Donationbox"
+
+#. module: donationpoints
+#: model_terms:ir.ui.view,arch_db:donationpoints.donationpoints_visit_search_view
+msgid "Donationpoint"
+msgstr ""
+
+#. module: donationpoints
+#: model:ir.ui.menu,name:donationpoints.donationpoints_main_menu
+msgid "Donationpoints"
+msgstr ""
+
+#. module: donationpoints
+#: model:ir.model,name:donationpoints.model_donationpoints_donation
+msgid "Donationpoints Donation"
+msgstr "Donazione Donationpoints"
+
+#. module: donationpoints
+#: model:ir.model,name:donationpoints.model_donationpoints_donationbox
+msgid "Donationpoints Donationbox"
+msgstr ""
+
+#. module: donationpoints
+#: model:ir.model,name:donationpoints.model_donationpoints_donationbox_condition
+msgid "Donationpoints Donationbox Condition"
+msgstr "Condizioni Donationpoints Donationbox"
+
+#. module: donationpoints
+#: model:ir.model,name:donationpoints.model_donationpoints_donationbox_theme
+msgid "Donationpoints Donationbox Theme"
+msgstr "Tema Donationpoints Donationbox"
+
+#. module: donationpoints
+#: model:ir.model,name:donationpoints.model_donationpoints_donationbox_type
+msgid "Donationpoints Donationbox Type"
+msgstr "Tipo Donationpoints Donationbox"
+
+#. module: donationpoints
+#: model:ir.actions.act_window,name:donationpoints.donationpoints_donationbox_theme_act_window
+msgid "Donationpoints Donationbox theme"
+msgstr "Tema Donationpoints Donationbox"
+
+#. module: donationpoints
+#: model:ir.model,name:donationpoints.model_donationpoints_donationpoint
+msgid "Donationpoints Donationpoint"
+msgstr ""
+
+#. module: donationpoints
+#: model:ir.actions.act_window,name:donationpoints.donationpoints_location_act_window
+#: model:ir.model,name:donationpoints.model_donationpoints_location
+msgid "Donationpoints Location"
+msgstr ""
+
+#. module: donationpoints
+#: model:ir.model,name:donationpoints.model_donationpoints_location_type
+msgid "Donationpoints Location Type"
+msgstr "Tipo Donationpoints Location"
+
+#. module: donationpoints
+#: model:ir.actions.act_window,name:donationpoints.donationpoints_visit_act_window
+#: model:ir.model,name:donationpoints.model_donationpoints_visit
+msgid "Donationpoints Visit"
+msgstr "Visite al Donationpoints"
+
+#. module: donationpoints
+#: model:ir.actions.act_window,name:donationpoints.donationpoints_visit_type_act_window
+#: model:ir.model,name:donationpoints.model_donationpoints_visit_type
+msgid "Donationpoints Visit Type"
+msgstr "Tipo Visite al Donationpoints"
+
+#. module: donationpoints
+#: model:ir.ui.menu,name:donationpoints.donationpoints_donation
+msgid "Donations"
+msgstr "Donazioni"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:19
+#: selection:donationpoints.donation,donation_type:0
+#, python-format
+msgid "Elettronic"
+msgstr "Elettronico"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_location.py:21
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location__email
+#: model_terms:ir.ui.view,arch_db:donationpoints.donationpoints_location_search_view
+#, python-format
+msgid "Email"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:35
+#: code:addons/donationpoints/wizards/donation_import.py:27
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__email_address
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__email_address
+#, python-format
+msgid "Email Address"
+msgstr "Indirizzo Email"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:47
+#: code:addons/donationpoints/wizards/donation_import.py:39
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__entry_type
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__entry_type
+#, python-format
+msgid "Entry Type"
+msgstr "Tipo di voce"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:41
+#: code:addons/donationpoints/wizards/donation_import.py:33
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__card_expiring_date
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__card_expiring_date
+#, python-format
+msgid "Expiry Date"
+msgstr "Data scadenza"
+
+#. module: donationpoints
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__message_follower_ids
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox__message_follower_ids
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: donationpoints
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__message_channel_ids
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox__message_channel_ids
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "Followers (Canali)"
+
+#. module: donationpoints
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__message_partner_ids
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox__message_partner_ids
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Followers (Contatti)"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:57
+#: code:addons/donationpoints/wizards/donation_import.py:49
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__fraud_profiler
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__fraud_profiler
+#, python-format
+msgid "Fraud Profiler"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:59
+#: code:addons/donationpoints/wizards/donation_import.py:51
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__fraud_score
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__fraud_score
+#, python-format
+msgid "Fraud Score"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:58
+#: code:addons/donationpoints/wizards/donation_import.py:50
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__fraud_state
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__fraud_state
+#, python-format
+msgid "Fraud State"
+msgstr ""
+
+#. module: donationpoints
+#: model_terms:ir.ui.view,arch_db:donationpoints.donationpoints_donationbox_form_view
+msgid "History"
+msgstr "Cronologia"
+
+#. module: donationpoints
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__id
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__id
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox__id
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox_condition__id
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox_theme__id
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox_type__id
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationpoint__id
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location__id
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location_type__id
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_visit__id
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_visit_type__id
+msgid "ID"
+msgstr ""
+
+#. module: donationpoints
+#: model:ir.model.fields,help:donationpoints.field_donationpoints_donation__message_unread
+#: model:ir.model.fields,help:donationpoints.field_donationpoints_donationbox__message_unread
+#: model:ir.model.fields,help:donationpoints.field_donationpoints_location__message_unread
+msgid "If checked new messages require your attention."
+msgstr ""
+
+#. module: donationpoints
+#: model:ir.model.fields,help:donationpoints.field_donationpoints_donation__message_needaction
+#: model:ir.model.fields,help:donationpoints.field_donationpoints_donationbox__message_needaction
+#: model:ir.model.fields,help:donationpoints.field_donationpoints_location__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: donationpoints
+#: model:ir.model.fields,help:donationpoints.field_donationpoints_donation__message_has_error
+#: model:ir.model.fields,help:donationpoints.field_donationpoints_donationbox__message_has_error
+#: model:ir.model.fields,help:donationpoints.field_donationpoints_location__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: donationpoints
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__message_is_follower
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox__message_is_follower
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location__message_is_follower
+msgid "Is Follower"
+msgstr "E' un Follower"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:43
+#: code:addons/donationpoints/wizards/donation_import.py:35
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__issue_number
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__issue_number
+#, python-format
+msgid "Issue Number"
+msgstr ""
+
+#. module: donationpoints
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import____last_update
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation____last_update
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox____last_update
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox_condition____last_update
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox_theme____last_update
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox_type____last_update
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationpoint____last_update
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location____last_update
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location_type____last_update
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_visit____last_update
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_visit_type____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: donationpoints
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__write_uid
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__write_uid
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox__write_uid
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox_condition__write_uid
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox_theme__write_uid
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox_type__write_uid
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationpoint__write_uid
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location__write_uid
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location_type__write_uid
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_visit__write_uid
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_visit_type__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: donationpoints
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__write_date
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__write_date
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox__write_date
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox_condition__write_date
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox_theme__write_date
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox_type__write_date
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationpoint__write_date
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location__write_date
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location_type__write_date
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_visit__write_date
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_visit_type__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:66
+#: code:addons/donationpoints/wizards/donation_import.py:59
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__latitude
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__latitude
+#, python-format
+msgid "Latitude"
+msgstr "Latitudine"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:15
+#: code:addons/donationpoints/models/donationpoints_donationbox.py:18
+#: code:addons/donationpoints/models/donationpoints_donationpoint.py:16
+#: code:addons/donationpoints/models/donationpoints_visit.py:31
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__location_id
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox__location_id
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationpoint__location_id
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_visit__location_id
+#: model_terms:ir.ui.view,arch_db:donationpoints.donationpoints_donationbox_search_view
+#: model_terms:ir.ui.view,arch_db:donationpoints.donationpoints_donationpoint_search_view
+#: model_terms:ir.ui.view,arch_db:donationpoints.donationpoints_location_search_view
+#: model_terms:ir.ui.view,arch_db:donationpoints.donationpoints_visit_search_view
+#, python-format
+msgid "Location"
+msgstr ""
+
+#. module: donationpoints
+#: model:ir.actions.act_window,name:donationpoints.donationpoints_location_type_act_window
+#: model:ir.ui.menu,name:donationpoints.donationpoints_settings_location_type
+msgid "Location Type"
+msgstr "Tipo Location"
+
+#. module: donationpoints
+#: model:ir.ui.menu,name:donationpoints.donationpoints_location
+msgid "Locations"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:67
+#: code:addons/donationpoints/wizards/donation_import.py:60
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__longitude
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__longitude
+#, python-format
+msgid "Longitude"
+msgstr "Longitudine"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:27
+#: code:addons/donationpoints/wizards/donation_import.py:19
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__terminal_code
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__terminal_code
+#, python-format
+msgid "Machine Reference"
+msgstr ""
+
+#. module: donationpoints
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__message_main_attachment_id
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox__message_main_attachment_id
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: donationpoints
+#: model_terms:ir.ui.view,arch_db:donationpoints.donationpoints_donationbox_search_view
+msgid "Maintenance"
+msgstr "Manutenzione"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donationbox_type.py:13
+#: selection:donationpoints.donationbox.type,model_type:0
+#, python-format
+msgid "Manual"
+msgstr "Manuale"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:29
+#: code:addons/donationpoints/wizards/donation_import.py:21
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__merchant
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__merchant
+#, python-format
+msgid "Merchant"
+msgstr "Commerciale"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:30
+#: code:addons/donationpoints/wizards/donation_import.py:22
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__merchant_number
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__merchant_number
+#, python-format
+msgid "Merchant Number"
+msgstr "Numero Commerciale"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:31
+#: code:addons/donationpoints/wizards/donation_import.py:23
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__merchant_number_alternative
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__merchant_number_alternative
+#, python-format
+msgid "Merchant Number Alternative"
+msgstr "Numero Commerciale Alternativo"
+
+#. module: donationpoints
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__message_has_error
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox__message_has_error
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: donationpoints
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__message_ids
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox__message_ids
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_location.py:20
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location__mobile
+#, python-format
+msgid "Mobile"
+msgstr "Cellulare"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donationbox_type.py:13
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox_type__model_type
+#, python-format
+msgid "Model Type"
+msgstr "Tipo Modello"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donationbox.py:13
+#: code:addons/donationpoints/models/donationpoints_donationbox_condition.py:12
+#: code:addons/donationpoints/models/donationpoints_donationbox_theme.py:12
+#: code:addons/donationpoints/models/donationpoints_donationbox_type.py:12
+#: code:addons/donationpoints/models/donationpoints_donationpoint.py:15
+#: code:addons/donationpoints/models/donationpoints_location.py:13
+#: code:addons/donationpoints/models/donationpoints_location_type.py:12
+#: code:addons/donationpoints/models/donationpoints_visit_type.py:12
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__name
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox__name
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox_condition__name
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox_theme__name
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox_type__name
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationpoint__name
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location__name
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location_type__name
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_visit_type__name
+#: model_terms:ir.ui.view,arch_db:donationpoints.donationpoints_donationbox_search_view
+#, python-format
+msgid "Name"
+msgstr "Nome"
+
+#. module: donationpoints
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox__activity_date_deadline
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: donationpoints
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox__activity_summary
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: donationpoints
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox__activity_type_id
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: donationpoints
+#: model_terms:ir.ui.view,arch_db:donationpoints.donationpoints_donationbox_search_view
+msgid "Not working"
+msgstr "Non funzionante"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donationpoint.py:25
+#: code:addons/donationpoints/models/donationpoints_location.py:31
+#: code:addons/donationpoints/models/donationpoints_visit.py:37
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationpoint__note
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location__note
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_visit__note
+#: model_terms:ir.ui.view,arch_db:donationpoints.donationpoints_location_form_view
+#, python-format
+msgid "Note"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donationbox.py:23
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox__note
+#: model_terms:ir.ui.view,arch_db:donationpoints.donationpoints_donationbox_form_view
+#, python-format
+msgid "Notes"
+msgstr "Note"
+
+#. module: donationpoints
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__message_needaction_counter
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox__message_needaction_counter
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: donationpoints
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__message_has_error_counter
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox__message_has_error_counter
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location__message_has_error_counter
+msgid "Number of error"
+msgstr ""
+
+#. module: donationpoints
+#: model:ir.model.fields,help:donationpoints.field_donationpoints_donation__message_needaction_counter
+#: model:ir.model.fields,help:donationpoints.field_donationpoints_donationbox__message_needaction_counter
+#: model:ir.model.fields,help:donationpoints.field_donationpoints_location__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: donationpoints
+#: model:ir.model.fields,help:donationpoints.field_donationpoints_donation__message_has_error_counter
+#: model:ir.model.fields,help:donationpoints.field_donationpoints_donationbox__message_has_error_counter
+#: model:ir.model.fields,help:donationpoints.field_donationpoints_location__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: donationpoints
+#: model:ir.model.fields,help:donationpoints.field_donationpoints_donation__message_unread_counter
+#: model:ir.model.fields,help:donationpoints.field_donationpoints_donationbox__message_unread_counter
+#: model:ir.model.fields,help:donationpoints.field_donationpoints_location__message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
+
+#. module: donationpoints
+#: selection:donationpoints.donationbox,activity_state:0
+#: selection:donationpoints.location,activity_state:0
+msgid "Overdue"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donationpoint.py:17
+#: code:addons/donationpoints/models/donationpoints_location.py:23
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationpoint__location_owner_id
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location__owner_partner_id
+#: model_terms:ir.ui.view,arch_db:donationpoints.donationpoints_donationpoint_search_view
+#: model_terms:ir.ui.view,arch_db:donationpoints.donationpoints_location_search_view
+#, python-format
+msgid "Owner"
+msgstr "Gestore"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_location.py:24
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location__owner_partner_email_id
+#, python-format
+msgid "Owner Email"
+msgstr "Email Gestore"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_location.py:26
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location__owner_partner_mobile_id
+#, python-format
+msgid "Owner Mobile"
+msgstr "Cellulare Gestore"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_location.py:25
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location__owner_partner_phone_id
+#, python-format
+msgid "Owner Phone"
+msgstr "Telefono Gestore"
+
+#. module: donationpoints
+#: model_terms:ir.ui.view,arch_db:donationpoints.donationpoints_location_search_view
+msgid "Owner email"
+msgstr "Email Gestore"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_location.py:19
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location__phone
+#, python-format
+msgid "Phone"
+msgstr "Telefono"
+
+#. module: donationpoints
+#: selection:donationpoints.donationbox,activity_state:0
+#: selection:donationpoints.location,activity_state:0
+msgid "Planned"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_location.py:17
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location__country_state_id
+#: model_terms:ir.ui.view,arch_db:donationpoints.donationpoints_location_search_view
+#, python-format
+msgid "Province"
+msgstr "Provincia"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:16
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__user_id
+#, python-format
+msgid "Responsable"
+msgstr "Responsabile"
+
+#. module: donationpoints
+#: model_terms:ir.ui.view,arch_db:donationpoints.donationpoints_visit_search_view
+msgid "Responsible"
+msgstr "Responsabile"
+
+#. module: donationpoints
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox__activity_user_id
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location__activity_user_id
+msgid "Responsible User"
+msgstr "Responsabile"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:60
+#: code:addons/donationpoints/wizards/donation_import.py:52
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__result
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__result
+#, python-format
+msgid "Result"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donationbox.py:15
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox__code
+#, python-format
+msgid "Serial Code"
+msgstr "Codice Seriale"
+
+#. module: donationpoints
+#: model:ir.ui.menu,name:donationpoints.donationpoints_settings
+msgid "Settings"
+msgstr "Impostazioni"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:63
+#: code:addons/donationpoints/wizards/donation_import.py:55
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__settlement_datetime
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__settlement_datetime
+#, python-format
+msgid "Settlement Date/Time"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:62
+#: code:addons/donationpoints/wizards/donation_import.py:54
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__settlement_state
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__settlement_state
+#, python-format
+msgid "Settlement State"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:42
+#: code:addons/donationpoints/wizards/donation_import.py:34
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__start_date
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__start_date
+#, python-format
+msgid "Start Date"
+msgstr "Data Inizio"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:61
+#: code:addons/donationpoints/wizards/donation_import.py:53
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__state
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__state
+#, python-format
+msgid "State"
+msgstr "Stato"
+
+#. module: donationpoints
+#: model:ir.model.fields,help:donationpoints.field_donationpoints_donationbox__activity_state
+#: model:ir.model.fields,help:donationpoints.field_donationpoints_location__activity_state
+msgid "Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donationpoint.py:21
+#: selection:donationpoints.donationpoint,activity_state:0
+#: model_terms:ir.ui.view,arch_db:donationpoints.donationpoints_donationpoint_search_view
+#, python-format
+msgid "Suspended"
+msgstr "Sospeso"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:26
+#: code:addons/donationpoints/wizards/donation_import.py:18
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__terminal_name
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__terminal_name
+#, python-format
+msgid "Terminal"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:24
+#: code:addons/donationpoints/wizards/donation_import.py:16
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__terminal_group
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__terminal_group
+#, python-format
+msgid "Terminal Group"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:25
+#: code:addons/donationpoints/wizards/donation_import.py:17
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__terminal_id
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__terminal_id
+#, python-format
+msgid "Terminal ID"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_visit.py:29
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_visit__is_device
+#, python-format
+msgid "The donation box is a device"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donationbox.py:16
+#: code:addons/donationpoints/models/donationpoints_donationbox.py:19
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox__theme_id
+#, python-format
+msgid "Theme"
+msgstr "Tema"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donationpoint.py:40
+#, python-format
+msgid "This Donationbox is already present on another donationpoint"
+msgstr "Questo Donationbox è già presente in un altro donationpoint"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:75
+#: code:addons/donationpoints/wizards/donation_import.py:68
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__tip_authorised
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__tip_authorised
+#, python-format
+msgid "Tip Authorised"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:91
+#: code:addons/donationpoints/wizards/donation_import.py:84
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__tip_authorised_dcc
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__tip_authorised_dcc
+#, python-format
+msgid "Tip Authorised (DCC)"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:77
+#: code:addons/donationpoints/wizards/donation_import.py:70
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__tip_requested_at_authorization
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__tip_requested_at_authorization
+#, python-format
+msgid "Tip Requested at Authorisation"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:92
+#: code:addons/donationpoints/wizards/donation_import.py:85
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__tip_requested_authorization_dcc
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__tip_requested_authorization_dcc
+#, python-format
+msgid "Tip Requested at Authorisation (DCC)"
+msgstr ""
+
+#. module: donationpoints
+#: selection:donationpoints.donationbox,activity_state:0
+#: selection:donationpoints.location,activity_state:0
+msgid "Today"
+msgstr "Oggi"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:78
+#: code:addons/donationpoints/wizards/donation_import.py:71
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__transanction_fee
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__transanction_fee
+#, python-format
+msgid "Transaction Fee"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:93
+#: code:addons/donationpoints/wizards/donation_import.py:86
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__transaction_fee_dcc
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__transaction_fee_dcc
+#, python-format
+msgid "Transaction Fee (DCC)"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:80
+#: code:addons/donationpoints/wizards/donation_import.py:73
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__transanction_merchant_address
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__transanction_merchant_address
+#, python-format
+msgid "Transaction Merchant Address"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:79
+#: code:addons/donationpoints/wizards/donation_import.py:72
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__transanction_merchant_name
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__transanction_merchant_name
+#, python-format
+msgid "Transaction Merchant Name"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:48
+#: code:addons/donationpoints/models/donationpoints_donationbox.py:17
+#: code:addons/donationpoints/models/donationpoints_location.py:22
+#: code:addons/donationpoints/models/donationpoints_visit.py:16
+#: code:addons/donationpoints/wizards/donation_import.py:40
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__type
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__type
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox__type_id
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location__location_type_id
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_visit__visit_type_id
+#: model_terms:ir.ui.view,arch_db:donationpoints.donationpoints_donationbox_search_view
+#: model_terms:ir.ui.view,arch_db:donationpoints.donationpoints_location_search_view
+#: model_terms:ir.ui.view,arch_db:donationpoints.donationpoints_visit_search_view
+#, python-format
+msgid "Type"
+msgstr "Tipo"
+
+#. module: donationpoints
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__message_unread
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox__message_unread
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location__message_unread
+msgid "Unread Messages"
+msgstr ""
+
+#. module: donationpoints
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__message_unread_counter
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox__message_unread_counter
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_location__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_visit.py:17
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_visit__user_id
+#: model_terms:ir.ui.view,arch_db:donationpoints.donationpoints_visit_search_view
+#, python-format
+msgid "User"
+msgstr "Utente"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:81
+#: code:addons/donationpoints/wizards/donation_import.py:74
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__user_data
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__user_data
+#, python-format
+msgid "User Data"
+msgstr ""
+
+#. module: donationpoints
+#: code:addons/donationpoints/wizards/donation_import.py:25
+#: model:ir.model.fields,field_description:donationpoints.field_donation_import__user_id
+#, python-format
+msgid "User Reference"
+msgstr ""
+
+#. module: donationpoints
+#: model:ir.ui.menu,name:donationpoints.donationpoints_visit
+msgid "Visit"
+msgstr "Visita"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_visit.py:15
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_visit__visit_date
+#, python-format
+msgid "Visit Date"
+msgstr "Data Visita"
+
+#. module: donationpoints
+#: model:ir.ui.menu,name:donationpoints.donationpoints_settings_visit_type
+msgid "Visit Type"
+msgstr "Tipo Visita"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donationbox.py:20
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donationbox__history_ids
+#, python-format
+msgid "Visits"
+msgstr "Visite"
+
+#. module: donationpoints
+#: model_terms:ir.ui.view,arch_db:donationpoints.donationpoints_donationbox_search_view
+msgid "Working"
+msgstr "Funzionante"
+
+#. module: donationpoints
+#: model:ir.model,name:donationpoints.model_donation_import
+msgid "donation.import"
+msgstr ""
+
+#. module: donationpoints
+#: model_terms:ir.ui.view,arch_db:donationpoints.donationpoints_donationbox_theme_search_view
+msgid "donationbox_theme"
+msgstr ""
+

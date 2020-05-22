@@ -20,6 +20,7 @@ class DonationpointsVisit(models.Model):
     donationpoint_id = fields.Many2one(
         "donationpoints.donationpoint", string=_("Donation Point"), required=True
     )
+    # donationbox_id related to one2many donationbox.history
     donationbox_id = fields.Many2one(
         "donationpoints.donationbox", related="donationpoint_id.donationbox_id"
     )
@@ -38,6 +39,8 @@ class DonationpointsVisit(models.Model):
     currency_id = fields.Many2one("res.currency", "Currency", readonly=True)
     note = fields.Text(string=_("Note"))
 
+        
+
     @api.onchange("donationpoint_id")
     def _donationbox_condition_state(self):
         for record in self:
@@ -51,62 +54,31 @@ class DonationpointsVisit(models.Model):
     @api.multi
     def write(self, vals):
         ret = super(DonationpointsVisit, self).write(vals)
-        log.error("******** WRITE **********")
-        log.error("******** WRITE **********")
-        log.error("******** WRITE **********")
-        log.error("******** WRITE **********")
-        # log(self.amount)
-        log.error("******** WRITE **********")
-        log.error("******** WRITE **********")
-        log.error("******** WRITE **********")
-        if self.amount <= 0:
-            raise ValidationError(_("The amount value must be greater than zero"))
-            return
-        else:
-            self.create_donation(vals)
-        return ret
 
-    @api.model
-    def create(self, vals):
-        log.error("******** CREATE **********")
-        log.error("******** CREATE **********")
-        log.error("******** CREATE **********")
-        log.error("******** CREATE **********")
-        # log(self.amount)
-        log.error("******** CREATE **********")
-        log.error("******** CREATE **********")
-        log.error("******** CREATE **********")
-        ret = super(DonationpointsVisit, self).create(vals)
-        if self.amount <= 0:
-            raise ValidationError(_("The amount value must be greater than zero"))
-            return
-        else:
-            self.create_donation(vals)
-        return ret
+        if vals.get("condition_id", False):
+            self.donationpoint_id.donationbox_id.write(
+                {"condition_id": vals["condition_id"]}
+            )
 
-    def create_donation(self, vals):
-        # Modifica lo stato della donationbox
-        # crea la donazione
-        for record in self:
-            if (
-                vals.get("condition_id", False)
-                and vals["condition_id"] != record.condition_id
-            ):
-                self.env["donationpoints.donationbox"].search(
-                    [("id", "=", record.donationbox_id)]
-                ).write({"condition_id": vals["condition_id"]})
-
-            if record.amount > 0:
+        if vals.get("amount", False) and vals["amount"] > 0:
+            existing_donation_id = self.env["donationpoints.donation"].search(
+                [("visit_id", "=", self.id)]
+            )
+            if existing_donation_id:
+                existing_donation_id.write({"amount": vals["amount"]})
+            else:
                 self.env["donationpoints.donation"].create(
                     {
-                        "donationpoint_id": record.donationpoint_id.id,
-                        "location_id": record.location_id.id,
-                        "date": record.visit_date,
-                        "amount": record.amount,
-                        "user_id": record.user_id,
+                        "donationpoint_id": self.donationpoint_id.id,
+                        "location_id": self.location_id.id,
+                        "date": self.visit_date,
+                        "amount": self.amount,
+                        "user_id": self.user_id.id,
                         "donation_type": "cash",
+                        "visit_id": self.id,
                     }
                 )
+        return ret
 
     @api.model
     def create(self, vals):
@@ -114,5 +86,25 @@ class DonationpointsVisit(models.Model):
             vals["code"] = (
                 self.env["ir.sequence"].next_by_code("donationpoints.visit") or "VIS"
             )
-            record = super(DonationpointsVisit, self).create(vals)
-            return record
+        ret = super(DonationpointsVisit, self).create(vals)
+
+
+        if ret.condition_id:
+            ret.donationpoint_id.donationbox_id.write(
+                {"condition_id": ret.condition_id.id}
+            )
+        if ret.amount > 0:
+            self.env["donationpoints.donation"].create(
+                {
+                    "donationpoint_id": ret.donationpoint_id.id,
+                    "location_id": ret.location_id.id,
+                    "date": ret.visit_date,
+                    "amount": ret.amount,
+                    "user_id": ret.user_id.id,
+                    "donation_type": "cash",
+                    "visit_id": ret.id,
+                }
+            )
+
+        return ret
+

@@ -2,7 +2,6 @@
 <!-- Copyright 2020 Metadonors Srl -->
 
 <odoo>
-
 	<record model="ir.ui.view" id="donationpoints_donation_form_view">
 		<field name="name">donationpoints.donation.form (in donationpoints)</field>
 		<field name="model">donationpoints.donation</field>

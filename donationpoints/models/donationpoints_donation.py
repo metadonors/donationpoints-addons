@@ -12,18 +12,30 @@ class DonationpointsDonation(models.Model):
 
     code = fields.Char(string=_("Code"), readonly=True)
     donationpoint_id = fields.Many2one(
-        "donationpoints.donationpoint", string=_("Donation Point")
+        "donationpoints.donationpoint", string=_("Donation Point"), required=True
     )
-    location_id = fields.Many2one("donationpoints.location", string=_("Location"))
-    # user_id = fields.Many2one("res.users", string=_("Responsable"))
+    donationbox_theme_id = fields.Many2one(
+        "donationpoints.donationbox.theme",
+        related="donationpoint_id.donationbox_id.theme_id",
+        readonly=True,
+        store=True,
+    )
+    visit_id = fields.Many2one("donationpoints.visit", string=_("Visit"))
+    location_id = fields.Many2one(
+        "donationpoints.location", string=_("Location"), required=True
+    )
+    # user_id = fields.Many2one('res.users', string=_('Responsable'),required=True)
     date = fields.Date(
-        string=_("Donation Date", required=True)
+        string=_("Donation Date"), required=True
     )  # Data di elaborazione della donazione
-    amount = fields.Monetary(currency_field="currency_id", string=_("Amount"))
+    amount = fields.Monetary(
+        currency_field="currency_id", string=_("Amount"), required=True
+    )
     donation_type = fields.Selection(
         [("elettronic", _("Elettronic")), ("cash", "Cash")],
         default="cash",
         string=_("Donation Type"),
+        required=True,
     )
     currency_id = fields.Many2one("res.currency", "Currency", readonly=True)
     cardease_reference = fields.Char(string=_("CardEase Reference"))
