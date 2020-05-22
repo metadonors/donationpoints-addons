@@ -9,9 +9,6 @@
         <field name="model">donationpoints.visit.type</field>
         <field name="arch" type="xml">
             <form>
-                <header>
-
-                </header>
                 <sheet>
                     <group>
                         <field name="name"/>
@@ -27,8 +24,7 @@
         <field name="name">donationpoints.visit.type.tree (in donationpoints)</field>
         <field name="model">donationpoints.visit.type</field>
         <field name="arch" type="xml">
-            <tree>
-
+            <tree editable="top">
                 <field name="name"/>
             </tree>
         </field>

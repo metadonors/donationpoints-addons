@@ -6,45 +6,30 @@ from odoo import api, fields, models, _
 
 class DonationpointsDonationbox(models.Model):
 
-    _name = 'donationpoints.donationbox'
-    _description = 'Donationpoints Donationbox'
-    _inherit = ['mail.thread', 'mail.activity.mixin']
+    _name = "donationpoints.donationbox"
+    _description = "Donationpoints Donationbox"
+    _inherit = ["mail.thread", "mail.activity.mixin"]
 
-    name = fields.Char(
-        string=_('Name'), 
-        required=True)
+    name = fields.Char(string=_("Name"), required=True)
 
-    description = fields.Text(
-        string=_('Description'))
+    description = fields.Text(string=_("Description"))
 
-    code = fields.Char(
-        string=_('Serial Code'))
+    code = fields.Char(string=_("Serial Code"))
 
-    theme_id = fields.Many2one(
-        'donationpoints.donationbox.theme',
-        string=_("Theme"))
+    theme_id = fields.Many2one("donationpoints.donationbox.theme", string=_("Theme"))
 
-    type_id = fields.Many2one(
-        'donationpoints.donationbox.type', 
-        string=_('Type'))
+    type_id = fields.Many2one("donationpoints.donationbox.type", string=_("Type"))
 
-    location_id = fields.Many2one(
-        'donationpoints.location', 
-        string=_('Location'))
+    location_id = fields.Many2one("donationpoints.location", string=_("Location"))
 
-    theme_id = fields.Many2one(
-        'donationpoints.donationbox.theme', 
-        string=_('Theme'))
+    theme_id = fields.Many2one("donationpoints.donationbox.theme", string=_("Theme"))
 
     history_ids = fields.One2many(
-        'donationpoints.visit', 
-        'donationbox_id', 
-        string=_('Visits'), 
-        readonly=True)
+        "donationpoints.visit", "donationbox_id", string=_("Visits"), readonly=True
+    )
 
     condition_id = fields.Many2one(
-        'donationpoints.donationbox.condition',
-        string=_("Conditions"))
-        
-    note = fields.Text(string=_('Notes'))
+        "donationpoints.donationbox.condition", string=_("Conditions")
+    )
 
+    note = fields.Text(string=_("Notes"))

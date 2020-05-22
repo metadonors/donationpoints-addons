@@ -6,7 +6,7 @@ from odoo import api, fields, models, _
 
 class DonationpointsLocationType(models.Model):
 
-    _name = 'donationpoints.location.type'
-    _description = 'Donationpoints Location Type'  # TODO
+    _name = "donationpoints.location.type"
+    _description = "Donationpoints Location Type"  # TODO
 
-    name = fields.Char(string=_('Name'))
+    name = fields.Char(string=_("Name"))

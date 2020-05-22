@@ -34,7 +34,7 @@
         <field name="name">donationpoints.donationbox.theme.tree (in donationpoints)</field>
         <field name="model">donationpoints.donationbox.theme</field>
         <field name="arch" type="xml">
-            <tree>
+            <tree editable="top">
                 <field name="name"/>
             </tree>
         </field>

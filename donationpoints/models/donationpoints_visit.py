@@ -11,7 +11,9 @@ class DonationpointsVisit(models.Model):
 
     _name = "donationpoints.visit"
     _description = "Donationpoints Visit"
+    _inherit = ["mail.thread", "mail.activity.mixin"]
 
+    code = fields.Char(string=_("Code"), readonly=True)
     visit_date = fields.Date(string=_("Visit Date"), required=True)
     visit_type_id = fields.Many2one("donationpoints.visit.type", string=_("Type"))
     user_id = fields.Many2one("res.users", string=_("User"), required=True)
@@ -28,7 +30,7 @@ class DonationpointsVisit(models.Model):
     )
     is_device = fields.Boolean(string=_("The donation box is a device"))
     location_id = fields.Many2one(
-        "donationpoints.location", string=_("Location"), store=True, required=True
+        "donationpoints.location", related="donationpoint_id.location_id"
     )
     amount = fields.Monetary(
         currency_field="currency_id", string=_("Amount"), store=True
@@ -49,14 +51,37 @@ class DonationpointsVisit(models.Model):
     @api.multi
     def write(self, vals):
         ret = super(DonationpointsVisit, self).write(vals)
-        self.create_donation(vals)
+        log.error("******** WRITE **********")
+        log.error("******** WRITE **********")
+        log.error("******** WRITE **********")
+        log.error("******** WRITE **********")
+        # log(self.amount)
+        log.error("******** WRITE **********")
+        log.error("******** WRITE **********")
+        log.error("******** WRITE **********")
+        if self.amount <= 0:
+            raise ValidationError(_("The amount value must be greater than zero"))
+            return
+        else:
+            self.create_donation(vals)
         return ret
 
     @api.model
     def create(self, vals):
+        log.error("******** CREATE **********")
+        log.error("******** CREATE **********")
+        log.error("******** CREATE **********")
+        log.error("******** CREATE **********")
+        # log(self.amount)
+        log.error("******** CREATE **********")
+        log.error("******** CREATE **********")
+        log.error("******** CREATE **********")
         ret = super(DonationpointsVisit, self).create(vals)
-        self.create_donation(vals)
-
+        if self.amount <= 0:
+            raise ValidationError(_("The amount value must be greater than zero"))
+            return
+        else:
+            self.create_donation(vals)
         return ret
 
     def create_donation(self, vals):
@@ -82,3 +107,12 @@ class DonationpointsVisit(models.Model):
                         "donation_type": "cash",
                     }
                 )
+
+    @api.model
+    def create(self, vals):
+        if vals.get("code", "VIS") == "VIS":
+            vals["code"] = (
+                self.env["ir.sequence"].next_by_code("donationpoints.visit") or "VIS"
+            )
+            record = super(DonationpointsVisit, self).create(vals)
+            return record

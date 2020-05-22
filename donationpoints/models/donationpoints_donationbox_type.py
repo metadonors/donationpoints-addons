@@ -6,8 +6,12 @@ from odoo import api, fields, models, _
 
 class DonationpointsDonationboxType(models.Model):
 
-    _name = 'donationpoints.donationbox.type'
-    _description = 'Donationpoints Donationbox Type'  # TODO
+    _name = "donationpoints.donationbox.type"
+    _description = "Donationpoints Donationbox Type"  # TODO
 
-    name = fields.Char(string=_('Name'))
-    model_type = fields.Selection([('manual', _('Manual')),('device',_('Device'))],string=_('Model Type'), default='manual')
+    name = fields.Char(string=_("Name"))
+    model_type = fields.Selection(
+        [("manual", _("Manual")), ("device", _("Device"))],
+        string=_("Model Type"),
+        default="manual",
+    )

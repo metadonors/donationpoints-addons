@@ -6,7 +6,7 @@ from odoo import api, fields, models, _
 
 class DonationpointsDonationboxCondition(models.Model):
 
-    _name = 'donationpoints.donationbox.condition'
-    _description = 'Donationpoints Donationbox Condition'  # TODO
+    _name = "donationpoints.donationbox.condition"
+    _description = "Donationpoints Donationbox Condition"  # TODO
 
-    name = fields.Char(string=_('Name'))
+    name = fields.Char(string=_("Name"))
