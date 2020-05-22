@@ -13,18 +13,18 @@
                     <group>
                         <field name="name"/>
                     </group>
-                </group>                 
+                </group>
             </form>
         </field>
     </record>
-    
+
 
     <record model="ir.ui.view" id="donationpoints_donationbox_theme_search_view">
         <field name="name">donationpoints.donationbox.theme.search (in donationpoints)</field>
         <field name="model">donationpoints.donationbox.theme</field>
         <field name="arch" type="xml">
             <search>
-               <!-- search fields -->
+                <!-- search fields -->
                 <field name="name" string="donationbox_theme"/>
             </search>
         </field>
@@ -35,18 +35,18 @@
         <field name="model">donationpoints.donationbox.theme</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="name"/>                
+                <field name="name"/>
             </tree>
         </field>
     </record>
 
     <record model="ir.actions.act_window" id="donationpoints_donationbox_theme_act_window">
-        <field name="name">Donationpoints Donationbox theme</field> 
+        <field name="name">Donationpoints Donationbox theme</field>
         <field name="res_model">donationpoints.donationbox.theme</field>
         <field name="view_mode">tree,form</field>
         <field name="domain">[]</field>
         <field name="context">{}</field>
     </record>
 
-   
+
 </odoo>

@@ -3,41 +3,41 @@
 
 <odoo>
 
-    <record model="ir.ui.view" id="donationpoints_visit_form_view">
-	<field name="name">donationpoints.visit.form (in donationpoints)</field>
-	<field name="model">donationpoints.visit</field>
-	<field name="arch" type="xml">
-	    <form>
-		<sheet>
-		    <group>
-			<group>
-			    <field name="location_id"/>
-			    <field name="visit_date"/>
-			    <field name="visit_type_id"/>
-			</group>
-			<group>
-			    <field name="user_id"/>
-			    <field name="is_device" invisible="1"/>
-			    <field name="amount" attrs="{'invisible': ['|',('is_device','=',True), ('donationpoint_id', '=', False)]}"/>
-			    <field name="donationpoint_id" attrs="{'invisible': [('location_id','=',False)]}" domain="[('location_id','=', location_id)]"/>
-			    <field name="condition_id" attrs="{'invisible': [('location_id','=',False)]}" string="Donation Box condition"/>
-			</group>
-		    </group>
-		    <field name="note"/>
-		</sheet>
+	<record model="ir.ui.view" id="donationpoints_visit_form_view">
+		<field name="name">donationpoints.visit.form (in donationpoints)</field>
+		<field name="model">donationpoints.visit</field>
+		<field name="arch" type="xml">
+			<form>
+				<sheet>
+					<group>
+						<group>
+							<field name="location_id"/>
+							<field name="visit_date"/>
+							<field name="visit_type_id"/>
+						</group>
+						<group>
+							<field name="user_id"/>
+							<field name="is_device" invisible="1"/>
+							<field name="amount" attrs="{'invisible': ['|',('is_device','=',True), ('donationpoint_id', '=', False)]}"/>
+							<field name="donationpoint_id" attrs="{'invisible': [('location_id','=',False)]}" domain="[('location_id','=', location_id)]"/>
+							<field name="condition_id" attrs="{'invisible': [('location_id','=',False)]}" string="Donation Box condition"/>
+						</group>
+					</group>
+					<field name="note"/>
+				</sheet>
 
-		<div class="oe_chatter"></div>
-	    </form>
-	</field>
-    </record>
+				<div class="oe_chatter"></div>
+			</form>
+		</field>
+	</record>
 
-    <record model="ir.ui.view" id="donationpoints_visit_search_view">
-	<field name="name">donationpoints.visit.search (in donationpoints)</field>
-	<field name="model">donationpoints.visit</field>
-	<field name="arch" type="xml">
-	    <search>
-		<!-- Verify how to insert amount range filter -->
-		<!--		<filter name="filter_visit_amount_label" string="Amount range:"/>
+	<record model="ir.ui.view" id="donationpoints_visit_search_view">
+		<field name="name">donationpoints.visit.search (in donationpoints)</field>
+		<field name="model">donationpoints.visit</field>
+		<field name="arch" type="xml">
+			<search>
+				<!-- Verify how to insert amount range filter -->
+				<!--		<filter name="filter_visit_amount_label" string="Amount range:"/>
 		<filter name="filter_visit_amount" string="0 - 10" domain="[('amount','&lt;=','10.0')]"/>
 		<filter name="filter_visit_amount" string="10 - 100" domain="['&amp;',('amount','>','10.0'),('amount','&lt;=','100.0')]"/>
 		<filter name="filter_visit_amount" string="100 - 1000" domain="['&amp;',('amount','>','100.0'),('amount','&lt;=','1000.0')]"/>
@@ -45,54 +45,54 @@
 
 
 
-		    <!-- group_by -->
-		<filter name="groupby_type" string="Type" context="{'group_by':'visit_type_id'}"/>
-		<filter name="groupby_user" string="Responsible" context="{'group_by':'user_id'}"/>
-		<filter name="groupby_location" string="Location" context="{'group_by':'location_id'}"/>
-		<filter name="groupby_condition" string="Donationbox condition" context="{'group_by':'condition_id'}"/>
+				<!-- group_by -->
+				<filter name="groupby_type" string="Type" context="{'group_by':'visit_type_id'}"/>
+				<filter name="groupby_user" string="Responsible" context="{'group_by':'user_id'}"/>
+				<filter name="groupby_location" string="Location" context="{'group_by':'location_id'}"/>
+				<filter name="groupby_condition" string="Donationbox condition" context="{'group_by':'condition_id'}"/>
 
-		    <!-- search fields -->
-		<field name="user_id" string="User"/>
-		<field name="donationpoint_id" string="Donationpoint"/>
-		<field name="location_id" string="Location"/>
-		<field name="visit_type_id" string="Type"/>
-		<field name="visit_date" string="Date"/>
+				<!-- search fields -->
+				<field name="user_id" string="User"/>
+				<field name="donationpoint_id" string="Donationpoint"/>
+				<field name="location_id" string="Location"/>
+				<field name="visit_type_id" string="Type"/>
+				<field name="visit_date" string="Date"/>
 
-	    </search>
-	</field>
-    </record>
+			</search>
+		</field>
+	</record>
 
-    <record model="ir.ui.view" id="donationpoints_visit_tree_view">
-	<field name="name">donationpoints.visit.tree (in donationpoints)</field>
-	<field name="model">donationpoints.visit</field>
-	<field name="arch" type="xml">
-	    <tree>
-		<field name="location_id"/>
-		<field name="visit_date"/>
-		<field name="visit_type_id"/>
-		<field name="user_id"/>
-		<field name="donationpoint_id"/>
-		<field name="condition_id"/>
-		<field name="amount"/>
-		<field name="note"/>
-	    </tree>
-	</field>
-    </record>
+	<record model="ir.ui.view" id="donationpoints_visit_tree_view">
+		<field name="name">donationpoints.visit.tree (in donationpoints)</field>
+		<field name="model">donationpoints.visit</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="location_id"/>
+				<field name="visit_date"/>
+				<field name="visit_type_id"/>
+				<field name="user_id"/>
+				<field name="donationpoint_id"/>
+				<field name="condition_id"/>
+				<field name="amount"/>
+				<field name="note"/>
+			</tree>
+		</field>
+	</record>
 
-    <record model="ir.ui.view" id="donationpoints_visit_pivot_view">
-	<field name="name">donationpoints.visit.pivot (in donationpoints)</field>
-	<field name="model">donationpoints.visit</field>
-	<field name="arch" type="xml">
-	    <pivot>
-	    </pivot>
-	</field>
-    </record>
+	<record model="ir.ui.view" id="donationpoints_visit_pivot_view">
+		<field name="name">donationpoints.visit.pivot (in donationpoints)</field>
+		<field name="model">donationpoints.visit</field>
+		<field name="arch" type="xml">
+			<pivot>
+			</pivot>
+		</field>
+	</record>
 
-    <record model="ir.actions.act_window" id="donationpoints_visit_act_window">
-	<field name="name">Donationpoints Visit</field>
-	<field name="res_model">donationpoints.visit</field>
-	<field name="view_mode">tree,form,pivot</field>
-	<field name="domain">[]</field>
-	<field name="context">{}</field>
-    </record>
+	<record model="ir.actions.act_window" id="donationpoints_visit_act_window">
+		<field name="name">Donationpoints Visit</field>
+		<field name="res_model">donationpoints.visit</field>
+		<field name="view_mode">tree,form,pivot</field>
+		<field name="domain">[]</field>
+		<field name="context">{}</field>
+	</record>
 </odoo>
