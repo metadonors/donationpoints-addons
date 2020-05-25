@@ -4,9 +4,10 @@
 from odoo import api, fields, models, _
 from datetime import datetime
 
+
 class Donationpointsdonationbox_theme(models.Model):
 
-    _name = 'donationpoints.donationbox.theme'
-    _description = 'Donationpoints Donationbox Theme'  # TODO
+    _name = "donationpoints.donationbox.theme"
+    _description = "Donationpoints Donationbox Theme"  # TODO
 
-    name = fields.Char(string=_('Name'))
+    name = fields.Char(string=_("Name"))

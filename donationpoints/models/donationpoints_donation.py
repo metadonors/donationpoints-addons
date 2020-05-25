@@ -11,6 +11,9 @@ class DonationpointsDonation(models.Model):
     _inherit = ["mail.thread", "mail.activity.mixin"]
 
     code = fields.Char(string=_("Code"), readonly=True)
+
+    active = fields.Boolean(string=_("Active"), default=True)
+
     donationpoint_id = fields.Many2one(
         "donationpoints.donationpoint", string=_("Donation Point"), required=True
     )
@@ -21,10 +24,13 @@ class DonationpointsDonation(models.Model):
         store=True,
     )
     visit_id = fields.Many2one("donationpoints.visit", string=_("Visit"))
+    visit_id_code = fields.Char(
+        related="visit_id.code", string=_("Visit Code"), readonly=True
+    )
     location_id = fields.Many2one(
         "donationpoints.location", string=_("Location"), required=True
     )
-    # user_id = fields.Many2one('res.users', string=_('Responsable'),required=True)
+    # user_id = fields.Many2one("res.users", string=_("Responsable"), required=True)
     date = fields.Date(
         string=_("Donation Date"), required=True
     )  # Data di elaborazione della donazione

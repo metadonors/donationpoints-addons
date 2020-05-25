@@ -16,6 +16,8 @@ class Donationpoint(models.Model):
 
     name = fields.Char(string=_("Name"))
 
+    active = fields.Boolean(string=_("Active"), default=True)
+
     location_id = fields.Many2one(
         "donationpoints.location", string=_("Location"), required=True
     )

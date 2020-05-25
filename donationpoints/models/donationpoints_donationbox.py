@@ -12,6 +12,8 @@ class DonationpointsDonationbox(models.Model):
 
     name = fields.Char(string=_("Name"), required=True)
 
+    active = fields.Boolean(string=_("Active"), default=True)
+
     description = fields.Text(string=_("Description"))
 
     code = fields.Char(string=_("Serial Code"))
@@ -20,7 +22,9 @@ class DonationpointsDonationbox(models.Model):
 
     type_id = fields.Many2one("donationpoints.donationbox.type", string=_("Type"))
 
-    location_id = fields.Many2one("donationpoints.location", string=_("Location"))
+    location_id = fields.Many2one(
+        "donationpoints.location", string=_("Location"), readonly=True
+    )
 
     theme_id = fields.Many2one("donationpoints.donationbox.theme", string=_("Theme"))
 

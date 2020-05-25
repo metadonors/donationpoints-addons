@@ -14,6 +14,7 @@ class DonationpointsVisit(models.Model):
     _inherit = ["mail.thread", "mail.activity.mixin"]
 
     code = fields.Char(string=_("Code"), readonly=True)
+    active = fields.Boolean(string=_("Active"), default=True)
     visit_date = fields.Date(string=_("Visit Date"), required=True)
     visit_type_id = fields.Many2one("donationpoints.visit.type", string=_("Type"))
     user_id = fields.Many2one("res.users", string=_("User"), required=True)
@@ -38,8 +39,6 @@ class DonationpointsVisit(models.Model):
     )
     currency_id = fields.Many2one("res.currency", "Currency", readonly=True)
     note = fields.Text(string=_("Note"))
-
-        
 
     @api.onchange("donationpoint_id")
     def _donationbox_condition_state(self):
@@ -73,7 +72,7 @@ class DonationpointsVisit(models.Model):
                         "location_id": self.location_id.id,
                         "date": self.visit_date,
                         "amount": self.amount,
-                        "user_id": self.user_id.id,
+                        # "user_id": self.user_id.id,
                         "donation_type": "cash",
                         "visit_id": self.id,
                     }
@@ -88,7 +87,6 @@ class DonationpointsVisit(models.Model):
             )
         ret = super(DonationpointsVisit, self).create(vals)
 
-
         if ret.condition_id:
             ret.donationpoint_id.donationbox_id.write(
                 {"condition_id": ret.condition_id.id}
@@ -100,11 +98,10 @@ class DonationpointsVisit(models.Model):
                     "location_id": ret.location_id.id,
                     "date": ret.visit_date,
                     "amount": ret.amount,
-                    "user_id": ret.user_id.id,
+                    # "user_id": ret.user_id.id,
                     "donation_type": "cash",
                     "visit_id": ret.id,
                 }
             )
 
         return ret
-
