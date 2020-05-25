@@ -424,7 +424,9 @@ msgstr "Chiuso"
 
 #. module: donationpoints
 #: code:addons/donationpoints/models/donationpoints_donation.py:13
+#: code:addons/donationpoints/models/donationpoints_visit.py:16
 #: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__code
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_visit__code
 #: model_terms:ir.ui.view,arch_db:donationpoints.donationpoints_donationbox_search_view
 #, python-format
 msgid "Code"
@@ -1520,6 +1522,14 @@ msgstr ""
 #: model:ir.ui.menu,name:donationpoints.donationpoints_visit
 msgid "Visit"
 msgstr "Visita"
+
+#. module: donationpoints
+#: code:addons/donationpoints/models/donationpoints_donation.py:28
+#: model:ir.model.fields,field_description:donationpoints.field_donationpoints_donation__visit_id_code
+#, python-format
+msgid "Visit Code"
+msgstr "Codice Visita"
+
 
 #. module: donationpoints
 #: code:addons/donationpoints/models/donationpoints_visit.py:15
