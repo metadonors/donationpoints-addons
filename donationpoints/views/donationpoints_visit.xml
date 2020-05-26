@@ -82,7 +82,6 @@
 				<field name="donationpoint_id"/>
 				<field name="condition_id"/>
 				<field name="amount"/>
-				<field name="note"/>
 			</tree>
 		</field>
 	</record>

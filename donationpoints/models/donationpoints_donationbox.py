@@ -13,7 +13,14 @@ class DonationpointsDonationbox(models.Model):
     name = fields.Char(string=_("Name"), required=True)
 
     active = fields.Boolean(string=_("Active"), default=True)
-    donation_count = fields.Integer(string=_('Total donation'), compute='_compute_total_donation')
+
+    donation_amount = fields.Monetary(
+        currency_field="currency_id",
+        string=_("Total donation"),
+        compute="_compute_total_donation",
+    )
+
+    currency_id = fields.Many2one("res.currency", "Currency", readonly=True)
 
     description = fields.Text(string=_("Description"))
 
@@ -38,30 +45,25 @@ class DonationpointsDonationbox(models.Model):
     )
     note = fields.Text(string=_("Notes"))
 
-    note = fields.Text(string=_("Notes"))
-
-    #TODO
     def _compute_total_donation(self):
-        return 100
+        total_donations = self.env["donationpoints.donation"].search(
+            [("donationpoint_id.donationbox_id", "=", self.id)]
+        )
+        total_amount = 0
+        for donation_id in total_donations:
+            total_amount += donation_id.amount
+        self.donation_amount = total_amount
 
-    #TODO
+    # TODO
     @api.multi
     def action_donation(self):
-        pass
-
-#        return {
-#            'name':'Donationbox Donations',
-#            'type':'ir.actions.act_window',
-#            'res_model':'agreements.agreements',
-#            'view_mode':'tree,form',
-#            'res_id':False,
-#            'domain': [(
-#                'id', 'in', self
-#            )],
-#            'target':'current',
-#            'context': {
-#                'default_donataionpoint_id': self.donation_point.id
-#            }
-#        }
-#
-
+        return {
+            "name": "Donationbox Donations",
+            "type": "ir.actions.act_window",
+            "res_model": "donationpoints.donation",
+            "view_mode": "tree",
+            "res_id": False,  # used for Form View and pass fields value
+            "domain": [("donationpoint_id.donationbox_id", "=", self.id)],
+            "target": "current",
+            # "context": {"default_donataionpoint_id": self.donation_point.id},
+        }

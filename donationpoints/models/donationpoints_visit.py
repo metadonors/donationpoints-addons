@@ -32,7 +32,7 @@ class DonationpointsVisit(models.Model):
     )
     is_device = fields.Boolean(string=_("The donation box is a device"))
     location_id = fields.Many2one(
-        "donationpoints.location", related="donationpoint_id.location_id"
+        "donationpoints.location", related="donationpoint_id.location_id",
     )
     amount = fields.Monetary(
         currency_field="currency_id", string=_("Amount"), store=True
