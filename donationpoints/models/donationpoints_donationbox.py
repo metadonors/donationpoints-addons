@@ -13,6 +13,7 @@ class DonationpointsDonationbox(models.Model):
     name = fields.Char(string=_("Name"), required=True)
 
     active = fields.Boolean(string=_("Active"), default=True)
+    donation_count = fields.Integer(string=_('Total donation'), compute='_compute_total_donation')
 
     description = fields.Text(string=_("Description"))
 
@@ -38,3 +39,29 @@ class DonationpointsDonationbox(models.Model):
     note = fields.Text(string=_("Notes"))
 
     note = fields.Text(string=_("Notes"))
+
+    #TODO
+    def _compute_total_donation(self):
+        return 100
+
+    #TODO
+    @api.multi
+    def action_donation(self):
+        pass
+
+#        return {
+#            'name':'Donationbox Donations',
+#            'type':'ir.actions.act_window',
+#            'res_model':'agreements.agreements',
+#            'view_mode':'tree,form',
+#            'res_id':False,
+#            'domain': [(
+#                'id', 'in', self
+#            )],
+#            'target':'current',
+#            'context': {
+#                'default_donataionpoint_id': self.donation_point.id
+#            }
+#        }
+#
+
