@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="sequence_donation_name" model="ir.sequence">
-       <field name="name">Donation Name</field>
-       <field name="code">donationpoints.donation</field>
-       <field name="active">TRUE</field>
-       <field name="prefix">DON</field>
-       <field name="padding">6</field>
-       <field name="number_next">1</field>
-       <field name="number_increment">1</field>
-    </record>
+    <data noupdate="1">
+        <record id="sequence_donation_name" model="ir.sequence">
+            <field name="name">Donation Name</field>
+            <field name="code">donationpoints.donation.sequence</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">DON</field>
+            <field name="padding">6</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+        <record id="sequence_visit_name" model="ir.sequence">
+            <field name="name">Visit Code</field>
+            <field name="code">donationpoints.visit.sequence</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">VIS</field>
+            <field name="padding">6</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+    </data>
 </odoo>

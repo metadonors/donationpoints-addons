@@ -4,7 +4,7 @@
 
 <odoo>
 
-<!--     <record model="ir.ui.view" id="donationpoints_donationbox_type_form_view">
+    <!--     <record model="ir.ui.view" id="donationpoints_donationbox_type_form_view">
         <field name="name">donationpoints.donationbox.type.form (in donationpoints)</field>
         <field name="model">donationpoints.donationbox.type</field>
         <field name="arch" type="xml">
@@ -20,17 +20,15 @@
         <field name="name">donationpoints.donationbox.type.tree (in donationpoints)</field>
         <field name="model">donationpoints.donationbox.type</field>
         <field name="arch" type="xml">
-            <tree editable="top" >
-                
+            <tree editable="top">
                 <field name="name"/>
                 <field name="model_type"/>
-                
             </tree>
         </field>
     </record>
 
     <record model="ir.actions.act_window" id="donationpoints_donationbox_type_act_window">
-        <field name="name">Donationbox Type</field> 
+        <field name="name">Donationbox Type</field>
         <field name="res_model">donationpoints.donationbox.type</field>
         <field name="view_mode">tree</field>
         <field name="domain">[]</field>

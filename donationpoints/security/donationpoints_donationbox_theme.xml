@@ -3,14 +3,14 @@
 License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 
 <odoo>
-    <record model="ir.model.access" id="donationpoints_donationbox_theme_access_name"> <!-- TODO acl id -->
-	<field name="name">donationpoints.donationbox.theme access name</field> <!-- TODO acl name -->
-	<field name="model_id" ref="model_donationpoints_donationbox_theme"/>
-	<field name="group_id" ref="base.group_user"/>
-	<field name="perm_read" eval="1"/>
-	<field name="perm_create" eval="1"/>
-	<field name="perm_write" eval="1"/>
-	<field name="perm_unlink" eval="1"/>
-    </record>
+	<record model="ir.model.access" id="donationpoints_donationbox_theme_access_name">		<!-- TODO acl id -->
+		<field name="name">donationpoints.donationbox.theme access name</field>		<!-- TODO acl name -->
+		<field name="model_id" ref="model_donationpoints_donationbox_theme"/>
+		<field name="group_id" ref="base.group_user"/>
+		<field name="perm_read" eval="1"/>
+		<field name="perm_create" eval="1"/>
+		<field name="perm_write" eval="1"/>
+		<field name="perm_unlink" eval="1"/>
+	</record>
 
 </odoo>

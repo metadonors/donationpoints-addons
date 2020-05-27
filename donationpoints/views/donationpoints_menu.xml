@@ -3,6 +3,7 @@
 <odoo>
     <record model="ir.ui.menu" id="donationpoints_main_menu">
         <field name="name">Donationpoints</field>
+        <field name="web_icon">donationpoints,static/description/icon.png</field>
         <field name="action" ref="donationpoints_donationpoint_act_window"/>
         <field name="sequence" eval="30"/>
     </record>

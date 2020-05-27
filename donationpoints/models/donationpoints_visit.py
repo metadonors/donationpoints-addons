@@ -11,7 +11,10 @@ class DonationpointsVisit(models.Model):
 
     _name = "donationpoints.visit"
     _description = "Donationpoints Visit"
+    _inherit = ["mail.thread", "mail.activity.mixin"]
 
+    code = fields.Char(string=_("Code"), readonly=True)
+    active = fields.Boolean(string=_("Active"), default=True)
     visit_date = fields.Date(string=_("Visit Date"), required=True)
     visit_type_id = fields.Many2one("donationpoints.visit.type", string=_("Type"))
     user_id = fields.Many2one("res.users", string=_("User"), required=True)
@@ -29,7 +32,7 @@ class DonationpointsVisit(models.Model):
     )
     is_device = fields.Boolean(string=_("The donation box is a device"))
     location_id = fields.Many2one(
-        "donationpoints.location", string=_("Location"), store=True, required=True
+        "donationpoints.location", related="donationpoint_id.location_id",
     )
     amount = fields.Monetary(
         currency_field="currency_id", string=_("Amount"), store=True
@@ -69,16 +72,19 @@ class DonationpointsVisit(models.Model):
                         "location_id": self.location_id.id,
                         "date": self.visit_date,
                         "amount": self.amount,
-                        "user_id": self.user_id.id,
+                        # "user_id": self.user_id.id,
                         "donation_type": "cash",
                         "visit_id": self.id,
                     }
                 )
-
         return ret
 
     @api.model
     def create(self, vals):
+        if vals.get("code", "VIS") == "VIS":
+            vals["code"] = (
+                self.env["ir.sequence"].next_by_code("donationpoints.visit") or "VIS"
+            )
         ret = super(DonationpointsVisit, self).create(vals)
 
         if ret.condition_id:
@@ -92,9 +98,10 @@ class DonationpointsVisit(models.Model):
                     "location_id": ret.location_id.id,
                     "date": ret.visit_date,
                     "amount": ret.amount,
-                    "user_id": ret.user_id.id,
+                    # "user_id": ret.user_id.id,
                     "donation_type": "cash",
                     "visit_id": ret.id,
                 }
             )
+
         return ret
