@@ -11,11 +11,11 @@ class DonationpointsLocation(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
     name = fields.Char(string=_('Name'), required=True)
-    address1 = fields.Char(string=_('Address'), required=True)
+    address1 = fields.Char(string=_('Address'))
     address2 = fields.Char(string=_('Address 2'))
-    city = fields.Char(string=_('City'), required=True)
-    country_state_id = fields.Many2one('res.country.state',string=_('Province'), required=True)
-    country_id = fields.Many2one('res.country',string=_('Country'), required=True)
+    city = fields.Char(string=_('City'))
+    country_state_id = fields.Many2one('res.country.state',string=_('Province'))
+    country_id = fields.Many2one('res.country',string=_('Country'))
     phone = fields.Char(string=_('Phone'))
     mobile = fields.Char(string=_('Mobile'))
     email = fields.Char(string=_('Email'))
