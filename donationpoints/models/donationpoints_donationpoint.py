@@ -41,7 +41,7 @@ class Donationpoint(models.Model):
         readonly=True,
     )
 
-    activity_state = fields.Selection(
+    state = fields.Selection(
         selection=[
             ("active", _("Active")),
             ("suspended", _("Suspended")),

@@ -10,10 +10,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 		<field name="arch" type="xml">
 			<form>
 				<header>
-					<!-- <button string="Active" type="object" name="set_activity_state_active" attrs="{'invisible': [('activity_state', '=', 'active')]}"></button> -->
-					<!-- <button string="Suspended" type="object" name="set_activity_state_suspended" attrs="{'invisible': [('activity_state', '=', 'suspended')]}"></button -->>
-					<!-- <button string="Closed" type="object" name="set_activity_state_closed" attrs="{'invisible': [('activity_state', '=', 'closed')]}"></button> -->
-					<field name="activity_state" widget="statusbar" clickable="1"/>
+					<field name="state" widget="statusbar" statusbar_visible="active,suspended,closed"/>
 				</header>
 				<sheet>
 					<div class="oe_button_box" name="button_box">
@@ -70,9 +67,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 		<field name="arch" type="xml">
 			<search>
 				<!-- activity state -->
-				<filter name="filter_active" string="Active" domain="[('activity_state','=','active')]"/>
-				<filter name="filter_suspended" string="Suspended" domain="[('activity_state','=','suspended')]"/>
-				<filter name="filter_closed" string="Closed" domain="[('activity_state','=','closed')]"/>
+				<filter name="filter_active" string="Active" domain="[('state','=','active')]"/>
+				<filter name="filter_suspended" string="Suspended" domain="[('state','=','suspended')]"/>
+				<filter name="filter_closed" string="Closed" domain="[('state','=','closed')]"/>
 				<separator/>
 				<filter name="active" string="Archived" domain="[('active','=',False)]"/>
 				<!-- group_by -->
@@ -97,7 +94,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 				<field name="donationbox_theme_id"/>
 				<field name="location_id"/>
 				<field name="location_owner_id"/>
-				<field name="activity_state"/>
+				<field name="state"/>
 			</tree>
 		</field>
 	</record>
