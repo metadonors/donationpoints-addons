@@ -10,6 +10,11 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 		<field name="arch" type="xml">
 			<form>
 				<header>
+					<button 
+						class="oe_highlight"
+						name="action_create_visit" 
+						type="object" 
+						string="Register a Visit"/>
 					<field name="state" widget="statusbar" statusbar_visible="active,suspended,closed"/>
 				</header>
 				<sheet>
@@ -24,11 +29,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 							<div class="o_stat_info">
 								<field class="o_stat_value" name="visits_count"/>
 								<span class="o_stat_text">Visit</span>
-							</div>
-						</button>
-						<button class="oe_stat_button" icon="fa-eye" name="action_create_visit" type="object">
-							<div class="o_stat_info">
-								<span class="o_stat_text">Create a Visit</span>
 							</div>
 						</button>
 						<button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
@@ -52,6 +52,12 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 					<group>
 						<field name="note"/>
 					</group>
+
+					<notebook>
+						<page string="History">
+							<field name="visit_ids"/>
+						</page>
+					</notebook>
 				</sheet>
 				<div class="oe_chatter">
 					<field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
@@ -95,6 +101,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 				<field name="donationbox_theme_id"/>
 				<field name="location_id"/>
 				<field name="location_owner_id"/>
+				<field name="donation_amount"/>
 				<field name="state"/>
 			</tree>
 		</field>

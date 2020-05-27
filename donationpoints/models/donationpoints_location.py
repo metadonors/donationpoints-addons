@@ -29,8 +29,7 @@ class DonationpointsLocation(models.Model):
 
     country_state_id = fields.Many2one(
         "res.country.state", 
-        string=_("Province"), 
-        required=True)
+        string=_("Province"))
 
     country_id = fields.Many2one(
         "res.country", 
