@@ -94,11 +94,20 @@
 			</pivot>
 		</field>
 	</record>
-
+    <record id="donationpoints_visit_graph_view" model="ir.ui.view">
+	<field name="name">donationpoints.visit.graph (in donationpoints)</field>
+	<field name="model">donationpoints.visit</field>
+	<field name="arch" type="xml">
+	    <graph string="Visit">
+		<field name="code"/>
+		<field name="amount"/>
+	    </graph>
+	</field>
+    </record>
 	<record model="ir.actions.act_window" id="donationpoints_visit_act_window">
 		<field name="name">Donationpoints Visit</field>
 		<field name="res_model">donationpoints.visit</field>
-		<field name="view_mode">tree,form,pivot</field>
+		<field name="view_mode">tree,form,pivot,graph</field>
 		<field name="domain">[]</field>
 		<field name="context">{}</field>
 	</record>
