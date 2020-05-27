@@ -10,7 +10,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 		<field name="arch" type="xml">
 			<form>
 				<header>
-					<field name="state" widget="statusbar" statusbar_visible="active,suspended,closed"/>
+					<field name="state" widget="statusbar" clickable="1"/>
 				</header>
 				<sheet>
 					<div class="oe_button_box" name="button_box">
