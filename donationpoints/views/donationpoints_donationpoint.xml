@@ -11,7 +11,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 			<form>
 				<header>
 					<button class="oe_highlight" name="action_create_visit" type="object" string="Register a Visit"/>
-					<field name="state" widget="statusbar" statusbar_visible="active,suspended,closed"/>
+					<field name="state" widget="statusbar" statusbar_visible="active,suspended,closed" clickable="1"/>
 				</header>
 				<sheet>
 					<div class="oe_button_box" name="button_box">

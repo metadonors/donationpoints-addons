@@ -15,7 +15,7 @@ class DonationpointsVisit(models.Model):
     _rec_name = "code"
     _order = "visit_date DESC"
 
-    name = fields.Char(string=_("Code"), readonly=True)
+    code = fields.Char(string=_("Code"), readonly=True)
     active = fields.Boolean(string=_("Active"), default=True)
     visit_date = fields.Date(string=_("Visit Date"), required=True)
     visit_type_id = fields.Many2one("donationpoints.visit.type", string=_("Type"))

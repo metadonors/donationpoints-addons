@@ -61,6 +61,10 @@ class Donationpoint(models.Model):
         string=_("Visit Count"), compute="_compute_visit_count"
     )
 
+    visit_ids = fields.One2many(
+        "donationpoints.visit", "donationpoint_id", string=_("Vists")
+    )
+
     def _compute_visit_count(self):
         for record in self:
             total_visits = self.env["donationpoints.visit"].search(

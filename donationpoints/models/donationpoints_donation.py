@@ -25,7 +25,7 @@ class DonationpointsDonation(models.Model):
     )
     visit_id = fields.Many2one("donationpoints.visit", string=_("Visit"))
     visit_id_code = fields.Char(
-        related="visit_id.name", string=_("Visit Code"), readonly=True
+        related="visit_id.code", string=_("Visit Code"), readonly=True
     )
     location_id = fields.Many2one(
         "donationpoints.location", string=_("Location"), required=True
