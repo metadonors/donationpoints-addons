@@ -3,19 +3,20 @@
 <odoo>
     <record model="ir.ui.menu" id="donationpoints_main_menu">
         <field name="name">Donationpoints</field>
+        <field name="web_icon">donationpoints,static/description/icon.png</field>
         <field name="action" ref="donationpoints_donationpoint_act_window"/>
         <field name="sequence" eval="30"/>
-    </record>
-    <record model="ir.ui.menu" id="donationpoints_donationpoint_menu">
-        <field name="name">Donation Box</field>
-        <field name="parent_id" ref="donationpoints_main_menu"/>
-        <field name="action" ref="donationpoints_donationbox_act_window"/>
-        <field name="sequence" eval="10"/>
     </record>
     <record model="ir.ui.menu" id="donationpoints_donationpoint">
         <field name="name">Donation Point</field>
         <field name="parent_id" ref="donationpoints_main_menu"/>
         <field name="action" ref="donationpoints_donationpoint_act_window"/>
+        <field name="sequence" eval="10"/>
+    </record>
+    <record model="ir.ui.menu" id="donationpoints_donationpoint_menu">
+        <field name="name">Donation Box</field>
+        <field name="parent_id" ref="donationpoints_main_menu"/>
+        <field name="action" ref="donationpoints_donationbox_act_window"/>
         <field name="sequence" eval="20"/>
     </record>
     <record model="ir.ui.menu" id="donationpoints_location">

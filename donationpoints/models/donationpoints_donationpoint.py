@@ -62,19 +62,21 @@ class Donationpoint(models.Model):
     )
 
     def _compute_visit_count(self):
-        total_visits = self.env["donationpoints.visit"].search(
-            [("donationpoint_id", "=", self.id)]
-        )
-        self.visits_count = len(total_visits)
+        for record in self:
+            total_visits = self.env["donationpoints.visit"].search(
+                [("donationpoint_id", "=", record.id)]
+            )
+            record.visits_count = len(total_visits)
 
     def _compute_total_donation(self):
-        total_donations = self.env["donationpoints.donation"].search(
-            [("donationpoint_id", "=", self.id)]
-        )
-        total_amount = 0
-        for donation_id in total_donations:
-            total_amount += donation_id.amount
-        self.donation_amount = total_amount
+        for record in self:
+            total_donations = self.env["donationpoints.donation"].search(
+                [("donationpoint_id", "=", record.id)]
+            )
+            total_amount = 0
+            for donation_id in total_donations:
+                total_amount += donation_id.amount
+            record.donation_amount = total_amount
 
     @api.multi
     def action_donation(self):
@@ -134,8 +136,7 @@ class Donationpoint(models.Model):
             "res_model": "donationpoints.visit",
             "view_mode": "form",
             "res_id": False,  # used for Form View and pass fields value
-            # "domain": [("donationpoint_id.donationbox_id", "=", self.id)],
-            "target": "new",
+            "target": "current",
             "context": {
                 "default_donationpoint_id": self.id,
                 "default_visit_date": date.today(),

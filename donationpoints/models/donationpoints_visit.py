@@ -12,6 +12,8 @@ class DonationpointsVisit(models.Model):
     _name = "donationpoints.visit"
     _description = "Donationpoints Visit"
     _inherit = ["mail.thread", "mail.activity.mixin"]
+    _rec_name = "code"
+    _order = "visit_date DESC"
 
     name = fields.Char(string=_("Code"), readonly=True)
     active = fields.Boolean(string=_("Active"), default=True)
@@ -79,10 +81,11 @@ class DonationpointsVisit(models.Model):
 
     @api.model
     def create(self, vals):
-        if vals.get("name", "VIS") == "VIS":
-            vals["name"] = (
-                self.env["ir.sequence"].next_by_code("donationpoints.visit") or "VIS"
+        if not vals.get("code"):
+            vals["code"] = self.env["ir.sequence"].next_by_code(
+                "donationpoints.visit.sequence"
             )
+
         ret = super(DonationpointsVisit, self).create(vals)
 
         if ret.condition_id:
