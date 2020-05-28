@@ -25,7 +25,7 @@ class DonationpointsDonation(models.Model):
     )
     visit_id = fields.Many2one("donationpoints.visit", string=_("Visit"))
     visit_id_code = fields.Char(
-        related="visit_id.code", string=_("Visit Code"), readonly=True
+        related="visit_id.name", string=_("Visit Code"), readonly=True
     )
     location_id = fields.Many2one(
         "donationpoints.location", string=_("Location"), required=True
@@ -34,9 +34,7 @@ class DonationpointsDonation(models.Model):
     date = fields.Date(
         string=_("Donation Date"), required=True
     )  # Data di elaborazione della donazione
-    amount = fields.Monetary(
-        currency_field="currency_id", string=_("Amount"), required=True
-    )
+    amount = fields.Float(string=_("Amount"), required=True)
     donation_type = fields.Selection(
         [("elettronic", _("Elettronic")), ("cash", "Cash")],
         default="cash",

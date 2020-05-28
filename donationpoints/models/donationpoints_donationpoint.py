@@ -53,13 +53,9 @@ class Donationpoint(models.Model):
 
     note = fields.Text(string=_("Note"))
 
-    donation_amount = fields.Monetary(
-        currency_field="currency_id",
-        string=_("Total donation"),
-        compute="_compute_total_donation",
+    donation_amount = fields.Float(
+        string=_("Total donation"), compute="_compute_total_donation",
     )
-
-    currency_id = fields.Many2one("res.currency", "Currency", readonly=True)
 
     visits_count = fields.Integer(
         string=_("Visit Count"), compute="_compute_visit_count"
@@ -130,15 +126,6 @@ class Donationpoint(models.Model):
             [("id", "=", vals["donationbox_id"])]
         ).write({"location_id": vals["location_id"]})
         return ret
-
-    def set_activity_state_active(self):
-        self.write({"activity_state": "active"})
-
-    def set_activity_state_suspended(self):
-        self.write({"activity_state": "suspended"})
-
-    def set_activity_state_closed(self):
-        self.write({"activity_state": "closed"})
 
     def action_create_visit(self):
         return {

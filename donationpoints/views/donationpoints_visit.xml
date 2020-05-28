@@ -15,9 +15,9 @@
 						</button>
 					</div>
 					<div class='oe_title'>
-						<label for="code"/>
+						<label for="name"/>
 						<h1>
-							<field name="code"/>
+							<field name="name"/>
 						</h1>
 					</div>
 					<group>
@@ -58,7 +58,7 @@
 				<filter name="groupby_condition" string="Donationbox condition" context="{'group_by':'condition_id'}"/>
 
 				<!-- search fields -->
-				<field name="code"/>
+				<field name="name"/>
 				<field name="user_id" string="User"/>
 				<field name="donationpoint_id" string="Donationpoint"/>
 				<field name="location_id" string="Location"/>
@@ -74,7 +74,7 @@
 		<field name="model">donationpoints.visit</field>
 		<field name="arch" type="xml">
 			<tree>
-				<field name="code"/>
+				<field name="name"/>
 				<field name="location_id"/>
 				<field name="visit_date"/>
 				<field name="visit_type_id"/>
@@ -94,16 +94,16 @@
 			</pivot>
 		</field>
 	</record>
-    <record id="donationpoints_visit_graph_view" model="ir.ui.view">
-	<field name="name">donationpoints.visit.graph (in donationpoints)</field>
-	<field name="model">donationpoints.visit</field>
-	<field name="arch" type="xml">
-	    <graph string="Visit">
-		<field name="code"/>
-		<field name="amount"/>
-	    </graph>
-	</field>
-    </record>
+	<record id="donationpoints_visit_graph_view" model="ir.ui.view">
+		<field name="name">donationpoints.visit.graph (in donationpoints)</field>
+		<field name="model">donationpoints.visit</field>
+		<field name="arch" type="xml">
+			<graph string="Visit">
+				<field name="name"/>
+				<field name="amount"/>
+			</graph>
+		</field>
+	</record>
 	<record model="ir.actions.act_window" id="donationpoints_visit_act_window">
 		<field name="name">Donationpoints Visit</field>
 		<field name="res_model">donationpoints.visit</field>

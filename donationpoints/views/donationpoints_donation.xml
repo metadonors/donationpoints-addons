@@ -2,173 +2,174 @@
 <!-- Copyright 2020 Metadonors Srl -->
 
 <odoo>
-    <record model="ir.ui.view" id="donationpoints_donation_form_view">
-	<field name="name">donationpoints.donation.form (in donationpoints)</field>
-	<field name="model">donationpoints.donation</field>
-	<field name="arch" type="xml">
-	    <form>
-		<sheet>
-		    <div class="oe_button_box" name="button_box">
-			<button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
-			    <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
-			</button>
-		    </div>
-		    <div class='oe_title'>
-			<label for="code"/>
-			<h1>
-			    <field name="code"/>
-			</h1>
-		    </div>
-		    <group>
-			<group>
-			    <field name="donationpoint_id"/>
-			    <field name="location_id"/>
-			    <field name="donation_type"/>
-			    <field name="visit_id_code"/>
-			    <field name="date"/>
-			    <field name="amount"/>
-			</group>
-		    </group>
-		    <group attrs="{'invisible':[('donation_type','=','cash')]}">
-			<group>
-			    <field name="cardease_reference"/>
-			    <field name="distributor"/>
-			    <field name="client"/>
-			    <field name="terminal_group"/>
-			    <field name="terminal_id"/>
-			    <field name="terminal_code"/>
-			    <field name="acquirer"/>
-			    <field name="merchant"/>
-			    <field name="merchant_number"/>
-			    <field name="merchant_number_alternative"/>
-			    <field name="acquirer_tid"/>
-				<!--field name="user_id"/-->
-			    <field name="cardholder"/>
-			    <field name="email_address"/>
-			    <field name="card_reference"/>
-			    <field name="batch_reference"/>
-			    <field name="creator_email_reference"/>
-			    <field name="card_number_start"/>
-			    <field name="card_expiring_date"/>
-			    <field name="start_date"/>
-			    <field name="issue_number"/>
-			    <field name="card_scheme"/>
-			    <field name="card_type"/>
-			    <field name="domestic_international"/>
-			    <field name="entry_type"/>
-			    <field name="type"/>
-			    <field name="auth_code"/>
-			    <field name="avs_zip_result"/>
-			    <field name="csc_result"/>
-			    <field name="secure_3d_enrolled"/>
-			    <field name="secure_3d_status"/>
-			    <field name="secure_3d_eci"/>
-			    <field name="secure_3d_xid"/>
-			    <field name="fraud_profiler"/>
-			    <field name="fraud_state"/>
-			    <field name="fraud_score"/>
-			    <field name="result"/>
-			    <field name="state"/>
-			    <field name="settlement_state"/>
-			    <field name="settlement_datetime"/>
-			    <field name="currency"/>
-			    <field name="amount_authorised"/>
-			    <field name="latitude"/>
-			</group>
-			<group>
-			    <field name="longitude"/>
-			    <field name="accuracy"/>
-			    <field name="amount_approved_online"/>
-			    <field name="amount_currency"/>
-			    <field name="amount_requested_authorisation"/>
-			    <field name="amount_final"/>
-			    <field name="cashback_authorised"/>
-			    <field name="cashback_requested_authorisation"/>
-			    <field name="tip_authorised"/>
-			    <field name="tip_requested_at_authorization"/>
-			    <field name="transanction_fee"/>
-			    <field name="transanction_merchant_name"/>
-			    <field name="transanction_merchant_address"/>
-			    <field name="user_data"/>
-			    <field name="acquirer_response_code"/>
-			    <field name="acquirer_response_code_address"/>
-			    <field name="amount_currency_dcc"/>
-			    <field name="amount_approved_online_dcc"/>
-			    <field name="amount_requested_at_authorization_dcc"/>
-			    <field name="amount_final_dcc"/>
-			    <field name="amount_type_dcc"/>
-			    <field name="cashback_authorised_dcc"/>
-			    <field name="cashback_requested_at_authorization_dcc"/>
-			    <field name="tip_authorised_dcc"/>
-			    <field name="tip_requested_authorization_dcc"/>
-			    <field name="transaction_fee_dcc"/>
-			</group>
-		    </group>
-		</sheet>
-		<div class="oe_chatter">
-		    <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
-		    <field name="message_ids" widget="mail_thread"/>
-		</div>
-	    </form>
-	</field>
-    </record>
+	<record model="ir.ui.view" id="donationpoints_donation_form_view">
+		<field name="name">donationpoints.donation.form (in donationpoints)</field>
+		<field name="model">donationpoints.donation</field>
+		<field name="arch" type="xml">
+			<form>
+				<sheet>
+					<div class="oe_button_box" name="button_box">
+						<button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+							<field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+						</button>
+					</div>
+					<div class='oe_title'>
+						<label for="code"/>
+						<h1>
+							<field name="code"/>
+						</h1>
+					</div>
+					<group>
+						<group>
+							<field name="donationpoint_id"/>
+							<field name="location_id"/>
+							<field name="donation_type"/>
+							<field name="visit_id_code"/>
+							<field name="visit_id"/>
+							<field name="date"/>
+							<field name="amount"/>
+						</group>
+					</group>
+					<group attrs="{'invisible':[('donation_type','=','cash')]}">
+						<group>
+							<field name="cardease_reference"/>
+							<field name="distributor"/>
+							<field name="client"/>
+							<field name="terminal_group"/>
+							<field name="terminal_id"/>
+							<field name="terminal_code"/>
+							<field name="acquirer"/>
+							<field name="merchant"/>
+							<field name="merchant_number"/>
+							<field name="merchant_number_alternative"/>
+							<field name="acquirer_tid"/>
+							<!--field name="user_id"/-->
+							<field name="cardholder"/>
+							<field name="email_address"/>
+							<field name="card_reference"/>
+							<field name="batch_reference"/>
+							<field name="creator_email_reference"/>
+							<field name="card_number_start"/>
+							<field name="card_expiring_date"/>
+							<field name="start_date"/>
+							<field name="issue_number"/>
+							<field name="card_scheme"/>
+							<field name="card_type"/>
+							<field name="domestic_international"/>
+							<field name="entry_type"/>
+							<field name="type"/>
+							<field name="auth_code"/>
+							<field name="avs_zip_result"/>
+							<field name="csc_result"/>
+							<field name="secure_3d_enrolled"/>
+							<field name="secure_3d_status"/>
+							<field name="secure_3d_eci"/>
+							<field name="secure_3d_xid"/>
+							<field name="fraud_profiler"/>
+							<field name="fraud_state"/>
+							<field name="fraud_score"/>
+							<field name="result"/>
+							<field name="state"/>
+							<field name="settlement_state"/>
+							<field name="settlement_datetime"/>
+							<field name="currency"/>
+							<field name="amount_authorised"/>
+							<field name="latitude"/>
+						</group>
+						<group>
+							<field name="longitude"/>
+							<field name="accuracy"/>
+							<field name="amount_approved_online"/>
+							<field name="amount_currency"/>
+							<field name="amount_requested_authorisation"/>
+							<field name="amount_final"/>
+							<field name="cashback_authorised"/>
+							<field name="cashback_requested_authorisation"/>
+							<field name="tip_authorised"/>
+							<field name="tip_requested_at_authorization"/>
+							<field name="transanction_fee"/>
+							<field name="transanction_merchant_name"/>
+							<field name="transanction_merchant_address"/>
+							<field name="user_data"/>
+							<field name="acquirer_response_code"/>
+							<field name="acquirer_response_code_address"/>
+							<field name="amount_currency_dcc"/>
+							<field name="amount_approved_online_dcc"/>
+							<field name="amount_requested_at_authorization_dcc"/>
+							<field name="amount_final_dcc"/>
+							<field name="amount_type_dcc"/>
+							<field name="cashback_authorised_dcc"/>
+							<field name="cashback_requested_at_authorization_dcc"/>
+							<field name="tip_authorised_dcc"/>
+							<field name="tip_requested_authorization_dcc"/>
+							<field name="transaction_fee_dcc"/>
+						</group>
+					</group>
+				</sheet>
+				<div class="oe_chatter">
+					<field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+					<field name="message_ids" widget="mail_thread"/>
+				</div>
+			</form>
+		</field>
+	</record>
 
-    <record model="ir.ui.view" id="donationpoints_donation_search_view">
-	<field name="name">donationpoints.donation.search (in donationpoints)</field>
-	<field name="model">donationpoints.donation</field>
-	<field name="arch" type="xml">
-	    <search>
-		<filter name="active" string="Archived" domain="[('active','=',False)]"/>
-		<field name="code"/>
-		<field name="donationpoint_id"/>
-		<field name="location_id"/>
-		<field name="donation_type"/>
-		<field name="date"/>
-		<field name="amount"/>
-	    </search>
-	</field>
-    </record>
+	<record model="ir.ui.view" id="donationpoints_donation_search_view">
+		<field name="name">donationpoints.donation.search (in donationpoints)</field>
+		<field name="model">donationpoints.donation</field>
+		<field name="arch" type="xml">
+			<search>
+				<filter name="active" string="Archived" domain="[('active','=',False)]"/>
+				<field name="code"/>
+				<field name="donationpoint_id"/>
+				<field name="location_id"/>
+				<field name="donation_type"/>
+				<field name="date"/>
+				<field name="amount"/>
+			</search>
+		</field>
+	</record>
 
-    <record model="ir.ui.view" id="donationpoints_donation_tree_view">
-	<field name="name">donationpoints.donation.tree (in donationpoints)</field>
-	<field name="model">donationpoints.donation</field>
-	<field name="arch" type="xml">
-	    <tree>
-		<field name="code"/>
-		<field name="donationpoint_id"/>
-		<field name="location_id"/>
-		<field name="date"/>
-		<field name="amount"/>
-	    </tree>
-	</field>
-    </record>
+	<record model="ir.ui.view" id="donationpoints_donation_tree_view">
+		<field name="name">donationpoints.donation.tree (in donationpoints)</field>
+		<field name="model">donationpoints.donation</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="code"/>
+				<field name="donationpoint_id"/>
+				<field name="location_id"/>
+				<field name="date"/>
+				<field name="amount"/>
+			</tree>
+		</field>
+	</record>
 
-    <record model="ir.ui.view" id="donationpoints_donation_pivot_view">
-	<field name="name">donationpoints.donation.pivot (in donationpoints)</field>
-	<field name="model">donationpoints.donation</field>
-	<field name="arch" type="xml">
-	    <pivot>
-	    </pivot>
-	</field>
-    </record>
+	<record model="ir.ui.view" id="donationpoints_donation_pivot_view">
+		<field name="name">donationpoints.donation.pivot (in donationpoints)</field>
+		<field name="model">donationpoints.donation</field>
+		<field name="arch" type="xml">
+			<pivot>
+			</pivot>
+		</field>
+	</record>
 
-    <record id="donationpoints_donation_graph_view" model="ir.ui.view">
-	<field name="name">donationpoints.donation.graph (in donationpoints)</field>
-	<field name="model">donationpoints.donation</field>
-	<field name="arch" type="xml">
-	    <graph string="Donation">
-		<field name="code"/>
-		<field name="amount"/>
-	    </graph>
-	</field>
-    </record>
+	<record id="donationpoints_donation_graph_view" model="ir.ui.view">
+		<field name="name">donationpoints.donation.graph (in donationpoints)</field>
+		<field name="model">donationpoints.donation</field>
+		<field name="arch" type="xml">
+			<graph string="Donation">
+				<field name="code"/>
+				<field name="amount"/>
+			</graph>
+		</field>
+	</record>
 
-    <record model="ir.actions.act_window" id="donationpoints_donation_act_window">
-	<field name="name">Donation</field>
-	<field name="res_model">donationpoints.donation</field>
-	<field name="view_mode">tree,form,pivot,graph</field>
-	<field name="domain">[]</field>
-	<field name="context">{}</field>
-    </record>
+	<record model="ir.actions.act_window" id="donationpoints_donation_act_window">
+		<field name="name">Donation</field>
+		<field name="res_model">donationpoints.donation</field>
+		<field name="view_mode">tree,form,pivot,graph</field>
+		<field name="domain">[]</field>
+		<field name="context">{}</field>
+	</record>
 
 </odoo>

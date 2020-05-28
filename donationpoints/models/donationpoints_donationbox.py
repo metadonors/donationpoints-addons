@@ -14,13 +14,9 @@ class DonationpointsDonationbox(models.Model):
 
     active = fields.Boolean(string=_("Active"), default=True)
 
-    donation_amount = fields.Monetary(
-        currency_field="currency_id",
-        string=_("Total donation"),
-        compute="_compute_total_donation",
+    donation_amount = fields.Float(
+        string=_("Total donation"), compute="_compute_total_donation",
     )
-
-    currency_id = fields.Many2one("res.currency", "Currency", readonly=True)
 
     description = fields.Text(string=_("Description"))
 

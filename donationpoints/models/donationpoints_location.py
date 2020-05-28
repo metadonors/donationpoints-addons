@@ -60,13 +60,9 @@ class DonationpointsLocation(models.Model):
     )
     note = fields.Text(string=_("Note"))
 
-    donation_amount = fields.Monetary(
-        currency_field="currency_id",
-        string=_("Total donation"),
-        compute="_compute_total_donation",
+    donation_amount = fields.Float(
+        string=_("Total donation"), compute="_compute_total_donation",
     )
-
-    currency_id = fields.Many2one("res.currency", "Currency", readonly=True)
 
     visits_count = fields.Integer(
         string=_("Visit Count"), compute="_compute_visit_count"

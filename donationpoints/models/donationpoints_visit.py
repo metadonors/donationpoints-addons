@@ -13,7 +13,7 @@ class DonationpointsVisit(models.Model):
     _description = "Donationpoints Visit"
     _inherit = ["mail.thread", "mail.activity.mixin"]
 
-    code = fields.Char(string=_("Code"), readonly=True)
+    name = fields.Char(string=_("Code"), readonly=True)
     active = fields.Boolean(string=_("Active"), default=True)
     visit_date = fields.Date(string=_("Visit Date"), required=True)
     visit_type_id = fields.Many2one("donationpoints.visit.type", string=_("Type"))
@@ -34,10 +34,8 @@ class DonationpointsVisit(models.Model):
     location_id = fields.Many2one(
         "donationpoints.location", related="donationpoint_id.location_id",
     )
-    amount = fields.Monetary(
-        currency_field="currency_id", string=_("Amount"), store=True
-    )
-    currency_id = fields.Many2one("res.currency", "Currency", readonly=True)
+    amount = fields.Float(string=_("Amount"), store=True)
+
     note = fields.Text(string=_("Note"))
 
     @api.onchange("donationpoint_id")
@@ -81,8 +79,8 @@ class DonationpointsVisit(models.Model):
 
     @api.model
     def create(self, vals):
-        if vals.get("code", "VIS") == "VIS":
-            vals["code"] = (
+        if vals.get("name", "VIS") == "VIS":
+            vals["name"] = (
                 self.env["ir.sequence"].next_by_code("donationpoints.visit") or "VIS"
             )
         ret = super(DonationpointsVisit, self).create(vals)

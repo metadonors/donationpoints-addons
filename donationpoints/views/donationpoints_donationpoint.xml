@@ -10,7 +10,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 		<field name="arch" type="xml">
 			<form>
 				<header>
-					<field name="state" widget="statusbar" statusbar_visible="active,suspended,closed"/>
+					<field name="state" widget="statusbar" clickable="1"/>
 				</header>
 				<sheet>
 					<div class="oe_button_box" name="button_box">
@@ -98,14 +98,14 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 			</tree>
 		</field>
 	</record>
-    <record model="ir.ui.view" id="donationpoints_donationpoint_pivot_view">
-	<field name="name">donationpoints.donationpoint.pivot (in donationpoints)</field>
-	<field name="model">donationpoints.donationpoint</field>
-	<field name="arch" type="xml">
-	    <pivot>
-	    </pivot>
-	</field>
-    </record>
+	<record model="ir.ui.view" id="donationpoints_donationpoint_pivot_view">
+		<field name="name">donationpoints.donationpoint.pivot (in donationpoints)</field>
+		<field name="model">donationpoints.donationpoint</field>
+		<field name="arch" type="xml">
+			<pivot>
+			</pivot>
+		</field>
+	</record>
 
 
 	<record model="ir.actions.act_window" id="donationpoints_donationpoint_act_window">
