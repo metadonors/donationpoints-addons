@@ -19,7 +19,12 @@ class DonationpointsVisit(models.Model):
     active = fields.Boolean(string=_("Active"), default=True)
     visit_date = fields.Date(string=_("Visit Date"), required=True)
     visit_type_id = fields.Many2one("donationpoints.visit.type", string=_("Type"))
-    user_id = fields.Many2one("res.users", string=_("User"), required=True)
+    user_id = fields.Many2one(
+        "res.users",
+        string=_("User"),
+        required=True,
+        default=lambda self: self.env.user,
+    )
     donationpoint_id = fields.Many2one(
         "donationpoints.donationpoint", string=_("Donation Point"), required=True
     )
@@ -78,6 +83,15 @@ class DonationpointsVisit(models.Model):
                     }
                 )
         return ret
+
+    @api.one
+    def _get_current_login_user(self):
+        user_obj = self.env["res.users"].search([])
+        for user_login in user_obj:
+            current_login = self.env.user
+            if user_login == current_login:
+                self.processing_staff = current_login
+            return
 
     @api.model
     def create(self, vals):

@@ -9,6 +9,8 @@ class DonationpointsDonation(models.Model):
     _name = "donationpoints.donation"
     _description = "Donationpoints Donation"
     _inherit = ["mail.thread", "mail.activity.mixin"]
+    _rec_name = "code"
+    _order = "date DESC"
 
     code = fields.Char(string=_("Code"), readonly=True)
 
@@ -136,9 +138,9 @@ class DonationpointsDonation(models.Model):
 
     @api.model
     def create(self, vals):
-        if vals.get("code", "DON") == "DON":
-            vals["code"] = (
-                self.env["ir.sequence"].next_by_code("donationpoints.donation") or "DON"
+        if not vals.get("code"):
+            vals["code"] = self.env["ir.sequence"].next_by_code(
+                "donationpoints.donation.sequence"
             )
             record = super(DonationpointsDonation, self).create(vals)
             return record
