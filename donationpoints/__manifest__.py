@@ -12,6 +12,7 @@
     "application": True,
     "depends": ["base", "mail"],
     "data": [
+        "security/donationpoints_security.xml",
         "wizards/donation_import.xml",
         "security/donationpoints_donationbox_condition.xml",
         "security/donationpoints_donationbox.xml",

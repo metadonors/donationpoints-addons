@@ -4,15 +4,26 @@
 
 <odoo>
 
-    <record model="ir.model.access" id="donationpoints_donationbox_condition_access_name">        <!-- TODO acl id -->
-        <field name="name">donationpoints.donationbox.condition access name</field>        <!-- TODO acl name -->
+    <record model="ir.model.access" id="donationpoints_donationbox_condition_user_access_name">        <!-- TODO acl id -->
+        <field name="name">donationpoints.donationbox.condition user access name</field>        <!-- TODO acl name -->
         <field name="model_id" ref="model_donationpoints_donationbox_condition"/>
         <!-- TODO review and adapt -->
-        <field name="group_id" ref="base.group_user"/>
+        <field name="group_id" ref="donationpoints_group_user"/>
+        <field name="perm_read" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    <record model="ir.model.access" id="donationpoints_donationbox_condition_manager_access_name">        <!-- TODO acl id -->
+        <field name="name">donationpoints.donationbox.condition manager access name</field>        <!-- TODO acl name -->
+        <field name="model_id" ref="model_donationpoints_donationbox_condition"/>
+        <!-- TODO review and adapt -->
+        <field name="group_id" ref="donationpoints_group_manager"/>
         <field name="perm_read" eval="1"/>
         <field name="perm_create" eval="1"/>
         <field name="perm_write" eval="1"/>
         <field name="perm_unlink" eval="1"/>
     </record>
+
 
 </odoo>
