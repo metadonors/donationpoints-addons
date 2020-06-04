@@ -30,8 +30,6 @@ class DonationpointsDonationbox(models.Model):
         "donationpoints.location", string=_("Location"), readonly=True
     )
 
-    theme_id = fields.Many2one("donationpoints.donationbox.theme", string=_("Theme"))
-
     history_ids = fields.One2many(
         "donationpoints.visit", "donationbox_id", string=_("Visits"), readonly=True
     )
