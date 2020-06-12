@@ -55,14 +55,14 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 			<field name="country_id"/>
 		    </group>
 		    <notebook>
-			<page string="Contact">
+			<page string="Referent">
 			    <group>
-				<field name="contact_partner_id"/>
-				<field name="contact_partner_phone_id"/>
+				<field name="referent_partner_id"/>
+				<field name="referent_partner_phone_id"/>
 			    </group>
 			    <group>
-				<field name="contact_partner_mobile_id"/>
-				<field name="contact_partner_email_id"/>
+				<field name="referent_partner_mobile_id"/>
+				<field name="referent_partner_email_id"/>
 			    </group>
 			</page>
 			<page string="Note">
