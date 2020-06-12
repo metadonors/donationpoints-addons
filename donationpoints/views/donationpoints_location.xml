@@ -50,7 +50,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 		    </group>
 		    <group>
 			<field name="address1"/>
-			<field name="address2"/>
 			<field name="city"/>
 			<field name="country_state_id"/>
 			<field name="country_id"/>
