@@ -3,7 +3,7 @@
 
 from odoo import api, fields, models, _
 from odoo.exceptions import ValidationError
-from datetime import date
+from datetime import datetime
 import logging
 
 log = logging.getLogger(__name__)
@@ -15,7 +15,7 @@ class Donationpoint(models.Model):
     _description = "Donationpoints Donationpoint"
     _inherit = ["mail.thread", "mail.activity.mixin"]
 
-    name = fields.Char(string=_("Name"))
+    name = fields.Char(string=_("Name"), readonly=True)
 
     active = fields.Boolean(string=_("Active"), default=True)
 
@@ -51,6 +51,8 @@ class Donationpoint(models.Model):
         default="active",
     )
 
+    start_date = fields.Date(string_="Date start")
+    end_date = fields.Date(string_="Date end")
     note = fields.Text(string=_("Note"))
 
     donation_amount = fields.Float(
@@ -64,6 +66,22 @@ class Donationpoint(models.Model):
     visit_ids = fields.One2many(
         "donationpoints.visit", "donationpoint_id", string=_("Vists")
     )
+
+    @api.onchange("location_id")
+    def create_donationpoint_name(self):
+        self.name = "{} - {} - {}".format(
+            self.location_id.name,
+            self.location_id.location_type_id.name,
+            self.location_id.owner_partner_id.name,
+        )
+
+    @api.onchange("state")
+    def _calculate_date(self):
+        if self.state == "active":
+            self.start_date = datetime.now().date()
+            self.end_date = False
+        elif self.state == "closed":
+            self.end_date = datetime.now().date()
 
     def _compute_visit_count(self):
         for record in self:
