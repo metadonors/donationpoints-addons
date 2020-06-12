@@ -34,22 +34,24 @@ class DonationpointsLocation(models.Model):
     owner_partner_mobile_id = fields.Char(
         string=_("Owner Mobile"), related="owner_partner_id.mobile"
     )
-    contact_partner_id = fields.Many2one(
-        "res.partner", string=_("Contact")
+    referent_partner_id = fields.Many2one(
+        "res.partner", string=_("Referent")
     )  # Contatto per il negozio
-    contact_partner_email_id = fields.Char(
-        string=_("Contact Email"), related="contact_partner_id.email"
+    referent_partner_email_id = fields.Char(
+        string=_("Referent Email"), related="referent_partner_id.email"
     )
-    contact_partner_phone_id = fields.Char(
-        string=_("Contact Phone"), related="contact_partner_id.phone"
+    referent_partner_phone_id = fields.Char(
+        string=_("Referent Phone"), related="referent_partner_id.phone"
     )
-    contact_partner_mobile_id = fields.Char(
-        string=_("Contact Mobile"), related="contact_partner_id.mobile"
+    referent_partner_mobile_id = fields.Char(
+        string=_("Referent Mobile"), related="referent_partner_id.mobile"
     )
     note = fields.Text(string=_("Note"))
+
     donation_amount = fields.Float(
         string=_("Total donation"), compute="_compute_total_donation",
     )
+
     visits_count = fields.Integer(
         string=_("Visit Count"), compute="_compute_visit_count"
     )
