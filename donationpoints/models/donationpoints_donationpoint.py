@@ -14,8 +14,11 @@ class Donationpoint(models.Model):
     _name = "donationpoints.donationpoint"
     _description = "Donationpoints Donationpoint"
     _inherit = ["mail.thread", "mail.activity.mixin"]
+    _rec_name = "code"
 
-    name = fields.Char(string=_("Name"), readonly=True)
+    name = fields.Char(string=_("Name"), store=True, readonly=True)
+    code = fields.Char(string=_("Code"))
+    date_deadline = fields.Date(default=lambda s: fields.Date.context_today(s))
 
     active = fields.Boolean(string=_("Active"), default=True)
 
@@ -31,7 +34,7 @@ class Donationpoint(models.Model):
     )
 
     donationbox_id = fields.Many2one(
-        "donationpoints.donationbox", string=_("Donationbox"), required=True
+        "donationpoints.donationbox", string=_("Donation Box"), required=True
     )
 
     donationbox_theme_id = fields.Many2one(
@@ -139,6 +142,10 @@ class Donationpoint(models.Model):
 
     @api.model
     def create(self, vals):
+        if not vals.get("code"):
+            vals["code"] = self.env["ir.sequence"].next_by_code(
+                "donationpoints.donationpoint.sequence"
+            )
         if vals.get("donationbox_id", False) and self.env[
             "donationpoints.donationpoint"
         ].search([("donationbox_id", "=", vals["donationbox_id"])]):
@@ -161,6 +168,6 @@ class Donationpoint(models.Model):
             "target": "current",
             "context": {
                 "default_donationpoint_id": self.id,
-                "default_visit_date": date.today(),
+                "visit_date":self.date_deadline
             },
         }

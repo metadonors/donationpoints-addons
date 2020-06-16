@@ -2,6 +2,9 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo import api, fields, models, _
+import logging
+
+log = logging.getLogger(__name__)
 
 
 class DonationpointsDonationbox(models.Model):
@@ -10,32 +13,30 @@ class DonationpointsDonationbox(models.Model):
     _description = "Donationpoints Donationbox"
     _inherit = ["mail.thread", "mail.activity.mixin"]
 
-    name = fields.Char(string=_("Name"), required=True)
-
+    name = fields.Char(
+        string=_("Name"),
+        default=lambda self: self.env["ir.sequence"].next_by_code(
+            "donationpoints.donationbox.sequence"
+        ),
+    )
     active = fields.Boolean(string=_("Active"), default=True)
-
     donation_amount = fields.Float(
         string=_("Total donation"), compute="_compute_total_donation",
     )
-
     description = fields.Text(string=_("Description"))
-
-    code = fields.Char(string=_("Serial Code"))
-
+    serial_code = fields.Char(string=_("Serial Code"))
     theme_id = fields.Many2one("donationpoints.donationbox.theme", string=_("Theme"))
-
     type_id = fields.Many2one("donationpoints.donationbox.type", string=_("Type"))
-
     location_id = fields.Many2one(
         "donationpoints.location", string=_("Location"), readonly=True
     )
-
     history_ids = fields.One2many(
         "donationpoints.visit", "donationbox_id", string=_("Visits"), readonly=True
     )
-
     condition_id = fields.Many2one(
-        "donationpoints.donationbox.condition", string=_("Conditions")
+        "donationpoints.donationbox.condition",
+        string=_("Conditions"),
+        default=lambda self: self.env["donationpoints.donationbox.condition"].browse(1),
     )
     note = fields.Text(string=_("Notes"))
 
@@ -48,7 +49,6 @@ class DonationpointsDonationbox(models.Model):
             total_amount += donation_id.amount
         self.donation_amount = total_amount
 
-    # TODO
     @api.multi
     def action_donation(self):
         return {

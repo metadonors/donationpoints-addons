@@ -17,9 +17,6 @@ class DonationpointsLocation(models.Model):
     city = fields.Char(string=_("City"))
     country_state_id = fields.Many2one("res.country.state", string=_("Province"))
     country_id = fields.Many2one("res.country", string=_("Country"))
-    phone = fields.Char(string=_("Phone"))
-    mobile = fields.Char(string=_("Mobile"))
-    email = fields.Char(string=_("Email"))
     location_type_id = fields.Many2one(
         "donationpoints.location.type", string=_("Type"), required=True
     )

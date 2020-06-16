@@ -38,9 +38,11 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 			<group>
 			    <field name="location_type_id"/>
 			    <field name="activation_date"/>
-			    <field name="phone"/>
-			    <field name="mobile"/>
-			    <field name="email"/>
+			    <field name="address1"/>
+			    <field name="city"/>
+			    <field name="country_state_id"/>
+			    <field name="country_id"/>
+
 			</group>
 			<group>
 			    <field name="owner_partner_id"/>
@@ -48,12 +50,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 			    <field name="owner_partner_mobile_id"/>
 			    <field name="owner_partner_email_id"/>
 			</group>
-		    </group>
-		    <group>
-			<field name="address1"/>
-			<field name="city"/>
-			<field name="country_state_id"/>
-			<field name="country_id"/>
 		    </group>
 		    <notebook>
 			<page string="Responsable">
@@ -94,7 +90,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 		<field name="location_type_id" string="Type"/>
 		<field name="city" string="City"/>
 		<field name="country_state_id"/>
-		<field name="email" string="Email"/>
 		<field name="owner_partner_id" string="Owner"/>
 		<field name="owner_partner_email_id" string="Owner email"/>
 		<field name="responsable_partner_id" string="Referent"/>
@@ -111,7 +106,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 		<field name="name"/>
 		<field name="city"/>
 		<field name="address1"/>
-		<field name="email"/>
 		<field name="owner_partner_id"/>
 		<field name="responsable_partner_id"/>
 		<field name="responsable_partner_email_id"/>

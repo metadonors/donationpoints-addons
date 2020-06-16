@@ -16,7 +16,7 @@ class DonationImport(models.TransientModel):
     terminal_group = fields.Char(string=_("Terminal Group"))
     terminal_id = fields.Many2one('donationpoints.donationbox', string=_("Terminal ID"))
     terminal_name= fields.Char(related='terminal_id.name', string=_("Terminal"))
-    terminal_code = fields.Char(related='terminal_id.code', string=_("Machine Reference"))
+    terminal_code = fields.Char(related='terminal_id.name', string=_("Machine Reference"))
     acquirer = fields.Char(string=_("Acquirer"))
     merchant = fields.Char(string=_("Merchant"))
     merchant_number = fields.Char(string=_("Merchant Number"))

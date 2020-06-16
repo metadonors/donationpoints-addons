@@ -19,5 +19,24 @@
             <field name="number_next">1</field>
             <field name="number_increment">1</field>
         </record>
+        <record id="sequence_donationpoint_name" model="ir.sequence">
+            <field name="name">DonationPoint Code</field>
+            <field name="code">donationpoints.donationpoint.sequence</field>
+            <field name="active">TRUE</field>
+	    <field name="prefix">DPOINT/</field>
+            <field name="padding">6</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+         <record id="sequence_donationbox_name" model="ir.sequence">
+            <field name="name">DonationPoint DonationBox</field>
+            <field name="code">donationpoints.donationbox.sequence</field>
+            <field name="active">TRUE</field>
+	    <field name="prefix">DBOX/</field>
+            <field name="padding">6</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+ 
     </data>
 </odoo>

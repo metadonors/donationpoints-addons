@@ -32,7 +32,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 			</h1>
 		    </div>
 		    <group col="2" colspan="2">
-			<field name="code"/>
+			<field name="serial_code"/>
 			<field name="theme_id"/>
 			<field name="type_id"/>
 			<field name="location_id" attrs="{'invisible':[('location_id','=',False)]}"/>
@@ -73,7 +73,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 		<filter name="groupby_condition" string="Condition" context="{'group_by':'condition_id'}"/>
 		<filter name="groupby_location" string="Location" context="{'group_by':'location_id'}"/>
 
-		<field name="code" string="Code"/>
 		<field name="name" string="Name"/>
 		<field name="type_id" string="Type"/>
 		<field name="location_id" string="Location"/>
@@ -88,7 +87,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 	    <tree>
 		<field name="name"/>
 		<field name="theme_id"/>
-		<field name="code"/>
 		<field name="type_id"/>
 		<field name="location_id"/>
 		<field name="condition_id"/>

@@ -17,8 +17,9 @@ class DonationpointsVisit(models.Model):
 
     code = fields.Char(string=_("Code"), readonly=True)
     active = fields.Boolean(string=_("Active"), default=True)
-    visit_date = fields.Date(string=_("Visit Date"), required=True)
+    visit_date = fields.Date(default=lambda s: fields.Date.context_today(s))
     visit_type_id = fields.Many2one("donationpoints.visit.type", string=_("Type"))
+    date_deadline = fields.Date()
     user_id = fields.Many2one(
         "res.users", string=_("User"), required=True, default=lambda self: self.env.uid,
     )
