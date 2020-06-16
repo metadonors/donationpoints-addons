@@ -37,6 +37,7 @@
         "views/donationpoints_menu.xml",
         "data/donationpoints_condition.xml",
         "data/ir_sequence_data.xml",
+        "data/mail_activity_data.xml",
     ],
     "demo": [],
 }

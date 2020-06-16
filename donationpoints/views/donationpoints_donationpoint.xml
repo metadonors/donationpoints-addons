@@ -113,23 +113,10 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 	</field>
     </record>
 
-    <record model='ir.ui.view' id='donationpoints_donationpoint_calendar_view'>
-	<field name="name">donationpoints.donationpoint.calendar (in donationpoints)</field>
-	<field name="model">donationpoints.donationpoint</field>
-	<field name="arch" type="xml">
-	    <calendar date_start="date_deadline" mode="month" quick_add="False">
-		<field name="code"/>
-		<field name="location_id"/>
-		<field name="donationbox_id"/>
-	    </calendar>
-	</field>
-
-    </record>
-
     <record model="ir.actions.act_window" id="donationpoints_donationpoint_act_window">
 	<field name="name">Donation Points</field>
 	<field name="res_model">donationpoints.donationpoint</field>
-	<field name="view_mode">tree,form,pivot,calendar</field>
+	<field name="view_mode">tree,form,pivot</field>
 	<field name="domain">[]</field>
 	<field name="context">{}</field>
     </record>
