@@ -4,8 +4,8 @@
 
 <odoo>
 
-    <record model="ir.model.access" id="donationpoints_location_type_access_name">        <!-- TODO acl id -->
-        <field name="name">donationpoints.location.type access name</field>        <!-- TODO acl name -->
+    <record model="ir.model.access" id="donationpoints_location_type_access_name"> 
+        <field name="name">donationpoints.location.type access name</field>  
         <field name="model_id" ref="model_donationpoints_location_type"/>
         <!-- TODO review and adapt -->
         <field name="group_id" ref="donationpoints_group_user"/>

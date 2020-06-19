@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 Metadonors Srl
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record model="ir.ui.view" id="donationpoints_donationpoint_form_view">
+        <field name="name">donationpoints.donationpoint.form (in donationpoints_campaigns)</field>
+        <field name="model">donationpoints.donationpoint</field>
+        <field name="inherit_id" ref="donationpoints.donationpoints_donationpoint_form_view"/>
+        <field name="arch" type="xml">
+            <field name="location_id" position="after">
+                <field name="campaign_id"/>
+            </field>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="donationpoints_donationpoint_tree_view">
+        <field name="name">donationpoints.donationpoint.tree (in donationpoints_campaigns)</field>
+        <field name="model">donationpoints.donationpoint</field>
+        <field name="inherit_id" ref="donationpoints.donationpoints_donationpoint_tree_view"/>
+        <field name="arch" type="xml">
+            <field name="location_id" position="after">
+                <field name="campaign_id"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>
