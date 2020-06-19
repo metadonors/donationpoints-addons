@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 Metadonors Srl
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record model="ir.ui.view" id="ngo_donation_form_view">
+        <field name="name">ngo.donation.form (in donationpoints_campaigns)</field>
+        <field name="model">ngo.donation</field>
+        <field name="inherit_id" ref="ngo_campaign_payment.ngo_donation_form_view"/>
+        <field name="arch" type="xml">
+            <field name="campaign_id" position="before">
+                <field name="donationpoint_id"/>
+            </field>
+        </field>
+    </record>
+
+
+
+</odoo>

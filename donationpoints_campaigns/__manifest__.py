@@ -10,8 +10,14 @@
     'author': 'Metadonors Srl',
     'website': 'https://www.metadonors.it',
     'depends': [
+        'donationpoints',
+        'ngo_fundraising'
     ],
     'data': [
+        'views/ngo_donation.xml',
+        'views/donationpoints_donation.xml',
+        'views/donationpoints_donationpoint.xml',
+        'views/donationpoints_settings.xml',
     ],
     'demo': [
     ],

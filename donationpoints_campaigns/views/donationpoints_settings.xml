@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 Metadonors Srl
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.donationpoints</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="5"/>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('settings')]" position="inside">
+                <div class="app_settings_block" data-string="Donationpoints" string="Donationpoints" data-key="donationpoints" groups="base.group_user">
+                    <h2>Fundraising</h2>
+                    <div class="row mt16 o_settings_container">
+                        <div class="row mt16 o_settings_container">
+                            <div class="col-12 col-lg-12 o_setting_box" attrs="{'invisible': [('has_accounting_entries','!=',False)]}">
+                                <div class="o_setting_left_pane"/>
+                                <div class="o_setting_right_pane">
+                                    <span class="o_form_label">Donation Settings</span>
+                                    <div class="text-muted">
+                                        Default settings for donations coming from your donation boxes
+                                    </div>
+                                    <div class="content-group">
+                                        <div class="row mt16">
+                                            <label for="payment_mode_id" string="Payment" class="col-lg-3 o_light_label"/>
+                                            <field name="payment_mode_id" widget="selection"/>
+                                        </div>
+                                        <div class="row mt16">
+                                            <label for="journal_id" string="Journal" class="col-lg-3 o_light_label"/>
+                                            <field name="journal_id" widget="selection"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="donationpoints_config_settings_action" model="ir.actions.act_window">
+        <field name="name">Settings</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_id" ref="res_config_settings_view_form"/>
+        <field name="view_mode">form</field>
+        <field name="target">inline</field>
+        <field name="context">{'module' : 'donationpoints'}</field>
+    </record>
+
+    <record model="ir.ui.menu" id="donationpoints_settings_general">
+        <field name="name">Settings</field>
+        <field name="parent_id" ref="donationpoints.donationpoints_settings"/>
+        <field name="action" ref="donationpoints_config_settings_action"/>
+        <field name="sequence" eval="0"/>
+    </record>
+
+</odoo>
