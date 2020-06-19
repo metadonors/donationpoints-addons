@@ -52,33 +52,37 @@ class DonationpointsVisit(models.Model):
                 else False
             )
 
+
+    def _prepare_donation_vals(self):
+        return {
+                    "donationpoint_id": self.donationpoint_id.id,
+                    "location_id": self.location_id.id,
+                    "date": self.visit_date,
+                    "amount": self.amount,
+                    "donation_type": "cash",
+                    "visit_id": self.id,
+                }
+
     @api.multi
     def write(self, vals):
         ret = super(DonationpointsVisit, self).write(vals)
 
-        if vals.get("condition_id", False):
-            self.donationpoint_id.donationbox_id.write(
-                {"condition_id": vals["condition_id"]}
-            )
-
-        if vals.get("amount", False) and vals["amount"] > 0:
-            existing_donation_id = self.env["donationpoints.donation"].search(
-                [("visit_id", "=", self.id)]
-            )
-            if existing_donation_id:
-                existing_donation_id.write({"amount": vals["amount"]})
-            else:
-                self.env["donationpoints.donation"].create(
-                    {
-                        "donationpoint_id": self.donationpoint_id.id,
-                        "location_id": self.location_id.id,
-                        "date": self.visit_date,
-                        "amount": self.amount,
-                        # "user_id": self.user_id.id,
-                        "donation_type": "cash",
-                        "visit_id": self.id,
-                    }
+        for record in self:
+            if vals.get("condition_id", False):
+                record.donationpoint_id.donationbox_id.write(
+                    {"condition_id": vals["condition_id"]}
                 )
+
+            if vals.get("amount", False) and vals["amount"] > 0:
+                existing_donation_id = self.env["donationpoints.donation"].search(
+                    [("visit_id", "=", record.id)]
+                )
+                if existing_donation_id:
+                    existing_donation_id.write({"amount": vals["amount"]})
+                else:
+                    vals = record._prepare_donation_vals()
+                    self.env["donationpoints.donation"].create(vals)
+
         return ret
 
     @api.model
@@ -93,16 +97,7 @@ class DonationpointsVisit(models.Model):
                 {"condition_id": ret.condition_id.id}
             )
         if ret.amount > 0:
-            self.env["donationpoints.donation"].create(
-                {
-                    "donationpoint_id": ret.donationpoint_id.id,
-                    "location_id": ret.location_id.id,
-                    "date": ret.visit_date,
-                    "amount": ret.amount,
-                    # "user_id": ret.user_id.id,
-                    "donation_type": "cash",
-                    "visit_id": ret.id,
-                }
-            )
+            vals = ret._prepare_donation_vals()
+            self.env["donationpoints.donation"].create(vals)
 
         return ret
