@@ -14,9 +14,8 @@ class Donationpoint(models.Model):
     _name = "donationpoints.donationpoint"
     _description = "Donationpoints Donationpoint"
     _inherit = ["mail.thread", "mail.activity.mixin"]
-    _rec_name = "code"
 
-    name = fields.Char(string=_("Name"), store=True, readonly=True)
+    name = fields.Char(string=_("Name"))
     code = fields.Char(string=_("Code"))
     date_deadline = fields.Date(default=lambda s: fields.Date.context_today(s))
 
@@ -25,6 +24,14 @@ class Donationpoint(models.Model):
     location_id = fields.Many2one(
         "donationpoints.location", string=_("Location"), required=True
     )
+
+    address1 = fields.Char(string=_("Address"), related="location_id.address1", store=True)
+    phone = fields.Char(string=_("Phone"), related="location_id.phone", store=True)
+    email = fields.Char(string=_("Email"), related="location_id.email", store=True)
+    city = fields.Char(string=_("City"), related="location_id.city", store=True)
+    postal_code = fields.Char(string=_("Postal Code"), related="location_id.postal_code", store=True)
+    country_state_id = fields.Many2one("res.country.state", string=_("Province"), related="location_id.country_state_id", store=True)
+    country_id = fields.Many2one("res.country", string=_("Country"), related="location_id.country_id", store=True)
 
     location_owner_id = fields.Many2one(
         string=_("Owner"),
@@ -70,13 +77,21 @@ class Donationpoint(models.Model):
         "donationpoints.visit", "donationpoint_id", string=_("Vists")
     )
 
+
+
     @api.onchange("location_id")
     def create_donationpoint_name(self):
-        self.name = "{} - {} - {}".format(
-            self.location_id.name,
-            self.location_id.location_type_id.name,
-            self.location_id.owner_partner_id.name,
-        )
+        if self.location_id:
+            name = self.location_id.name
+            if self.location_id.location_type_id and self.location_id.location_type_id.name:
+                name = "{} - {}".format(name, self.location_id.location_type_id.name)
+
+            if self.location_id.owner_partner_id and self.location_id.owner_partner_id.name:
+                name = "{} - {}".format(name, self.location_id.owner_partner_id.name)
+
+            self.name = name
+        else:
+            self.name = False
 
     @api.onchange("state")
     def _calculate_date(self):
@@ -135,7 +150,7 @@ class Donationpoint(models.Model):
         if vals.get("location_id", False):
             for record in self:
                 self.env["donationpoints.donationbox"].search(
-                    [("id", "=", record["donationbox_id"])]
+                    [("id", "=", record.donationbox_id.id)]
                 ).write({"location_id": vals["location_id"]})
 
         return ret
@@ -146,16 +161,25 @@ class Donationpoint(models.Model):
             vals["code"] = self.env["ir.sequence"].next_by_code(
                 "donationpoints.donationpoint.sequence"
             )
+
+        if not vals.get("name"):
+            location_id = self.env['donationpoints.location'].browse(vals['location_id'])
+            vals['name'] = location_id.name
+            if location_id.location_type_id and location_id.location_type_id.name:
+                vals['name'] = "{} - {}".format(vals['name'], location_id.location_type_id.name)
+
+            if location_id.owner_partner_id and location_id.owner_partner_id.name:
+                vals['name'] = "{} - {}".format(vals['name'], location_id.owner_partner_id.name)
+
         if vals.get("donationbox_id", False) and self.env[
             "donationpoints.donationpoint"
         ].search([("donationbox_id", "=", vals["donationbox_id"])]):
             raise ValidationError(
                 _("This Donationbox is already present on another donationpoint")
             )
+
         ret = super(Donationpoint, self).create(vals)
-        self.env["donationpoints.donationbox"].search(
-            [("id", "=", vals["donationbox_id"])]
-        ).write({"location_id": vals["location_id"]})
+        self.env["donationpoints.donationbox"].search([("id", "=", vals["donationbox_id"])]).write({"location_id": vals["location_id"]})
         return ret
 
     def action_create_visit(self):

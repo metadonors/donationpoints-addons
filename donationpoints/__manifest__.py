@@ -13,7 +13,6 @@
     "depends": ["base", "mail"],
     "data": [
         "security/donationpoints_security.xml",
-        "wizards/donation_import.xml",
         "security/donationpoints_donationbox_condition.xml",
         "security/donationpoints_donationbox.xml",
         "security/donationpoints_visit.xml",
@@ -35,6 +34,7 @@
         "views/donationpoints_donationbox.xml",
         "views/donationpoints_donationbox_condition.xml",
         "views/donationpoints_menu.xml",
+        'wizards/donationpoints_import_wizard.xml',
         "data/donationpoints_condition.xml",
         "data/ir_sequence_data.xml",
         "data/mail_activity_data.xml",

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 Metadonors Srl
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record model="ir.ui.view" id="donationpoints_import_wizard_form_view">
+        <field name="name">donationpoints.import.wizard.form (in donationpoints)</field>
+        <field name="model">donationpoints.import.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Donationpoints Import Wizard">
+                <group>
+                    <field name="file"/>
+                </group>
+                <footer>
+                    <button name="doit"
+                            string="Importa"
+                            class="btn-primary"
+                            type="object"/>
+                    <button string="Cancel"
+                            class="btn-default"
+                            special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="donationpoints_import_wizard_act_window">
+        <field name="name">Donationpoints Import</field>
+        <field name="res_model">donationpoints.import.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="context">{}</field>
+        <field name="target">new</field>
+    </record>
+
+
+    <record model="ir.ui.menu" id="donationpoints_import_wizard_menu">
+        <field name="name">Donationpoints Import Wizard</field>
+        <field name="parent_id" ref="donationpoints_settings"/>
+        <field name="action" ref="donationpoints_import_wizard_act_window"/>
+        <field name="sequence" eval="100"/> 
+    </record>
+</odoo>

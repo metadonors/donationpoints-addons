@@ -1,1 +1,1 @@
-from . import donation_import
+from . import donationpoints_import_wizard

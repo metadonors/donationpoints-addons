@@ -32,6 +32,8 @@
 			    <field name="condition_id" attrs="{'invisible': [('location_id','=',False)]}" string="Donation Box condition"/>
 			    <field name="is_device" invisible="1"/>
 			    <field name="amount" attrs="{'invisible': ['|',('is_device','=',True), ('donationpoint_id', '=', False)]}"/>
+			    <field name="donation_id" readonly="1"/>
+
 			</group>
 		    </group>
 		    <field name="note"/>

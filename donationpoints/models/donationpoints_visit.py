@@ -24,12 +24,21 @@ class DonationpointsVisit(models.Model):
         "res.users", string=_("User"), required=True, default=lambda self: self.env.uid,
     )
     donationpoint_id = fields.Many2one(
-        "donationpoints.donationpoint", string=_("Donation Point"), required=True
+        "donationpoints.donationpoint", 
+        string=_("Donation Point"), 
+        required=True
     )
     # donationbox_id related to one2many donationbox.history
     donationbox_id = fields.Many2one(
-        "donationpoints.donationbox", related="donationpoint_id.donationbox_id"
+        "donationpoints.donationbox", 
+        related="donationpoint_id.donationbox_id"
     )
+
+    donation_id = fields.Many2one(
+        "donationpoints.donation",
+        string=_("Donation")
+    )
+
     condition_id = fields.Many2one(
         "donationpoints.donationbox.condition",
         string=_("Donationbox Condition"),
@@ -39,6 +48,7 @@ class DonationpointsVisit(models.Model):
     location_id = fields.Many2one(
         "donationpoints.location", related="donationpoint_id.location_id",
     )
+
     amount = fields.Float(string=_("Amount"), store=True)
 
     note = fields.Text(string=_("Note"))
@@ -82,7 +92,8 @@ class DonationpointsVisit(models.Model):
                     existing_donation_id.write({"amount": vals["amount"]})
                 else:
                     vals = record._prepare_donation_vals()
-                    self.env["donationpoints.donation"].create(vals)
+                    donation_id = self.env["donationpoints.donation"].create(vals)
+                    record.write({ "donation_id": donation_id.id})
 
         return ret
 
@@ -110,6 +121,7 @@ class DonationpointsVisit(models.Model):
             )
         if ret.amount > 0:
             vals = ret._prepare_donation_vals()
-            self.env["donationpoints.donation"].create(vals)
+            donation_id = self.env["donationpoints.donation"].create(vals)
+            ret.write({ "donation_id": donation_id.id})
 
         return ret

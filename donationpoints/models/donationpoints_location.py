@@ -14,7 +14,10 @@ class DonationpointsLocation(models.Model):
     name = fields.Char(string=_("Name"), required=True)
     active = fields.Boolean(string=_("Active"), default=True)
     address1 = fields.Char(string=_("Address"))
+    phone = fields.Char(string=_("Phone"))
+    email = fields.Char(string=_("Email"))
     city = fields.Char(string=_("City"))
+    postal_code = fields.Char(string=_("Postal Code"))
     country_state_id = fields.Many2one("res.country.state", string=_("Province"))
     country_id = fields.Many2one("res.country", string=_("Country"))
     location_type_id = fields.Many2one(
