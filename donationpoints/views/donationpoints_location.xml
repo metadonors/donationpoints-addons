@@ -38,7 +38,10 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 			<group>
 			    <field name="location_type_id"/>
 			    <field name="activation_date"/>
+			    <field name="phone"/>
+			    <field name="email"/>
 			    <field name="address1"/>
+			    <field name="postal_code"/>
 			    <field name="city"/>
 			    <field name="country_state_id"/>
 			    <field name="country_id"/>
