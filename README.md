@@ -25,22 +25,6 @@ in fondoo all'elenco degli _addons\_path_ aggiungere _/mnt/bundle-addons/donatio
 
 ```
 addons_path:
-  - /mnt/bundle-addons/account-invoicing
-  - /mnt/bundle-addons/connector
-  - /mnt/bundle-addons/hr
-  - /mnt/bundle-addons/muk_base
-  - /mnt/bundle-addons/muk_misc
-  - /mnt/bundle-addons/muk_web
-  - /mnt/bundle-addons/l10n-italy
-  - /mnt/bundle-addons/partner-contact
-  - /mnt/bundle-addons/project
-  - /mnt/bundle-addons/purchase-workflow
-  - /mnt/bundle-addons/queue
-  - /mnt/bundle-addons/rest-framework
-  - /mnt/bundle-addons/server-tools
-  - /mnt/bundle-addons/server-ux
-  - /mnt/bundle-addons/web
-  - /mnt/bundle-addons/website
   - /mnt/bundle-addons/donationpoints
 ```
 
@@ -58,10 +42,6 @@ docker-compose up
 
 Andare su [http://localhost](http://localhost) 
 
-User: admin 
-Password: admin
-
-Tra le app selezionare il modulo Donationpoints e installarlo
 
 
 
