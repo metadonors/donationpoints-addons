@@ -9,7 +9,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 	<field name='res_model_id' ref="donationpoints.model_donationpoints_donationpoint"></field>
 	<field name='decoration_type'>warning</field>
 	<field name="summary">Appointment Visit Reminder</field>
-	<field name="days">1</field>
+	<field name="delay_unit">days</field>
 	<field name="delay_count">1</field>
     </record>
 </odoo>

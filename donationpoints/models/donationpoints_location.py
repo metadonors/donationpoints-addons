@@ -73,7 +73,6 @@ class DonationpointsLocation(models.Model):
             total_amount += donation_id.amount
         self.donation_amount = total_amount
 
-    @api.multi
     def action_donation(self):
         return {
             "name": "Location Donations",
@@ -86,7 +85,6 @@ class DonationpointsLocation(models.Model):
             # "context": {"default_donataionpoint_id": self.donation_point.id},
         }
 
-    @api.multi
     def action_visit(self):
         return {
             "name": "Location Visit",

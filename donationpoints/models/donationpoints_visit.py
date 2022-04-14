@@ -74,7 +74,6 @@ class DonationpointsVisit(models.Model):
                     "visit_id": self.id,
                 }
 
-    @api.multi
     def write(self, vals):
         ret = super(DonationpointsVisit, self).write(vals)
 
@@ -97,8 +96,8 @@ class DonationpointsVisit(models.Model):
 
         return ret
 
-    @api.one
     def _get_current_login_user(self):
+        self.ensure_one()
         user_obj = self.env["res.users"].search([])
         for user_login in user_obj:
             current_login = self.env.user

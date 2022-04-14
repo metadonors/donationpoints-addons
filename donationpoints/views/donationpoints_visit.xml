@@ -27,7 +27,7 @@
 			</group>
 			<group>
 			    <field name="user_id"/>
-			    <field name="location_id" attrs="{'invisible': [('location_id','=',False)]}" domain="[('location_id','=', location_id)]"/>
+			    <field name="location_id" attrs="{'invisible': [('location_id','=',False)]}" domain="[('id','=', location_id)]"/>
 			    <field name="donationbox_id"/>
 			    <field name="condition_id" attrs="{'invisible': [('location_id','=',False)]}" string="Donation Box condition"/>
 			    <field name="is_device" invisible="1"/>

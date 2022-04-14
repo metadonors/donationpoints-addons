@@ -36,7 +36,6 @@ class DonationpointsSettings(models.TransientModel):
         if self.journal_id:
             self.env['ir.config_parameter'].set_param(JOURNAL_ID_CONF, self.journal_id.id)
 
-    @api.multi
     def get_values(self):
         res = super(DonationpointsSettings, self).get_values()
         

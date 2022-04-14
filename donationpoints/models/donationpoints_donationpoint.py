@@ -118,7 +118,6 @@ class Donationpoint(models.Model):
                 total_amount += donation_id.amount
             record.donation_amount = total_amount
 
-    @api.multi
     def action_donation(self):
         return {
             "name": "Donationpoint Donations",
@@ -131,7 +130,6 @@ class Donationpoint(models.Model):
             # "context": {"default_donataionpoint_id": self.donation_point.id},
         }
 
-    @api.multi
     def action_visit(self):
         return {
             "name": "Donationpoint Visit",
@@ -144,7 +142,6 @@ class Donationpoint(models.Model):
             # "context": {"default_donataionpoint_id": self.donation_point.id},
         }
 
-    @api.multi
     def write(self, vals):
         ret = super(Donationpoint, self).write(vals)
         if vals.get("location_id", False):

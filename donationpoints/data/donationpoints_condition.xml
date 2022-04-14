@@ -2,15 +2,12 @@
     <data noupdate="1">
         <record id="donationpoints.condition_working" model="donationpoints.donationbox.condition">
             <field name="name">Working</field>
-            <field name="sequence">1</field>
         </record>
         <record id="donationpoints.condition_notworking" model="donationpoints.donationbox.condition">
             <field name="name">Not working</field>
-            <field name="sequence">2</field>
         </record>
         <record id="donationpoints.condition_maintenance" model="donationpoints.donationbox.condition">
             <field name="name">Maintenance</field>
-            <field name="sequence">3</field>
         </record>
     </data>
 </odoo>

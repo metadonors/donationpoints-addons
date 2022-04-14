@@ -98,7 +98,6 @@ class DonationpointsImportWizard(models.TransientModel):
 
         return imported
 
-    @api.multi
     def doit(self):
         for wizard in self:
             if not self.file:

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 Metadonors Srl
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record model="ir.model.access" id="donationpoints_import_wizard_user_access_name">
+        <field name="name">donationpoints.import.wizard user access name</field>
+        <field name="model_id" ref="model_donationpoints_import_wizard" />
+        <field name="group_id" ref="donationpoints_group_user" />
+        <field name="perm_read" eval="0" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_write" eval="0" />
+        <field name="perm_unlink" eval="0" />
+    </record>
+
+    <record model="ir.model.access" id="donationpoints_import_wizard_manager_access_name">
+        <field name="name">donationpoints.import.wizard manager access name</field>
+        <field name="model_id" ref="model_donationpoints_import_wizard" />
+        <field name="group_id" ref="donationpoints_group_manager" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_create" eval="1" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_unlink" eval="1" />
+    </record>
+
+</odoo>

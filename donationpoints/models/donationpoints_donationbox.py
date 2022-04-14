@@ -49,7 +49,6 @@ class DonationpointsDonationbox(models.Model):
             total_amount += donation_id.amount
         self.donation_amount = total_amount
 
-    @api.multi
     def action_donation(self):
         return {
             "name": "Donationbox Donations",
