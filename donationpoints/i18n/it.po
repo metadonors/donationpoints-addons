@@ -1234,7 +1234,7 @@ msgstr "Telefono"
 #: selection:donationpoints.donationbox,activity_state:0
 #: selection:donationpoints.location,activity_state:0
 msgid "Planned"
-msgstr ""
+msgstr "Pianificato"
 
 #. module: donationpoints
 #: code:addons/donationpoints/models/donationpoints_location.py:17
