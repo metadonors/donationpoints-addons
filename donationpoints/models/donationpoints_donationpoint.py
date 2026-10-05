@@ -137,7 +137,7 @@ class Donationpoint(models.Model):
             "res_model": "donationpoints.visit",
             "view_mode": "tree",
             "res_id": False,  # used for Form View and pass fields value
-            "domain": [("location_id", "=", self.id)],
+            "domain": [("donationpoint_id", "=", self.id)],
             "target": "current",
             # "context": {"default_donataionpoint_id": self.donation_point.id},
         }
